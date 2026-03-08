@@ -1,0 +1,122 @@
+:root {
+  --cream: #f7f3ea;
+  --ink: #15212a;
+  --sun: #ef8a3d;
+  --sea: #2f7e8a;
+  --sand: #ecd1a8;
+  --card: rgba(247, 243, 234, 0.88);
+}
+
+.page-shell {
+  min-height: 100vh;
+  background:
+    radial-gradient(
+      circle at 20% 15%,
+      rgba(239, 138, 61, 0.24),
+      transparent 45%
+    ),
+    radial-gradient(
+      circle at 80% 85%,
+      rgba(47, 126, 138, 0.2),
+      transparent 50%
+    ),
+    linear-gradient(135deg, #fff9ef 0%, #f2efe7 40%, #ecf2f3 100%);
+  color: var(--ink);
+}
+
+.top-nav {
+  position: fixed;
+  z-index: 10;
+  top: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 0.3rem;
+  flex-wrap: wrap;
+  padding: 0.45rem;
+  border-radius: 999px;
+  background: rgba(247, 243, 234, 0.75);
+  border: 1px solid rgba(21, 33, 42, 0.12);
+  backdrop-filter: blur(10px);
+}
+
+.top-nav a {
+  color: var(--ink);
+  text-decoration: none;
+  font-family: "IBM Plex Sans", sans-serif;
+  font-size: 0.85rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 0.45rem 0.75rem;
+  border-radius: 999px;
+}
+
+.top-nav a:hover {
+  background: rgba(239, 138, 61, 0.18);
+}
+
+.sections-scroll {
+  height: 100vh;
+  overflow-y: auto;
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+}
+
+.screen-section {
+  min-height: 100vh;
+  scroll-snap-align: start;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+  padding: 6rem clamp(1.25rem, 4vw, 5rem) 3rem;
+  animation: rise 650ms ease both;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+  font-family: "Fraunces", serif;
+  line-height: 1.04;
+}
+
+h1 {
+  font-size: clamp(2.3rem, 8vw, 6.4rem);
+  max-width: 14ch;
+}
+
+h2 {
+  font-size: clamp(2rem, 6vw, 4.2rem);
+}
+
+h3 {
+  font-size: clamp(1.25rem, 2.8vw, 1.9rem);
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 700px) {
+  .top-nav {
+    width: calc(100% - 1rem);
+    justify-content: center;
+  }
+
+  .top-nav a {
+    font-size: 0.75rem;
+  }
+
+  .screen-section {
+    padding-top: 6.5rem;
+  }
+}

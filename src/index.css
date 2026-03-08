@@ -1,0 +1,53 @@
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap");
+@import "tailwindcss";
+
+:root {
+  --colors-Primary-white: rgba(244, 239, 212, 1);
+  --colors-Primary-black: rgba(0, 0, 0, 1);
+  --colors-Primary-dark-green: rgba(44, 54, 35, 1);
+  --colors-Primary-mid-green: rgba(129, 160, 83, 1);
+  --colors-Primary-light-green: rgba(214, 227, 110, 1);
+  --colors-Secondary-orange: rgba(230, 117, 65, 1);
+  --colors-Secondary-bubble-pink: rgba(244, 130, 172, 1);
+  --colors-Secondary-grape-purple: rgba(114, 31, 71, 1);
+  --colors-Secondary-butter-yello: rgba(231, 203, 128, 1);
+  --colors-Secondary-lilac: rgba(206, 183, 208, 1);
+
+  --colors-Primary-white-rgb: 244, 239, 212;
+  --colors-Primary-black-rgb: 0, 0, 0;
+  --colors-Primary-dark-green-rgb: 44, 54, 35;
+  --colors-Primary-mid-green-rgb: 129, 160, 83;
+  --colors-Primary-light-green-rgb: 214, 227, 110;
+  --colors-Secondary-orange-rgb: 230, 117, 65;
+  --colors-Secondary-bubble-pink-rgb: 244, 130, 172;
+  --colors-Secondary-grape-purple-rgb: 114, 31, 71;
+  --colors-Secondary-butter-yello-rgb: 231, 203, 128;
+  --colors-Secondary-lilac-rgb: 206, 183, 208;
+
+  --ink: var(--colors-Primary-dark-green);
+  --cream: var(--colors-Primary-white);
+  --sea: var(--colors-Primary-mid-green);
+  --sun: var(--colors-Primary-mid-green);
+
+  --ink-rgb: var(--colors-Primary-dark-green-rgb);
+  --cream-rgb: var(--colors-Primary-white-rgb);
+  --sea-rgb: var(--colors-Primary-mid-green-rgb);
+  --sun-rgb: var(--colors-Primary-mid-green-rgb);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  min-height: 100%;
+}
+
+body {
+  min-height: 100vh;
+  font-family: "IBM Plex Sans", sans-serif;
+  background: var(--colors-Primary-mid-green);
+}
