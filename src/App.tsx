@@ -11,18 +11,33 @@ function App() {
   const featuredProjects = [
     {
       title: "Brand Story Website",
-      description:
-        "A modern one-page experience focused on clean narrative and visuals.",
+      description: "Editorial-style website crafted around a brand narrative.",
+      imageAlt: "Placeholder cover for Brand Story Website",
+      imageSrc: "",
+      year: "2026",
+      medium: "Web Design + Illustration",
+      detail:
+        "A one-page storytelling experience where each section is paced like a chapter. Focus was on rhythm, visual hierarchy, and smooth transitions between content blocks.",
     },
     {
       title: "Photography Portfolio",
-      description:
-        "Responsive gallery layout designed to let imagery lead the experience.",
+      description: "Minimal portfolio layout built to keep imagery in control.",
+      imageAlt: "Placeholder cover for Photography Portfolio",
+      imageSrc: "",
+      year: "2025",
+      medium: "UI/UX + Frontend",
+      detail:
+        "A clean, responsive gallery-first structure. The design system keeps typography quiet and spacing intentional, so the photography becomes the hero across every breakpoint.",
     },
     {
       title: "Local Business Landing Page",
-      description:
-        "Conversion-first structure with clear messaging and strong call to action.",
+      description: "Conversion-focused landing page with strong section flow.",
+      imageAlt: "Placeholder cover for Local Business Landing Page",
+      imageSrc: "",
+      year: "2025",
+      medium: "Brand + Landing Page",
+      detail:
+        "A structured landing page designed around trust signals and clear calls to action. Messaging, illustration accents, and layout are tuned for quick scan and immediate contact conversion.",
     },
   ];
 

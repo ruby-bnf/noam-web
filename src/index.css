@@ -51,3 +51,21 @@ body {
   font-family: "IBM Plex Sans", sans-serif;
   background: var(--colors-Primary-mid-green);
 }
+
+button:not(.button-unstyled) {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  border-radius: 9999px;
+  background: var(--colors-Secondary-bubble-pink);
+  padding: 0.75rem 1.25rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--colors-Primary-dark-green);
+  transition: transform 200ms ease;
+}
+
+button:not(.button-unstyled):hover {
+  transform: translateY(-2px);
+}
