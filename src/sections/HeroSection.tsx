@@ -63,11 +63,11 @@ function HeroSection() {
       }
 
       if (backgroundLayerRef.current) {
-        backgroundLayerRef.current.style.transform = `translate3d(0, ${scrolledWithinHero * 0.2}px, 0)`;
+        backgroundLayerRef.current.style.transform = `translate3d(0, ${scrolledWithinHero * 0.08}px, 0)`;
       }
 
       if (midgroundLayerRef.current) {
-        midgroundLayerRef.current.style.transform = `translate3d(0, ${scrolledWithinHero * 0.32}px, 0)`;
+        midgroundLayerRef.current.style.transform = `translate3d(0, ${scrolledWithinHero * 0.52}px, 0)`;
       }
     };
 
