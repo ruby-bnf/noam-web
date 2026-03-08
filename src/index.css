@@ -46,6 +46,11 @@ body,
   min-height: 100%;
 }
 
+html,
+body {
+  overflow-x: hidden;
+}
+
 body {
   min-height: 100vh;
   font-family: "IBM Plex Sans", sans-serif;

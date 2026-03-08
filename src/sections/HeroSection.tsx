@@ -3,6 +3,7 @@ import logo from "../assets/logo.png";
 import logoFrame from "../assets/logoFrame.svg";
 import background from "../assets/background/background.svg";
 import midground from "../assets/background/midground.svg";
+import HeroTrees from "../components/HeroTrees";
 
 function HeroSection() {
   const sectionRef = useRef<HTMLElement | null>(null);
@@ -114,7 +115,7 @@ function HeroSection() {
     <section
       id="hero"
       ref={sectionRef}
-      className="relative flex min-h-screen snap-start items-center justify-center gap-4 bg-[radial-gradient(circle_at_78%_8%,rgba(var(--colors-Secondary-butter-yello-rgb),0.16),transparent_34%),linear-gradient(180deg,var(--colors-Primary-white)_0%,rgba(var(--colors-Primary-white-rgb),0.96)_58%,rgba(var(--colors-Primary-light-green-rgb),0.26)_100%)] px-[clamp(1.25rem,4vw,5rem)] pt-24 pb-12"
+      className="relative flex min-h-screen snap-start items-center justify-center gap-4 overflow-hidden bg-[radial-gradient(circle_at_78%_8%,rgba(var(--colors-Secondary-butter-yello-rgb),0.16),transparent_34%),linear-gradient(180deg,var(--colors-Primary-white)_0%,rgba(var(--colors-Primary-white-rgb),0.96)_58%,rgba(var(--colors-Primary-light-green-rgb),0.26)_100%)] px-[clamp(1.25rem,4vw,5rem)] pt-24 pb-12"
     >
       <div
         ref={logoLayerRef}
@@ -126,7 +127,7 @@ function HeroSection() {
               ? "translate-y-0 scale-100 opacity-100"
               : "translate-y-4 scale-95 opacity-0"
           }`}
-          style={{ transitionDelay: "60ms" }}
+          style={{ transitionDuration: "820ms", transitionDelay: "120ms" }}
         >
           <div className="absolute inset-0 flex items-center justify-center">
             <img
@@ -154,7 +155,7 @@ function HeroSection() {
           className={`absolute inset-0 z-0 will-change-transform transition-opacity duration-700 ease-out ${
             introVisible ? "opacity-100" : "opacity-0"
           }`}
-          style={{ transitionDelay: "460ms" }}
+          style={{ transitionDuration: "820ms", transitionDelay: "560ms" }}
         >
           <div
             className={`absolute inset-0 transition-transform duration-900 ease-[cubic-bezier(0.2,1.1,0.2,1)] ${
@@ -162,7 +163,7 @@ function HeroSection() {
                 ? "translate-y-0 rotate-0"
                 : "-translate-y-20 -rotate-[4deg]"
             }`}
-            style={{ transitionDelay: "460ms" }}
+            style={{ transitionDuration: "1040ms", transitionDelay: "560ms" }}
           >
             <img
               className="absolute left-1/2 top-[378px] h-[508px] w-[1440px] -translate-x-1/2 rotate-0 object-contain opacity-100"
@@ -177,7 +178,7 @@ function HeroSection() {
           className={`absolute inset-0 z-[1] will-change-transform transition-opacity duration-700 ease-out ${
             introVisible ? "opacity-100" : "opacity-0"
           }`}
-          style={{ transitionDelay: "820ms" }}
+          style={{ transitionDuration: "820ms", transitionDelay: "980ms" }}
         >
           <div
             className={`absolute inset-0 transition-transform duration-900 ease-[cubic-bezier(0.2,1.1,0.2,1)] ${
@@ -185,7 +186,7 @@ function HeroSection() {
                 ? "translate-y-0 rotate-0"
                 : "-translate-y-24 rotate-[5deg]"
             }`}
-            style={{ transitionDelay: "820ms" }}
+            style={{ transitionDuration: "1040ms", transitionDelay: "980ms" }}
           >
             <img
               className="absolute left-1/2 top-[379px] h-[507px] w-[1440px] -translate-x-1/2 rotate-0 object-contain opacity-100"
@@ -194,6 +195,8 @@ function HeroSection() {
             />
           </div>
         </div>
+
+        <HeroTrees introVisible={introVisible} />
       </div>
     </section>
   );
