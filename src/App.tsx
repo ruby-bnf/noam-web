@@ -2,7 +2,8 @@ import AboutSection from "./sections/AboutSection";
 import ContactSection from "./sections/ContactSection";
 import HeroSection from "./sections/HeroSection";
 import ProjectsSection from "./sections/ProjectsSection";
-import WorkshopsSection from "./sections/WorkshopsSection";
+import WorkshopsSection, { workshopImages } from "./sections/WorkshopsSection";
+import { workshopsSectionContent } from "./constants/workshopsInfo";
 
 function App() {
   const navLinkClassName =
@@ -41,11 +42,14 @@ function App() {
     },
   ];
 
-  const upcomingWorkshops = [
-    "Intro To Personal Branding",
-    "Build Your First Portfolio Website",
-    "Creative Workflow For Freelancers",
-  ];
+  const workshopCards = workshopsSectionContent.workshops.map(
+    (workshop, index) => ({
+      title: workshop.title,
+      description: workshop.description,
+      picture: workshopImages[index % workshopImages.length],
+      status: workshop.status,
+    }),
+  );
 
   return (
     <div className="min-h-screen bg-[radial-gradient(circle_at_20%_15%,rgba(var(--sun-rgb),0.24),transparent_45%),radial-gradient(circle_at_80%_85%,rgba(var(--sea-rgb),0.2),transparent_50%),linear-gradient(135deg,#fff9ef_0%,#f2efe7_40%,#ecf2f3_100%)] text-[var(--ink)]">
@@ -71,7 +75,7 @@ function App() {
         <HeroSection />
         <AboutSection />
         <ProjectsSection featuredProjects={featuredProjects} />
-        <WorkshopsSection upcomingWorkshops={upcomingWorkshops} />
+        <WorkshopsSection workshopCards={workshopCards} />
         <ContactSection />
       </main>
     </div>

@@ -40,7 +40,7 @@ function ProjectsSection({ featuredProjects }: ProjectsSectionProps) {
     return (
       <section
         id="projects"
-        className="flex min-h-screen snap-start flex-col justify-center gap-5 px-[clamp(1.25rem,4vw,5rem)] pt-24 pb-12"
+        className="flex min-h-screen snap-start flex-col justify-center gap-5 bg-[radial-gradient(circle_at_20%_15%,rgba(var(--sun-rgb),0.24),transparent_45%),radial-gradient(circle_at_80%_85%,rgba(var(--sea-rgb),0.2),transparent_50%),linear-gradient(135deg,#fff9ef_0%,#f2efe7_40%,#ecf2f3_100%)] px-[clamp(1.25rem,4vw,5rem)] pt-24 pb-12"
       >
         <div className="mx-auto w-full max-w-6xl">
           <h2 className="text-[clamp(2rem,3.1vw,3.1rem)] leading-[1.05] font-semibold tracking-[0.08em] uppercase">
@@ -60,7 +60,7 @@ function ProjectsSection({ featuredProjects }: ProjectsSectionProps) {
   return (
     <section
       id="projects"
-      className="flex min-h-screen snap-start flex-col justify-center gap-5 px-[clamp(1.25rem,4vw,5rem)] pt-24 pb-12"
+      className="flex min-h-screen snap-start flex-col justify-center gap-5 bg-[radial-gradient(circle_at_20%_15%,rgba(var(--sun-rgb),0.24),transparent_45%),radial-gradient(circle_at_80%_85%,rgba(var(--sea-rgb),0.2),transparent_50%),linear-gradient(135deg,#fff9ef_0%,#f2efe7_40%,#ecf2f3_100%)] px-[clamp(1.25rem,4vw,5rem)] pt-24 pb-12"
     >
       <div className="mx-auto w-full max-w-6xl">
         <h2 className="text-[clamp(2rem,3.1vw,3.1rem)] leading-[1.05] font-semibold tracking-[0.08em] uppercase">
