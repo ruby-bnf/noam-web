@@ -1,5 +1,6 @@
 import { aboutSectionContent } from "../constants/content";
 import noamProfileIllustration from "../assets/aboutMe/noamProfileIllustration.svg";
+import forgroundDivider from "../assets/background/forground.svg";
 import decorativeVectorA from "../assets/decoratives/Vector.svg";
 import decorativeVectorB from "../assets/decoratives/Vector (1).svg";
 import decorativeVectorC from "../assets/decoratives/Vector (2).svg";
@@ -12,6 +13,17 @@ function AboutSection() {
       id="about"
       className="relative flex min-h-screen snap-start items-center justify-center bg-[var(--colors-Primary-dark-green)] px-[clamp(1.25rem,4vw,5rem)] pt-32 pb-24"
     >
+      <div className="pointer-events-none absolute top-0 left-1/2 z-[2] w-[min(100%,1440px)] -translate-x-1/2 -translate-y-[48%]">
+        <div>
+          <img
+            src={forgroundDivider}
+            alt=""
+            aria-hidden="true"
+            className="h-auto w-full object-contain"
+          />
+        </div>
+      </div>
+
       <div
         className="pointer-events-none absolute inset-0 z-0"
         aria-hidden="true"
