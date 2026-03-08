@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { aboutSectionContent } from "../constants/content";
 import noamProfileIllustration from "../assets/aboutMe/noamProfileIllustration.svg";
 import forgroundDivider from "../assets/background/forground.svg";
@@ -8,13 +9,41 @@ import decorativeVectorD from "../assets/decoratives/Vector (3).svg";
 import decorativeVectorE from "../assets/decoratives/Vector (4).svg";
 
 function AboutSection() {
+  const [foregroundReady, setForegroundReady] = useState(false);
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+
+    if (mediaQuery.matches) {
+      setForegroundReady(true);
+      return;
+    }
+
+    let timeoutId = 0;
+    const frame = window.requestAnimationFrame(() => {
+      // Start foreground drag after logo/background/midground intro sequence.
+      timeoutId = window.setTimeout(() => {
+        setForegroundReady(true);
+      }, 1550);
+    });
+
+    return () => {
+      window.cancelAnimationFrame(frame);
+      window.clearTimeout(timeoutId);
+    };
+  }, []);
+
   return (
     <section
       id="about"
       className="relative flex min-h-screen snap-start items-center justify-center bg-[var(--colors-Primary-dark-green)] px-[clamp(1.25rem,4vw,5rem)] pt-32 pb-24"
     >
-      <div className="pointer-events-none absolute top-0 left-1/2 z-[2] w-[min(100%,1440px)] -translate-x-1/2 -translate-y-[48%]">
-        <div>
+      <div className="pointer-events-none absolute top-0 left-1/2 z-[2] w-[min(100%,1440px)] -translate-x-1/2 -translate-y-[58%]">
+        <div
+          className={`transition-transform duration-900 ease-[cubic-bezier(0.2,0.95,0.2,1)] ${
+            foregroundReady ? "translate-y-0" : "translate-y-[130%]"
+          }`}
+        >
           <img
             src={forgroundDivider}
             alt=""
