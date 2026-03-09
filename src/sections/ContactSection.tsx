@@ -23,7 +23,7 @@ function ContactSection() {
   return (
     <section
       id="contact"
-      className="flex min-h-screen snap-start flex-col justify-center gap-8 px-[clamp(1.25rem,4vw,5rem)] pt-24 pb-12"
+      className="flex min-h-screen snap-start flex-col justify-center gap-8 bg-[radial-gradient(circle_at_78%_8%,rgba(var(--colors-Secondary-butter-yello-rgb),0.16),transparent_34%),linear-gradient(180deg,var(--colors-Primary-white)_0%,rgba(var(--colors-Primary-white-rgb),0.96)_58%,rgba(var(--colors-Primary-light-green-rgb),0.26)_100%)] px-[clamp(1.25rem,4vw,5rem)] pt-24 pb-12"
     >
       <h2 className="text-[clamp(2rem,3.1vw,3.1rem)] leading-[1.05] font-semibold tracking-[0.08em] uppercase text-[var(--colors-Primary-dark-green)]">
         {contactSectionContent.title}
