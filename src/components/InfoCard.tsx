@@ -1,12 +1,16 @@
-import type { ReactNode } from "react";
+import type { HTMLAttributes, ReactNode } from "react";
 
-type InfoCardProps = {
+type InfoCardProps = HTMLAttributes<HTMLElement> & {
   children: ReactNode;
   className?: string;
 };
 
-function InfoCard({ children, className = "" }: InfoCardProps) {
-  return <article className={className}>{children}</article>;
+function InfoCard({ children, className = "", ...rest }: InfoCardProps) {
+  return (
+    <article className={className} {...rest}>
+      {children}
+    </article>
+  );
 }
 
 export default InfoCard;
