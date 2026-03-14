@@ -1,6 +1,7 @@
 import { useEffect, useState, type RefObject } from "react";
 
 const HERO_SCENE_BASE_WIDTH = 1440;
+let heroIntroPlayedInAppLifecycle = false;
 
 const clamp = (value: number, min: number, max: number) =>
   Math.min(Math.max(value, min), max);
@@ -148,12 +149,14 @@ export function useHeroSceneScale() {
 export function useHeroIntroVisible() {
   const [introVisible, setIntroVisible] = useState(
     () =>
-      typeof window !== "undefined" &&
-      window.matchMedia("(prefers-reduced-motion: reduce)").matches,
+      (typeof window !== "undefined" &&
+        window.matchMedia("(prefers-reduced-motion: reduce)").matches) ||
+      heroIntroPlayedInAppLifecycle,
   );
 
   useEffect(() => {
     if (introVisible) {
+      heroIntroPlayedInAppLifecycle = true;
       return;
     }
 

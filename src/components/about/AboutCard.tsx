@@ -13,7 +13,7 @@ function AboutCard() {
         </p>
       </div>
 
-      <div className="flex items-center justify-center md:justify-end">
+      <div className="hidden items-center justify-center md:flex md:justify-end">
         <img
           src={noamProfileIllustration}
           alt="Noam profile illustration"
