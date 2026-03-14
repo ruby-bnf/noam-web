@@ -1,5 +1,4 @@
-import treeNoam2 from "../assets/heroSection/Treenoam2.png";
-import treeNoam3 from "../assets/heroSection/Treenoam3.png";
+import trees from "../assets/background/trees.svg";
 
 type HeroTreesProps = {
   introVisible: boolean;
@@ -14,22 +13,9 @@ function HeroTrees({ introVisible }: HeroTreesProps) {
       style={{ transitionDuration: "820ms", transitionDelay: "1240ms" }}
     >
       <img
-        className="absolute top-[20px] left-[calc(50%-730px)] w-[350px] object-contain md:w-[465px]"
-        src={treeNoam3}
+        className="absolute bottom-0 left-0 h-auto w-full object-contain"
+        src={trees}
         alt=""
-      />
-
-      <img
-        className="absolute top-[332px] left-[calc(50%-405px)] w-[245px] object-contain md:w-[300px]"
-        src={treeNoam2}
-        alt=""
-      />
-
-      <img
-        className="absolute top-[20px] left-[calc(50%+380px)] w-[325px] object-contain md:w-[440px]"
-        src={treeNoam3}
-        alt=""
-        style={{ transform: "scaleX(-1)" }}
       />
     </div>
   );

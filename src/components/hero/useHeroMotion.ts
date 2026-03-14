@@ -1,5 +1,10 @@
 import { useEffect, useState, type RefObject } from "react";
 
+const HERO_SCENE_BASE_WIDTH = 1440;
+
+const clamp = (value: number, min: number, max: number) =>
+  Math.min(Math.max(value, min), max);
+
 type ParallaxRef = RefObject<HTMLDivElement | null>;
 
 type UseHeroParallaxParams = {
@@ -51,9 +56,6 @@ export function useHeroParallax({
     let rafId = 0;
     let ticking = false;
 
-    const clamp = (value: number, min: number, max: number) =>
-      Math.min(Math.max(value, min), max);
-
     const setLayerTransform = (
       layerRef: ParallaxRef,
       translateY: number,
@@ -102,6 +104,45 @@ export function useHeroParallax({
       window.cancelAnimationFrame(rafId);
     };
   }, [sectionRef, logoLayerRef, backgroundLayerRef, midgroundLayerRef]);
+}
+
+export function useHeroSceneScale() {
+  const [sceneScale, setSceneScale] = useState(() => {
+    if (typeof window === "undefined") {
+      return 1;
+    }
+
+    return window.innerWidth / HERO_SCENE_BASE_WIDTH;
+  });
+
+  useEffect(() => {
+    let rafId = 0;
+
+    const updateScale = () => {
+      rafId = 0;
+      setSceneScale(window.innerWidth / HERO_SCENE_BASE_WIDTH);
+    };
+
+    const onResize = () => {
+      if (rafId !== 0) {
+        return;
+      }
+
+      rafId = window.requestAnimationFrame(updateScale);
+    };
+
+    window.addEventListener("resize", onResize, { passive: true });
+    updateScale();
+
+    return () => {
+      window.removeEventListener("resize", onResize);
+      if (rafId !== 0) {
+        window.cancelAnimationFrame(rafId);
+      }
+    };
+  }, []);
+
+  return sceneScale;
 }
 
 export function useHeroIntroVisible() {

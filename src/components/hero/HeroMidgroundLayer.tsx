@@ -27,7 +27,7 @@ function HeroMidgroundLayer({
         style={{ transitionDuration: "1040ms", transitionDelay: "980ms" }}
       >
         <img
-          className="absolute left-1/2 top-[379px] h-[507px] w-[1440px] -translate-x-1/2 rotate-0 object-contain opacity-100"
+          className="absolute bottom-0 left-0 h-auto w-full rotate-0 object-contain opacity-100"
           src={midground}
           alt=""
         />
