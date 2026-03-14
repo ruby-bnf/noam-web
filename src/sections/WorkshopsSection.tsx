@@ -1,18 +1,9 @@
-import backgroundShape from "../assets/background/background.svg";
-import midgroundShape from "../assets/background/midground.svg";
-import foregroundShape from "../assets/background/forground.svg";
 import ContentCard, { type ContentCardProps } from "../components/ContentCard";
 import { workshopsSectionContent } from "../constants/workshopsInfo";
 
 type WorkshopsSectionProps = {
   workshopCards: ContentCardProps[];
 };
-
-const workshopImages = [
-  backgroundShape,
-  midgroundShape,
-  foregroundShape,
-] as const;
 
 function WorkshopsSection({ workshopCards }: WorkshopsSectionProps) {
   return (
@@ -46,7 +37,5 @@ function WorkshopsSection({ workshopCards }: WorkshopsSectionProps) {
     </section>
   );
 }
-
-export { workshopImages };
 
 export default WorkshopsSection;

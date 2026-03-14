@@ -3,9 +3,10 @@ import CommissionPage from "./pages/CommissionPage.tsx";
 import ContactSection from "./sections/ContactSection";
 import HeroSection from "./sections/HeroSection";
 import ProjectsSection from "./sections/ProjectsSection";
-import WorkshopsSection, { workshopImages } from "./sections/WorkshopsSection";
+import WorkshopsSection from "./sections/WorkshopsSection";
 import { workshopsSectionContent } from "./constants/workshopsInfo";
 import SiteNav from "./components/SiteNav";
+import { workshopImages } from "./components/workshops/workshopImages";
 import { Route, Routes } from "react-router-dom";
 
 function HomePage() {
