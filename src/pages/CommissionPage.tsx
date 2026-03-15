@@ -50,10 +50,7 @@ function CommissionPage() {
 
                 {step.ctaLabel && step.ctaHref ? (
                   <div className="mt-2">
-                    <a
-                      href={step.ctaHref}
-                      className="inline-flex items-center justify-center rounded-full bg-[var(--colors-Secondary-bubble-pink)] px-5 py-3 text-sm font-semibold text-[var(--colors-Primary-dark-green)] transition-transform duration-200 hover:-translate-y-0.5"
-                    >
+                    <a href={step.ctaHref} className="button-primary">
                       {step.ctaLabel}
                     </a>
                   </div>
@@ -63,7 +60,7 @@ function CommissionPage() {
                   <div className="mt-2">
                     <a
                       href={commissionPageContent.finalCtaHref}
-                      className="inline-flex items-center justify-center rounded-full bg-[var(--colors-Secondary-bubble-pink)] px-5 py-3 text-sm font-semibold text-[var(--colors-Primary-dark-green)] transition-transform duration-200 hover:-translate-y-0.5"
+                      className="button-primary"
                     >
                       {commissionPageContent.finalCtaLabel}
                     </a>

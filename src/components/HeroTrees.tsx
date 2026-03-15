@@ -1,5 +1,3 @@
-import trees from "../assets/background/trees.svg";
-
 type HeroTreesProps = {
   introVisible: boolean;
 };
@@ -11,13 +9,7 @@ function HeroTrees({ introVisible }: HeroTreesProps) {
         introVisible ? "opacity-100" : "opacity-0"
       }`}
       style={{ transitionDuration: "820ms", transitionDelay: "1240ms" }}
-    >
-      <img
-        className="absolute bottom-0 left-0 h-auto w-full object-contain"
-        src={trees}
-        alt=""
-      />
-    </div>
+    ></div>
   );
 }
 

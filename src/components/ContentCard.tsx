@@ -65,7 +65,7 @@ function ContentCard({
           {description}
         </p>
         <span
-          className={`mt-auto inline-flex w-fit self-start items-center justify-center rounded-[0.65rem] border border-[var(--colors-Secondary-orange)] bg-transparent px-2 py-1.25 text-[0.72rem] font-semibold text-[var(--colors-Secondary-orange)] transition-transform duration-200 group-hover:-translate-y-0.5 group-hover:bg-[rgba(var(--colors-Secondary-orange-rgb),0.1)] ${
+          className={`button-secondary mt-auto w-fit self-start group-hover:-translate-y-0.5 group-hover:bg-[rgba(var(--colors-Secondary-orange-rgb),0.1)] ${
             isFeatured ? "-translate-y-0.5" : ""
           }`}
         >

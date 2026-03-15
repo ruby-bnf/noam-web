@@ -4,7 +4,7 @@ import menuIcon from "../assets/icons/MenuIcon.svg";
 const navItems = [
   { label: "Home", href: "/#hero" },
   { label: "About", href: "/#about" },
-  { label: "Projects", href: "/#projects" },
+  { label: "Portfolio", href: "/#portfolio" },
   { label: "Workshops", href: "/#workshops" },
   { label: "Commission", href: "/commission" },
   { label: "Contact", href: "/#contact" },

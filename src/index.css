@@ -57,7 +57,8 @@ body {
   background: var(--colors-Primary-mid-green);
 }
 
-button:not(.button-unstyled) {
+button:not(.button-unstyled),
+.button-primary {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -68,9 +69,38 @@ button:not(.button-unstyled) {
   font-size: 0.875rem;
   font-weight: 600;
   color: var(--colors-Primary-dark-green);
+  text-decoration: none;
   transition: transform 200ms ease;
 }
 
-button:not(.button-unstyled):hover {
+button:not(.button-unstyled):hover,
+.button-primary:hover {
   transform: translateY(-2px);
+}
+
+.button-primary-small {
+  padding: 0.375rem 0.75rem;
+  font-size: 0.75rem;
+}
+
+.button-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--colors-Secondary-orange);
+  border-radius: 0.65rem;
+  background: transparent;
+  padding: 0.3125rem 0.5rem;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--colors-Secondary-orange);
+  text-decoration: none;
+  transition:
+    transform 200ms ease,
+    background-color 200ms ease;
+}
+
+.button-secondary:hover {
+  transform: translateY(-2px);
+  background: rgba(var(--colors-Secondary-orange-rgb), 0.1);
 }

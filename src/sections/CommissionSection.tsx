@@ -20,7 +20,7 @@ function CommissionSection() {
           <div className="mt-5">
             <a
               href="mailto:noamhen100@gmail.com?subject=Commission%20Request"
-              className="inline-flex items-center justify-center rounded-full bg-[var(--colors-Secondary-bubble-pink)] px-5 py-3 text-sm font-semibold text-[var(--colors-Primary-dark-green)] transition-transform duration-200 hover:-translate-y-0.5"
+              className="button-primary"
             >
               {commissionSectionContent.ctaLabel}
             </a>
