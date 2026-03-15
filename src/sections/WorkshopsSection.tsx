@@ -1,11 +1,7 @@
-import ContentCard, { type ContentCardProps } from "../components/ContentCard";
+import ContentCard from "../components/ContentCard";
 import { workshopsSectionContent } from "../constants/workshopsInfo";
 
-type WorkshopsSectionProps = {
-  workshopCards: ContentCardProps[];
-};
-
-function WorkshopsSection({ workshopCards }: WorkshopsSectionProps) {
+function WorkshopsSection() {
   return (
     <section
       id="workshops"
@@ -20,14 +16,13 @@ function WorkshopsSection({ workshopCards }: WorkshopsSectionProps) {
         </p>
 
         <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
-          {workshopCards.map((card, index) => (
+          {workshopsSectionContent.workshops.map((workshop, index) => (
             <ContentCard
-              key={card.title}
-              title={card.title}
-              description={card.description}
-              picture={card.picture}
-              pictureAlt={card.pictureAlt}
-              status={card.status}
+              key={workshop.title}
+              title={workshop.title}
+              description={workshop.description}
+              picture={workshop.thumbnail}
+              status={workshop.status}
               isFeatured={index === 0}
               href="#contact"
             />

@@ -5,10 +5,8 @@ import ContactSection from "./sections/ContactSection";
 import HeroSection from "./sections/HeroSection";
 import PortfolioSection from "./sections/PortfolioSection";
 import WorkshopsSection from "./sections/WorkshopsSection";
-import { workshopsSectionContent } from "./constants/workshopsInfo";
 import MobileMenuPage from "./pages/MobileMenuPage";
 import SiteNav from "./components/SiteNav";
-import { workshopImages } from "./components/workshops/workshopImages";
 import { selectedProjects } from "./constants/portfolioInfo";
 import { Route, Routes, useLocation } from "react-router-dom";
 
@@ -43,15 +41,6 @@ function HomePage() {
     };
   }, [location.hash, location.pathname]);
 
-  const workshopCards = workshopsSectionContent.workshops.map(
-    (workshop, index) => ({
-      title: workshop.title,
-      description: workshop.description,
-      picture: workshopImages[index % workshopImages.length],
-      status: workshop.status,
-    }),
-  );
-
   return (
     <div className="min-h-screen bg-[radial-gradient(circle_at_20%_15%,rgba(var(--sun-rgb),0.24),transparent_45%),radial-gradient(circle_at_80%_85%,rgba(var(--sea-rgb),0.2),transparent_50%),linear-gradient(135deg,#fff9ef_0%,#f2efe7_40%,#ecf2f3_100%)] text-[var(--ink)]">
       <SiteNav />
@@ -63,7 +52,7 @@ function HomePage() {
         <HeroSection />
         <AboutSection />
         <PortfolioSection featuredProjects={selectedProjects} />
-        <WorkshopsSection workshopCards={workshopCards} />
+        <WorkshopsSection />
         <ContactSection />
       </main>
     </div>

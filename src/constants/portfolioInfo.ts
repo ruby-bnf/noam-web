@@ -1,8 +1,8 @@
-import botanicalGardensImage from "../assets/Projects/Illustrations/BotanicalGardens.jpg";
+import botanicalGardensImage from "../assets/Projects/Illustrations/BotanicalGardens.display.webp";
 import botanicalGardensThumbnail from "../assets/Projects/Illustrations/BotanicalGardens.thumb.webp";
-import groeneSchattenImage from "../assets/Projects/Illustrations/GroeneSchattenTreasureHuntMap.png";
+import groeneSchattenImage from "../assets/Projects/Illustrations/GroeneSchattenTreasureHuntMap.display.webp";
 import groeneSchattenThumbnail from "../assets/Projects/Illustrations/GroeneSchattenTreasureHuntMap.thumb.webp";
-import rainyRotterdamNoordImage from "../assets/Projects/Illustrations/RainyRotterdamNoord.jpg";
+import rainyRotterdamNoordImage from "../assets/Projects/Illustrations/RainyRotterdamNoord.display.webp";
 import rainyRotterdamNoordThumbnail from "../assets/Projects/Illustrations/RainyRotterdamNoord.thumb.webp";
 import type { ProjectItem } from "../components/portfolio/types";
 
