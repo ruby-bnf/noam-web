@@ -107,8 +107,12 @@ function ProjectCarouselCard({
             }}
           >
             <img
-              src={project.imageSrc}
+              src={project.thumbnailSrc ?? project.imageSrc}
               alt={project.imageAlt ?? `Project ${projectIndex + 1}`}
+              loading="lazy"
+              decoding="async"
+              fetchPriority="low"
+              sizes="(max-width: 639px) 100vw, (max-width: 1023px) 50vw, 33vw"
               className="h-[220px] w-full object-cover"
             />
           </button>

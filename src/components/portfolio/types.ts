@@ -1,6 +1,7 @@
 type BaseProjectItem = {
   title: string;
   imageSrc?: string;
+  thumbnailSrc?: string;
   imageAlt?: string;
 };
 
