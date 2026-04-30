@@ -2,11 +2,27 @@ import botanicalGardensImage from "../assets/Projects/Illustrations/BotanicalGar
 import botanicalGardensThumbnail from "../assets/Projects/Illustrations/BotanicalGardens.thumb.webp";
 import groeneSchattenImage from "../assets/Projects/Illustrations/GroeneSchattenTreasureHuntMap.display.webp";
 import groeneSchattenThumbnail from "../assets/Projects/Illustrations/GroeneSchattenTreasureHuntMap.thumb.webp";
+import kanguroThumbnail from "../assets/Projects/Illustrations/Kangurothumbnail.png";
 import rainyRotterdamNoordImage from "../assets/Projects/Illustrations/RainyRotterdamNoord.display.webp";
 import rainyRotterdamNoordThumbnail from "../assets/Projects/Illustrations/RainyRotterdamNoord.thumb.webp";
+import tomatoThumbnail from "../assets/Projects/Illustrations/tomatothumbnail.png";
 import type { ProjectItem } from "../components/portfolio/types";
 
 export const selectedProjects: ProjectItem[] = [
+  {
+    type: "image",
+    title: "Kanguro",
+    imageAlt: "Kanguro thumbnail",
+    imageSrc: kanguroThumbnail,
+    thumbnailSrc: kanguroThumbnail,
+  },
+  {
+    type: "image",
+    title: "Tomato",
+    imageAlt: "Tomato thumbnail",
+    imageSrc: tomatoThumbnail,
+    thumbnailSrc: tomatoThumbnail,
+  },
   {
     type: "image",
     title: "Botanical Gardens",

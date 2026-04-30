@@ -19,17 +19,11 @@ function PortfolioCarousel({ projects }: PortfolioCarouselProps) {
     setActiveIndex((i) => (i + 1) % projects.length);
   };
 
-  // Each card is 50% wide → center fully visible + 25% peeks on each side
+  // Each card is 50% wide -> center fully visible + 25% peeks on each side
   const translateX = `calc(${25 - activeIndex * 50}%)`;
 
-  const activeProject = projects[activeIndex];
-  const hasTitle = Boolean(activeProject.title?.trim());
-  const hasDescription =
-    activeProject.type === "project" &&
-    Boolean(activeProject.shortDescription?.trim());
-
   return (
-    <div className="flex flex-col gap-2">
+    <div className="flex flex-col gap-2 overflow-x-hidden">
       {/* Carousel track */}
       {/* Carousel track — full viewport width, breaks out of section padding */}
       <div className="relative left-1/2 w-screen -translate-x-1/2 overflow-hidden">
@@ -39,10 +33,11 @@ function PortfolioCarousel({ projects }: PortfolioCarouselProps) {
         >
           {projects.map((project, i) => {
             const isCenter = i === activeIndex;
+            const projectTitle = project.title?.trim() ? project.title : " ";
             return (
               <div
                 key={`${project.title}-${i}`}
-                className="w-1/2 flex-shrink-0 px-3 transition-all duration-500"
+                className="w-1/2 flex-shrink-0 px-6 transition-all duration-500"
                 style={{
                   opacity: isCenter ? 1 : 0.45,
                   transform: isCenter ? "scale(1)" : "scale(0.93)",
@@ -53,22 +48,16 @@ function PortfolioCarousel({ projects }: PortfolioCarouselProps) {
                   projectIndex={i}
                   projects={projects}
                 />
+
+                <div className="mt-2 min-h-[2rem]">
+                  <span className="text-[clamp(0.95rem,1.35vw,1.2rem)] font-semibold leading-[1.2]">
+                    {projectTitle}
+                  </span>
+                </div>
               </div>
             );
           })}
         </div>
-      </div>
-
-      {/* Caption */}
-      <div className="mx-auto flex min-h-[3.5rem] w-[calc(50vw-1.5rem)] flex-col justify-start">
-        <span className="text-[clamp(0.95rem,1.35vw,1.2rem)] font-semibold leading-[1.2]">
-          {hasTitle ? activeProject.title : " "}
-        </span>
-        {hasDescription && (
-          <p className="mt-0.5 text-[clamp(0.8rem,0.95vw,0.95rem)] leading-[1.45] text-[rgba(var(--ink-rgb),0.7)]">
-            {activeProject.shortDescription}
-          </p>
-        )}
       </div>
 
       {/* Navigation — centered */}
