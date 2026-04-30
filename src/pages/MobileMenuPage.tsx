@@ -20,7 +20,7 @@ function MobileMenuPage() {
   const closeTimeoutRef = useRef<number | null>(null);
 
   useEffect(() => {
-    const mediaQuery = window.matchMedia("(max-width: 767px)");
+    const mediaQuery = window.matchMedia("(max-width: 1023px)");
 
     const handleViewportChange = (event: MediaQueryListEvent) => {
       if (!event.matches) {
@@ -67,15 +67,15 @@ function MobileMenuPage() {
   };
 
   return (
-    <div className="fixed inset-0 z-[70] h-[100dvh] overflow-hidden text-[var(--ink)] md:hidden">
+    <div className="fixed inset-0 z-[70] h-[100dvh] overflow-hidden text-[var(--ink)] lg:hidden">
       <div
-        className={`flex h-full w-full flex-col gap-4 bg-[var(--colors-Primary-white)] px-6 py-4 transition-transform duration-300 ease-out ${isEntering ? "translate-x-0" : "translate-x-full"}`}
+        className={`flex h-full w-full flex-col gap-2 bg-[linear-gradient(180deg,#fbf7ef_0%,#f4ecdc_100%)] px-5 py-4 transition-transform duration-300 ease-out ${isEntering ? "translate-x-0" : "translate-x-full"}`}
       >
-        <div className="flex items-center justify-end">
+        <div className="flex items-center justify-end pb-2">
           <Link
             to="/"
             aria-label="Close menu"
-            className="p-1"
+            className="bg-[rgba(250,246,237,0.94)] p-2"
             onClick={(event) => {
               event.preventDefault();
               closeWithPushAnimation("/");
@@ -90,7 +90,7 @@ function MobileMenuPage() {
           </Link>
         </div>
 
-        <nav className="mt-2 flex flex-1 flex-col justify-start gap-[clamp(0.25rem,1.2vh,0.8rem)] overflow-y-auto pb-1">
+        <nav className="flex flex-1 flex-col justify-evenly pb-1">
           {menuItems.map((item) => (
             <Link
               key={item.label}
@@ -99,7 +99,7 @@ function MobileMenuPage() {
                 event.preventDefault();
                 closeWithPushAnimation(item.href);
               }}
-              className="px-1 py-[clamp(0.6rem,1.5vh,1rem)] text-[clamp(0.95rem,1.9vh,1.1rem)] font-semibold tracking-[0.08em] uppercase hover:text-[rgba(var(--sun-rgb),0.95)]"
+              className="flex flex-1 items-center justify-center px-1 text-center text-[clamp(1rem,2vh,1.18rem)] font-semibold tracking-[0.12em] uppercase text-[rgba(var(--ink-rgb),0.88)] transition-colors duration-200 hover:text-[rgba(var(--colors-Secondary-orange-rgb),0.96)]"
             >
               {item.label}
             </Link>

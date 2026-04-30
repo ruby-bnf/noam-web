@@ -12,7 +12,7 @@ function PortfolioSection({ featuredProjects }: PortfolioSectionProps) {
     return (
       <section
         id="portfolio"
-        className="flex h-screen snap-start flex-col justify-center gap-3 bg-[radial-gradient(circle_at_20%_15%,rgba(var(--sun-rgb),0.24),transparent_45%),radial-gradient(circle_at_80%_85%,rgba(var(--sea-rgb),0.2),transparent_50%),linear-gradient(135deg,#fff9ef_0%,#f2efe7_40%,#ecf2f3_100%)] pt-16 pb-6 md:pt-20 md:pb-8"
+        className="flex h-screen snap-start flex-col justify-center gap-3 bg-[radial-gradient(circle_at_18%_14%,rgba(var(--sun-rgb),0.12),transparent_42%),radial-gradient(circle_at_82%_82%,rgba(var(--sea-rgb),0.1),transparent_46%),linear-gradient(135deg,#fffdf7_0%,#fbf7ef_42%,#f7f5ef_100%)] pt-16 pb-6 md:pt-20 md:pb-8"
       >
         <div className="px-[clamp(1.25rem,4vw,5rem)]">
           <PortfolioSectionIntro />
@@ -27,7 +27,7 @@ function PortfolioSection({ featuredProjects }: PortfolioSectionProps) {
   return (
     <section
       id="portfolio"
-      className="flex h-screen snap-start flex-col justify-center gap-3 bg-[radial-gradient(circle_at_20%_15%,rgba(var(--sun-rgb),0.24),transparent_45%),radial-gradient(circle_at_80%_85%,rgba(var(--sea-rgb),0.2),transparent_50%),linear-gradient(135deg,#fff9ef_0%,#f2efe7_40%,#ecf2f3_100%)] pt-16 pb-6 md:pt-20 md:pb-8"
+      className="flex h-screen snap-start flex-col justify-center gap-3 bg-[radial-gradient(circle_at_18%_14%,rgba(var(--sun-rgb),0.12),transparent_42%),radial-gradient(circle_at_82%_82%,rgba(var(--sea-rgb),0.1),transparent_46%),linear-gradient(135deg,#fffdf7_0%,#fbf7ef_42%,#f7f5ef_100%)] pt-16 pb-6 md:pt-20 md:pb-8"
     >
       <div className="px-[clamp(1.25rem,4vw,5rem)]">
         <PortfolioSectionIntro />
