@@ -90,7 +90,7 @@ function MobileMenuPage() {
           </Link>
         </div>
 
-        <nav className="flex flex-1 flex-col justify-evenly pb-1">
+        <nav className="flex flex-1 flex-col items-start justify-evenly pb-1">
           {menuItems.map((item) => (
             <Link
               key={item.label}
@@ -99,7 +99,7 @@ function MobileMenuPage() {
                 event.preventDefault();
                 closeWithPushAnimation(item.href);
               }}
-              className="flex flex-1 items-center justify-center px-1 text-center text-[clamp(1rem,2vh,1.18rem)] font-semibold tracking-[0.12em] uppercase text-[rgba(var(--ink-rgb),0.88)] transition-colors duration-200 hover:text-[rgba(var(--colors-Secondary-orange-rgb),0.96)]"
+              className="flex w-full flex-1 items-center justify-start px-1 text-left text-[clamp(1rem,2vh,1.18rem)] font-semibold tracking-[0.12em] uppercase text-[rgba(var(--ink-rgb),0.88)] transition-colors duration-200 hover:text-[rgba(var(--colors-Secondary-orange-rgb),0.96)]"
             >
               {item.label}
             </Link>

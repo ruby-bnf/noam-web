@@ -97,7 +97,7 @@ function SiteNav() {
     <>
       <header className="fixed inset-x-0 top-0 z-50 hidden lg:block">
         <nav
-          className={`flex w-full items-center justify-end gap-4 bg-transparent px-5 py-3 text-right whitespace-nowrap ${
+          className={`flex w-full items-center justify-start gap-4 bg-transparent px-5 py-3 text-left whitespace-nowrap ${
             isDarkBackground ? "text-[var(--cream)]" : "text-[var(--ink)]"
           }`}
         >
