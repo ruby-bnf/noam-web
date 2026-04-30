@@ -19,14 +19,13 @@ function PortfolioCarousel({ projects }: PortfolioCarouselProps) {
     setActiveIndex((i) => (i + 1) % projects.length);
   };
 
-  // Each card is 50% wide -> center fully visible + 25% peeks on each side
-  const translateX = `calc(${25 - activeIndex * 50}%)`;
+  const translateX = `calc((100% - var(--slide-width)) / 2 - ${activeIndex} * var(--slide-width))`;
 
   return (
     <div className="flex flex-col gap-2 overflow-x-hidden">
       {/* Carousel track */}
       {/* Carousel track — full viewport width, breaks out of section padding */}
-      <div className="relative left-1/2 w-screen -translate-x-1/2 overflow-hidden">
+      <div className="relative left-1/2 w-screen -translate-x-1/2 overflow-hidden [--slide-width:86%] md:[--slide-width:50%]">
         <div
           className="flex transition-transform duration-500 ease-in-out"
           style={{ transform: `translateX(${translateX})` }}
@@ -37,7 +36,7 @@ function PortfolioCarousel({ projects }: PortfolioCarouselProps) {
             return (
               <div
                 key={`${project.title}-${i}`}
-                className="w-1/2 flex-shrink-0 px-6 transition-all duration-500"
+                className="w-[var(--slide-width)] flex-shrink-0 px-2 transition-all duration-500 md:px-6"
                 style={{
                   opacity: isCenter ? 1 : 0.45,
                   transform: isCenter ? "scale(1)" : "scale(0.93)",

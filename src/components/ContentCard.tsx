@@ -22,7 +22,7 @@ function ContentCard({
   const normalizedStatus = status ?? "open";
   const isNewStatus = normalizedStatus === "new";
 
-  const cardClassName = `group flex h-full flex-col overflow-hidden rounded-[1rem] bg-[rgba(var(--cream-rgb),0.88)] shadow-[0_10px_20px_rgba(var(--ink-rgb),0.12)] transition-all duration-300 hover:-translate-y-1 hover:rotate-[-0.35deg] hover:shadow-[0_16px_28px_rgba(var(--ink-rgb),0.2)] focus-visible:-translate-y-1 focus-visible:shadow-[0_16px_28px_rgba(var(--ink-rgb),0.2)] focus-visible:outline-2 focus-visible:outline-[var(--colors-Secondary-orange)] focus-visible:outline-offset-2 ${
+  const cardClassName = `group mx-auto flex w-full max-w-[19rem] aspect-[3/4] flex-col overflow-hidden rounded-[1rem] bg-[rgba(var(--cream-rgb),0.88)] shadow-[0_10px_20px_rgba(var(--ink-rgb),0.12)] transition-all duration-300 hover:-translate-y-1 hover:rotate-[-0.35deg] hover:shadow-[0_16px_28px_rgba(var(--ink-rgb),0.2)] focus-visible:-translate-y-1 focus-visible:shadow-[0_16px_28px_rgba(var(--ink-rgb),0.2)] focus-visible:outline-2 focus-visible:outline-[var(--colors-Secondary-orange)] focus-visible:outline-offset-2 ${
     isNewStatus
       ? "hover:-translate-y-2 hover:scale-[1.03] focus-visible:-translate-y-2 focus-visible:scale-[1.03]"
       : ""

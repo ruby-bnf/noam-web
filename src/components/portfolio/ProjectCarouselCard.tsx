@@ -21,7 +21,7 @@ function ProjectCarouselCard({
             loading="lazy"
             decoding="async"
             fetchPriority="low"
-            sizes="(max-width: 639px) 100vw, (max-width: 1023px) 50vw, 33vw"
+            sizes="(max-width: 767px) 86vw, (max-width: 1023px) 50vw, 33vw"
             className="aspect-[3/2] w-full object-cover"
           />
         </div>
