@@ -17,7 +17,7 @@ function CommissionPage() {
       <SiteNav />
 
       <main className="mx-auto flex min-h-[calc(100vh-9rem)] w-full max-w-6xl flex-col gap-8">
-        <h1 className="text-[clamp(2rem,3.1vw,3.1rem)] leading-[1.05] font-semibold tracking-[0.08em] uppercase text-[var(--colors-Primary-dark-green)]">
+        <h1 className="section-title text-[clamp(2rem,3.1vw,3.1rem)] leading-[1.05] tracking-[0.08em] uppercase">
           {commissionPageContent.title}
         </h1>
 

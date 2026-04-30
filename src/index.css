@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Nunito+Sans:wght@600;700;800&family=Poppins:wght@400;500;600;700;800;900&display=swap");
 @import "tailwindcss";
 
 :root {
@@ -7,6 +7,8 @@
   --colors-Primary-dark-green: rgba(44, 54, 35, 1);
   --colors-Primary-mid-green: rgba(129, 160, 83, 1);
   --colors-Primary-light-green: rgba(214, 227, 110, 1);
+  --red-default: #c44e39;
+  --red-default-rgb: 196, 78, 57;
   --colors-Secondary-orange: rgba(230, 117, 65, 1);
   --colors-Secondary-bubble-pink: rgba(244, 130, 172, 1);
   --colors-Secondary-grape-purple: rgba(114, 31, 71, 1);
@@ -33,6 +35,7 @@
   --cream-rgb: var(--colors-Primary-white-rgb);
   --sea-rgb: var(--colors-Primary-mid-green-rgb);
   --sun-rgb: var(--colors-Primary-mid-green-rgb);
+  --title-font: "Nunito Sans", "IBM Plex Sans", sans-serif;
 }
 
 * {
@@ -55,6 +58,20 @@ body {
   min-height: 100vh;
   font-family: "IBM Plex Sans", sans-serif;
   background: var(--colors-Primary-mid-green);
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--title-font);
+  font-weight: 600;
+  line-height: 1.08;
+}
+
+.section-title {
+  font-family: "Poppins", sans-serif;
+  font-weight: 900;
+  color: var(--red-default);
 }
 
 button:not(.button-unstyled),

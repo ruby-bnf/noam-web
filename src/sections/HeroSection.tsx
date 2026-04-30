@@ -1,43 +1,54 @@
 import { useRef } from "react";
-import HeroBackgroundLayers from "../components/hero/HeroBackgroundLayers";
-import HeroLogoLayer from "../components/hero/HeroLogoLayer";
-import {
-  useHeroIntroVisible,
-  useHeroParallax,
-  useHeroSceneScale,
-} from "../components/hero/useHeroMotion";
+import heroBackground from "../assets/HeroSectionComic.png";
+import { useHeroIntroVisible } from "../components/hero/useHeroMotion";
 
 function HeroSection() {
   const sectionRef = useRef<HTMLElement | null>(null);
-  const logoLayerRef = useRef<HTMLDivElement | null>(null);
-  const backgroundLayerRef = useRef<HTMLDivElement | null>(null);
-  const midgroundLayerRef = useRef<HTMLDivElement | null>(null);
   const introVisible = useHeroIntroVisible();
-  const sceneScale = useHeroSceneScale();
-
-  useHeroParallax({
-    sectionRef,
-    logoLayerRef,
-    backgroundLayerRef,
-    midgroundLayerRef,
-  });
 
   return (
     <section
       id="hero"
       ref={sectionRef}
-      className="relative flex min-h-screen snap-start items-center justify-center gap-4 overflow-hidden bg-[var(--cream)] px-[clamp(1.25rem,4vw,5rem)] pt-24 pb-12"
+      className="relative isolate flex min-h-[92vh] snap-start overflow-hidden bg-black"
     >
-      <HeroLogoLayer
-        introVisible={introVisible}
-        layerRef={logoLayerRef}
-        sceneScale={sceneScale}
+      <img
+        src={heroBackground}
+        alt="Hero illustration background"
+        className="absolute inset-0 z-0 h-full w-full object-cover"
       />
-      <HeroBackgroundLayers
-        introVisible={introVisible}
-        backgroundLayerRef={backgroundLayerRef}
-        midgroundLayerRef={midgroundLayerRef}
-      />
+      <div className="absolute inset-0 z-10 bg-[linear-gradient(180deg,rgba(0,0,0,0.28)_0%,rgba(0,0,0,0.08)_28%,rgba(0,0,0,0.16)_100%)]" />
+
+      <div className="relative z-20 flex min-h-[92vh] w-full items-end justify-start px-[clamp(1.25rem,4vw,5rem)] pb-[4.5rem] md:pb-24">
+        <div
+          className={`transition-[opacity,transform] duration-[900ms] ease-out ${
+            introVisible
+              ? "translate-y-0 opacity-100"
+              : "translate-y-3 opacity-0"
+          }`}
+        >
+          <h1
+            className="text-left text-[64px] leading-[0.92] uppercase"
+            style={{
+              fontFamily: '"Poppins", sans-serif',
+              fontWeight: 900,
+              color: "var(--red-default)",
+            }}
+          >
+            Noam Hen
+          </h1>
+          <p
+            className="mt-2 text-left text-[18px] leading-[1.2]"
+            style={{
+              fontFamily: '"Poppins", sans-serif',
+              fontWeight: 400,
+              color: "rgba(0, 0, 0, 0.95)",
+            }}
+          >
+            Comic Artist and Illustrator
+          </p>
+        </div>
+      </div>
     </section>
   );
 }

@@ -7,7 +7,7 @@ function CommissionSection() {
       id="commission"
       className="relative flex min-h-screen snap-start flex-col justify-center gap-8 overflow-hidden bg-[linear-gradient(165deg,rgba(var(--colors-Primary-white-rgb),0.92)_0%,rgba(var(--colors-Secondary-butter-yello-rgb),0.26)_48%,rgba(var(--colors-Primary-light-green-rgb),0.24)_100%)] px-[clamp(1.25rem,4vw,5rem)] pt-24 pb-12"
     >
-      <h2 className="relative z-10 text-[clamp(2rem,3.1vw,3.1rem)] leading-[1.05] font-semibold tracking-[0.08em] uppercase text-[var(--colors-Primary-dark-green)]">
+      <h2 className="section-title relative z-10 text-[clamp(2rem,3.1vw,3.1rem)] leading-[1.05] tracking-[0.08em] uppercase">
         {commissionSectionContent.title}
       </h2>
 
