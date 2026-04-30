@@ -26,7 +26,7 @@ function CommissionPage() {
         </p>
 
         <div className="relative left-1/2 w-screen -translate-x-1/2 py-2 md:py-8">
-          <div className="pointer-events-none absolute inset-0 z-0 translate-y-4 bg-[linear-gradient(to_bottom,transparent_0%,transparent_22%,rgb(var(--colors-Primary-mid-green-rgb))_22%,rgb(var(--colors-Primary-mid-green-rgb))_58%,transparent_58%,transparent_100%)] md:translate-y-6" />
+          <div className="pointer-events-none absolute inset-0 z-0 translate-y-4 bg-[linear-gradient(to_bottom,transparent_0%,transparent_22%,rgb(var(--secondary-blue-rgb))_22%,rgb(var(--secondary-blue-rgb))_58%,transparent_58%,transparent_100%)] md:translate-y-6" />
 
           <div className="relative z-10 mx-auto flex w-full max-w-6xl flex-col gap-8 px-[clamp(1.25rem,4vw,5rem)] md:gap-12">
             <img
@@ -39,7 +39,7 @@ function CommissionPage() {
             {commissionPageContent.steps.map((step, index) => (
               <InfoCard
                 key={step.title}
-                className={`relative z-20 flex w-full max-w-[553.405517578125px] flex-col gap-6 rounded-[40px] p-6 opacity-100 shadow-[0_18px_36px_rgba(0,0,0,0.16)] ${index === 0 ? "bg-[var(--colors-Secondary-lilac)] text-[var(--colors-Primary-dark-green)]" : "bg-[var(--colors-Primary-white)] text-[var(--colors-Primary-dark-green)]"} ${index === commissionPageContent.steps.length - 1 ? "md:h-auto" : "md:h-[241px]"} ${stepPathClasses[index] ?? ""}`}
+                className={`relative z-20 flex w-full max-w-[553.405517578125px] flex-col gap-6 rounded-[40px] p-6 opacity-100 shadow-[0_18px_36px_rgba(0,0,0,0.16)] ${index === 0 ? "bg-[var(--secondary-blue)] text-[var(--colors-Primary-dark-green)]" : "bg-[var(--colors-Primary-white)] text-[var(--colors-Primary-dark-green)]"} ${index === commissionPageContent.steps.length - 1 ? "md:h-auto" : "md:h-[241px]"} ${stepPathClasses[index] ?? ""}`}
               >
                 <h2 className="text-[clamp(1.1rem,1.6vw,1.35rem)] font-semibold uppercase tracking-[0.04em]">
                   {step.title}

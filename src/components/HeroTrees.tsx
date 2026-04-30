@@ -7,7 +7,7 @@ type HeroTreesProps = {
 function HeroTrees({ introVisible }: HeroTreesProps) {
   return (
     <div
-      className="pointer-events-none absolute inset-x-0 bottom-0 z-[2] translate-y-[18%] overflow-hidden"
+      className="pointer-events-none absolute inset-x-0 bottom-0 z-[2] overflow-hidden"
       aria-hidden="true"
     >
       <div

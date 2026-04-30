@@ -37,7 +37,7 @@ function PortfolioSection({ featuredProjects }: PortfolioSectionProps) {
       <div className="px-[clamp(1.25rem,4vw,5rem)]">
         <div className="mx-auto flex w-full max-w-6xl justify-center">
           <button type="button" className="button-secondary mt-1">
-            Portfolio
+            Recent projects
           </button>
         </div>
       </div>

@@ -7,7 +7,7 @@ const MENU_TRANSITION_MS = 300;
 const menuItems = [
   { label: "Home", href: "/#hero" },
   { label: "About", href: "/#about" },
-  { label: "Portfolio", href: "/#portfolio" },
+  { label: "Recent projects", href: "/#portfolio" },
   { label: "Workshops", href: "/#workshops" },
   { label: "Commission", href: "/commission" },
   { label: "Contact", href: "/#contact" },
@@ -99,7 +99,7 @@ function MobileMenuPage() {
                 event.preventDefault();
                 closeWithPushAnimation(item.href);
               }}
-              className="flex w-full flex-1 items-center justify-start px-1 text-left text-[clamp(1rem,2vh,1.18rem)] font-semibold tracking-[0.12em] uppercase text-[rgba(var(--ink-rgb),0.88)] transition-colors duration-200 hover:text-[rgba(var(--colors-Secondary-orange-rgb),0.96)]"
+              className="flex w-full flex-1 items-center justify-start px-1 text-left text-[clamp(1rem,2vh,1.18rem)] font-semibold tracking-[0.12em] uppercase text-[rgba(var(--ink-rgb),0.88)] transition-colors duration-200 hover:text-[rgba(var(--red-default-rgb),0.96)]"
             >
               {item.label}
             </Link>
