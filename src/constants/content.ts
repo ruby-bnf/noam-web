@@ -8,6 +8,8 @@ My portfolio pieces typically begin with a nerdy
 dive into some random curiosity.
 
 Then, with details and care, an illustration is born !`,
+  whatIDoTitle: "what i do:",
+  whatIDoItems: ["comic book", "workshops", "ART MARKETS"],
 } as const;
 
 export const projectsSectionContent = {

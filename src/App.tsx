@@ -1,6 +1,7 @@
 import { useEffect, useRef } from "react";
 import CommissionPage from "./pages/CommissionPage.tsx";
 import ContactSection from "./sections/ContactSection";
+import AboutSection from "./sections/AboutSection";
 import HeroSection from "./sections/HeroSection";
 import PortfolioSection from "./sections/PortfolioSection";
 import WorkshopsSection from "./sections/WorkshopsSection";
@@ -49,6 +50,7 @@ function HomePage() {
         className="h-screen snap-y snap-mandatory overflow-y-auto scroll-smooth"
       >
         <HeroSection />
+        <AboutSection />
         <PortfolioSection featuredProjects={selectedProjects} />
         <WorkshopsSection />
         <ContactSection />
