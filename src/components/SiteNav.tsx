@@ -13,6 +13,17 @@ const navItems = [
 
 function SiteNav() {
   const [activeSectionId, setActiveSectionId] = useState<string | null>(null);
+  const [isNavVisible, setIsNavVisible] = useState(false);
+
+  useEffect(() => {
+    const frame = window.requestAnimationFrame(() => {
+      setIsNavVisible(true);
+    });
+
+    return () => {
+      window.cancelAnimationFrame(frame);
+    };
+  }, []);
 
   useEffect(() => {
     const mainScroller = document.querySelector("main");
@@ -78,13 +89,12 @@ function SiteNav() {
     };
   }, []);
 
-  const isDarkBackground =
-    activeSectionId === "workshops" || activeSectionId === "about";
+  const isDarkBackground = activeSectionId === "workshops";
 
-  const navLinkClassName = `shrink-0 border-b border-transparent px-2 py-1 text-[0.7rem] font-semibold tracking-[0.14em] uppercase transition-colors duration-75 ${
+  const navLinkClassName = `my-[-0.75rem] inline-flex shrink-0 items-center border-b border-transparent px-2 py-[0.75rem] text-[0.7rem] font-semibold tracking-[0.14em] uppercase transition-colors duration-75 ${
     isDarkBackground
-      ? "text-[rgba(var(--cream-rgb),0.9)] hover:border-[rgba(var(--cream-rgb),0.75)] hover:text-[var(--cream)]"
-      : "text-[rgba(var(--ink-rgb),0.82)] hover:border-[rgba(var(--sun-rgb),0.7)] hover:text-[var(--ink)]"
+      ? "text-[rgba(var(--cream-rgb),0.9)] hover:border-[rgba(var(--cream-rgb),0.75)] hover:bg-[rgba(255,255,255,0.22)] hover:text-[var(--cream)]"
+      : "text-[rgba(var(--ink-rgb),0.82)] hover:border-[rgba(var(--sun-rgb),0.7)] hover:bg-[rgba(255,255,255,0.45)] hover:text-[var(--ink)]"
   }`;
 
   const mobileTriggerClassName = `bg-transparent p-2 ${
@@ -95,7 +105,11 @@ function SiteNav() {
 
   return (
     <>
-      <header className="fixed inset-x-0 top-0 z-50 hidden lg:block">
+      <header
+        className={`fixed inset-x-0 top-0 z-50 hidden lg:block transition-[opacity,transform] duration-500 ease-out ${
+          isNavVisible ? "translate-y-0 opacity-100" : "translate-y-2 opacity-0"
+        }`}
+      >
         <nav
           className={`flex w-full items-center justify-start gap-4 bg-transparent px-5 py-3 text-left whitespace-nowrap ${
             isDarkBackground ? "text-[var(--cream)]" : "text-[var(--ink)]"
@@ -109,7 +123,11 @@ function SiteNav() {
         </nav>
       </header>
 
-      <header className="fixed top-4 right-4 z-50 flex lg:hidden">
+      <header
+        className={`fixed top-4 right-4 z-50 flex transition-[opacity,transform] duration-500 ease-out lg:hidden ${
+          isNavVisible ? "translate-y-0 opacity-100" : "translate-y-2 opacity-0"
+        }`}
+      >
         <Link
           to="/menu"
           aria-label="Open menu"
