@@ -3,7 +3,7 @@ import CommissionPage from "./pages/CommissionPage.tsx";
 import ContactSection from "./sections/ContactSection";
 import AboutSection from "./sections/AboutSection";
 import HeroSection from "./sections/HeroSection";
-import PortfolioSection from "./sections/PortfolioSection";
+import PortfolioGallery from "./components/portfolio/PortfolioGallery";
 import WorkshopsSection from "./sections/WorkshopsSection";
 import MobileMenuPage from "./pages/MobileMenuPage";
 import SiteNav from "./components/SiteNav";
@@ -13,6 +13,12 @@ import { Route, Routes, useLocation } from "react-router-dom";
 function HomePage() {
   const location = useLocation();
   const mainRef = useRef<HTMLElement | null>(null);
+  const portfolioGalleryImages = selectedProjects
+    .filter((project) => Boolean(project.thumbnailSrc ?? project.imageSrc))
+    .map((project) => ({
+      src: project.thumbnailSrc ?? project.imageSrc ?? "",
+      alt: project.imageAlt ?? project.title,
+    }));
 
   useEffect(() => {
     if (location.pathname !== "/" || !location.hash) {
@@ -51,7 +57,7 @@ function HomePage() {
       >
         <HeroSection />
         <AboutSection />
-        <PortfolioSection featuredProjects={selectedProjects} />
+        <PortfolioGallery images={portfolioGalleryImages} />
         <WorkshopsSection />
         <ContactSection />
       </main>

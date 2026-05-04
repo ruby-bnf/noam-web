@@ -6,9 +6,8 @@ import kanguroThumbnail from "../assets/Projects/Illustrations/Kangurothumbnail.
 import rainyRotterdamNoordImage from "../assets/Projects/Illustrations/RainyRotterdamNoord.display.webp";
 import rainyRotterdamNoordThumbnail from "../assets/Projects/Illustrations/RainyRotterdamNoord.thumb.webp";
 import tomatoThumbnail from "../assets/Projects/Illustrations/tomatothumbnail.png";
-import type { ProjectItem } from "../components/portfolio/types";
 
-export const selectedProjects: ProjectItem[] = [
+export const selectedProjects = [
   {
     type: "image",
     title: "Kanguro",
