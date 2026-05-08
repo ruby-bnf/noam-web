@@ -7,7 +7,7 @@ import MobileMenuPage from "./pages/MobileMenuPage";
 import SiteNav from "./components/SiteNav";
 import { Route, Routes, useLocation } from "react-router-dom";
 import AboutSection from "./sections/AboutSection.tsx";
-import PortfolioSection from "./sections/PortfolioSection.tsx";
+import PortfolioPage from "./pages/PortfolioPage.tsx";
 
 function HomePage() {
   const location = useLocation();
@@ -50,7 +50,6 @@ function HomePage() {
       >
         <HeroSection />
         <AboutSection />
-        <PortfolioSection />
         <WorkshopsSection />
         <ContactSection />
       </main>
@@ -62,6 +61,7 @@ function App() {
   return (
     <Routes>
       <Route path="/" element={<HomePage />} />
+      <Route path="/portfolio" element={<PortfolioPage />} />
       <Route path="/commission" element={<CommissionPage />} />
       <Route
         path="/menu"

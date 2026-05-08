@@ -5,7 +5,7 @@ import menuIcon from "../assets/icons/MenuIcon.svg";
 const navItems = [
   { label: "Home", href: "/#hero" },
   { label: "About", href: "/#about" },
-  { label: "Recent projects", href: "/#portfolio-gallery" },
+  { label: "Portfolio", href: "/portfolio" },
   { label: "Workshops", href: "/#workshops" },
   { label: "Commission", href: "/commission" },
   { label: "Contact", href: "/#contact" },
@@ -116,9 +116,9 @@ function SiteNav() {
           }`}
         >
           {navItems.map((item) => (
-            <a key={item.label} href={item.href} className={navLinkClassName}>
+            <Link key={item.label} to={item.href} className={navLinkClassName}>
               {item.label}
-            </a>
+            </Link>
           ))}
         </nav>
       </header>
