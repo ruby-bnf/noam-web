@@ -1,10 +1,11 @@
 import { useRef } from "react";
-import CAT3 from "../assets/PortfolioThumbnails/CAT3.png";
-import KangarooP2 from "../assets/PortfolioThumbnails/Kangaroo-p-2.png";
-import OliverMap from "../assets/PortfolioThumbnails/OliverMap.png";
-import OliverPoop from "../assets/PortfolioThumbnails/OliverPoop.png";
+import CAT3 from "../assets/PortfolioThumbnails/scrollGallery/CAT3.png";
+import KangarooP1 from "../assets/PortfolioThumbnails/scrollGallery/Kangaroo-p-1.png";
+import KangarooP2 from "../assets/PortfolioThumbnails/scrollGallery/Kangaroo-p-2.png";
+import OliverMap from "../assets/PortfolioThumbnails/scrollGallery/OliverMap.png";
+import OliverPoop from "../assets/PortfolioThumbnails/scrollGallery/OliverPoop.png";
 
-const galleryImages = [KangarooP2, CAT3, OliverMap, OliverPoop];
+const galleryImages = [KangarooP1, KangarooP2, CAT3, OliverMap, OliverPoop];
 
 function PortfolioSection() {
   const scrollContainerRef = useRef<HTMLDivElement>(null);

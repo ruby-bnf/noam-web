@@ -4,12 +4,17 @@ import {
   projectsSectionContent,
 } from "../constants/content";
 
-import CAT3 from "../assets/PortfolioThumbnails/CAT3.png";
-import KangarooP2 from "../assets/PortfolioThumbnails/Kangaroo-p-2.png";
-import OliverMap from "../assets/PortfolioThumbnails/OliverMap.png";
-import OliverPoop from "../assets/PortfolioThumbnails/OliverPoop.png";
+import ComicCat from "../assets/PortfolioThumbnails/Comic/cat-p1.png";
+import ComicKangaroo from "../assets/PortfolioThumbnails/Comic/Kangarp-2.png";
+import ComicOliver from "../assets/PortfolioThumbnails/Comic/oliver.png";
+import ComicTomato from "../assets/PortfolioThumbnails/Comic/Tomato-factory.png";
 
-const portfolioGalleryImages = [KangarooP2, CAT3, OliverMap, OliverPoop];
+const portfolioGalleryImages = [
+  ComicKangaroo,
+  ComicCat,
+  ComicOliver,
+  ComicTomato,
+];
 
 function AboutSection() {
   return (

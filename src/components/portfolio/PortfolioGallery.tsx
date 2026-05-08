@@ -60,7 +60,7 @@ function PortfolioGallery({ images }: PortfolioGalleryProps) {
                 alt="Portfolio work"
                 loading="lazy"
                 decoding="async"
-                className={`h-full w-full object-cover transition-all duration-500 ease-out ${
+                className={`h-full w-full scale-125 object-cover transition-all duration-500 ease-out ${
                   hoveredIndex === index
                     ? "md:saturate-[1.08] md:contrast-[1.03]"
                     : "md:saturate-100 md:grayscale-0"
