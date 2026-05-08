@@ -11,7 +11,15 @@ function PortfolioSection() {
 
   const scroll = (direction: "left" | "right") => {
     if (scrollContainerRef.current) {
-      const scrollAmount = 300;
+      const firstCard = scrollContainerRef.current.querySelector<HTMLElement>(
+        "[data-gallery-card='true']",
+      );
+      const scrollAmount = firstCard
+        ? firstCard.offsetWidth + 16
+        : Math.max(
+            260,
+            Math.round(scrollContainerRef.current.clientWidth * 0.9),
+          );
       scrollContainerRef.current.scrollBy({
         left: direction === "left" ? -scrollAmount : scrollAmount,
         behavior: "smooth",
@@ -22,43 +30,23 @@ function PortfolioSection() {
   return (
     <section
       id="portfolio-gallery"
-      className="relative w-full flex min-h-screen snap-start items-center bg-white px-[clamp(1.25rem,4vw,5rem)] py-20"
+      className="relative flex min-h-screen w-full snap-start items-center overflow-x-hidden bg-white px-[clamp(1.25rem,4vw,5rem)] py-20"
     >
-      <div className="mx-auto w-full max-w-6xl">
+      <div className="mx-auto w-full max-w-7xl">
         <div className="mb-8">
           <h2 className="section-title text-[clamp(2rem,3.6vw,3.8rem)] leading-[0.98] tracking-[0.05em] uppercase">
             Recent Works
           </h2>
         </div>
 
-        <div className="relative">
-          <div
-            ref={scrollContainerRef}
-            className="flex gap-6 overflow-x-auto scroll-smooth pb-4 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
-          >
-            {galleryImages.map((image, index) => (
-              <div
-                key={`${image}-${index}`}
-                className="flex-shrink-0 w-80 h-96 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300"
-              >
-                <img
-                  src={image}
-                  alt={`Gallery item ${index + 1}`}
-                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-                  loading="lazy"
-                  decoding="async"
-                />
-              </div>
-            ))}
-          </div>
-
+        <div className="flex items-center gap-2 sm:gap-3">
           <button
             onClick={() => scroll("left")}
-            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-16 z-10 bg-[rgba(var(--ink-rgb),0.1)] hover:bg-[rgba(var(--ink-rgb),0.2)] rounded-full p-3 transition-colors duration-300"
+            className="z-10 shrink-0 rounded-full bg-[rgba(var(--ink-rgb),0.1)] p-2 transition-colors duration-300 hover:bg-[rgba(var(--ink-rgb),0.2)] sm:p-3"
             aria-label="Scroll gallery left"
           >
             <svg
-              className="w-6 h-6"
+              className="h-5 w-5 sm:h-6 sm:w-6"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -72,13 +60,36 @@ function PortfolioSection() {
             </svg>
           </button>
 
+          <div className="min-w-0 flex-1 overflow-hidden">
+            <div
+              ref={scrollContainerRef}
+              className="flex snap-x snap-mandatory gap-4 overflow-x-auto scroll-smooth pb-4 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+            >
+              {galleryImages.map((image, index) => (
+                <div
+                  key={`${image}-${index}`}
+                  data-gallery-card="true"
+                  className="h-[22rem] w-full snap-start flex-shrink-0 overflow-hidden rounded-lg shadow-md transition-shadow duration-300 hover:shadow-lg sm:h-96 sm:w-[clamp(14rem,20vw,18rem)]"
+                >
+                  <img
+                    src={image}
+                    alt={`Gallery item ${index + 1}`}
+                    className="h-full w-full object-cover transition-transform duration-300 hover:scale-105"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+              ))}
+            </div>
+          </div>
+
           <button
             onClick={() => scroll("right")}
-            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-16 z-10 bg-[rgba(var(--ink-rgb),0.1)] hover:bg-[rgba(var(--ink-rgb),0.2)] rounded-full p-3 transition-colors duration-300"
+            className="z-10 shrink-0 rounded-full bg-[rgba(var(--ink-rgb),0.1)] p-2 transition-colors duration-300 hover:bg-[rgba(var(--ink-rgb),0.2)] sm:p-3"
             aria-label="Scroll gallery right"
           >
             <svg
-              className="w-6 h-6"
+              className="h-5 w-5 sm:h-6 sm:w-6"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"

@@ -48,10 +48,10 @@ function PortfolioGallery({ images }: PortfolioGalleryProps) {
           aria-label={`Reveal featured work ${index + 1}`}
         >
           <div
-            className={`overflow-hidden transition-all duration-500 ease-out md:h-full md:max-h-none md:opacity-100 ${
+            className={`overflow-hidden transition-all duration-500 ease-out max-h-[20rem] opacity-100 md:h-full md:max-h-none md:opacity-100 ${
               activeIndex === index
-                ? "max-h-[20rem] opacity-100"
-                : "max-h-0 opacity-0 md:max-h-none md:opacity-100"
+                ? "md:max-h-[20rem] md:opacity-100"
+                : "md:max-h-0 md:opacity-0"
             }`}
           >
             <div className="aspect-[4/5] md:h-full md:aspect-auto">
@@ -62,8 +62,8 @@ function PortfolioGallery({ images }: PortfolioGalleryProps) {
                 decoding="async"
                 className={`h-full w-full object-cover transition-all duration-500 ease-out ${
                   hoveredIndex === index
-                    ? "scale-100 opacity-100 md:saturate-[1.08] md:contrast-[1.03]"
-                    : "scale-100 opacity-100 md:saturate-100 md:grayscale-0"
+                    ? "md:saturate-[1.08] md:contrast-[1.03]"
+                    : "md:saturate-100 md:grayscale-0"
                 }`}
               />
             </div>

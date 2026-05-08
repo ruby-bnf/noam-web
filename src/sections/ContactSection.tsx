@@ -9,7 +9,7 @@ const sectionClasses =
   "flex h-auto snap-start flex-col justify-between bg-[var(--colors-Primary-white)] px-[clamp(1.25rem,4vw,5rem)] py-12";
 
 const containerClasses =
-  "mx-auto flex w-full max-w-5xl items-center gap-8 lg:gap-12";
+  "mx-auto flex w-full max-w-5xl flex-col lg:flex-row items-center gap-8 lg:gap-12";
 
 const contactLinks = [
   {
@@ -80,7 +80,7 @@ function ContactSection() {
         </div>
 
         {/* Right Column */}
-        <div className="hidden lg:flex items-center flex-1">
+        <div className="flex items-center flex-1">
           <ContactLinksCard />
         </div>
       </div>
