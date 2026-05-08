@@ -1,42 +1,51 @@
-import kangarooImage from "../assets/Projects/comics/Kangaroo/Kangaroo-p-1.png";
-import { aboutSectionContent } from "../constants/content";
+import PortfolioGallery from "../components/portfolio/PortfolioGallery";
+import {
+  aboutSectionContent,
+  projectsSectionContent,
+} from "../constants/content";
+
+import CAT3 from "../assets/PortfolioThumbnails/CAT3.png";
+import KangarooP2 from "../assets/PortfolioThumbnails/Kangaroo-p-2.png";
+import OliverMap from "../assets/PortfolioThumbnails/OliverMap.png";
+import OliverPoop from "../assets/PortfolioThumbnails/OliverPoop.png";
+
+const portfolioGalleryImages = [KangarooP2, CAT3, OliverMap, OliverPoop];
 
 function AboutSection() {
   return (
     <section
-      id="about"
-      className="relative flex min-h-screen snap-start items-center bg-white px-[clamp(1.25rem,4vw,5rem)] pt-24 pb-12"
+      id="portfolio"
+      className="relative w-full flex min-h-screen snap-start items-center bg-white px-[clamp(1.25rem,4vw,5rem)] pt-20 pb-10"
     >
-      <div className="mx-auto grid w-full max-w-6xl items-center gap-8 md:grid-cols-2 md:gap-12">
-        <div className="overflow-hidden rounded-[1.5rem]">
-          <img
-            src={kangarooImage}
-            alt="Kangaroo comic artwork"
-            className="h-full w-full object-cover"
-            loading="lazy"
-          />
+      <div className="mx-auto grid min-h-[calc(100vh-7.5rem)] w-full max-w-6xl grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-10">
+        <div className="order-1 flex flex-col justify-center lg:order-1">
+          <div className="max-w-xl space-y-6">
+            <p className="m-0 inline-flex pb-1 text-[0.72rem] font-semibold tracking-[0.18em] uppercase text-[rgba(var(--ink-rgb),0.72)]">
+              About me
+            </p>
+
+            <h2 className="section-title text-[clamp(2rem,3.6vw,3.8rem)] leading-[0.98] tracking-[0.05em] uppercase text-[rgba(var(--ink-rgb),1)]">
+              <span className="block"> {aboutSectionContent.title}</span>
+              {/* <span className="block">Recent</span>
+              <span className="block">Works</span> */}
+            </h2>
+
+            <p className="m-0 text-[clamp(1rem,1.2vw,1.12rem)] leading-[1.75] text-[rgba(var(--ink-rgb),0.84)]">
+              {aboutSectionContent.body}
+
+              {projectsSectionContent.body}
+            </p>
+
+            <div className="pt-2">
+              <a href="#contact" className="button-primary">
+                Contact Me
+              </a>
+            </div>
+          </div>
         </div>
 
-        <div className="p-6 md:p-8">
-          <h2 className="section-title text-[clamp(2rem,3.1vw,3.1rem)] leading-[1.05] tracking-[0.08em] uppercase">
-            {aboutSectionContent.title}
-          </h2>
-          <p className="mt-4 whitespace-pre-line text-[clamp(1rem,1.2vw,1.12rem)] leading-[1.7] text-[var(--ink)]">
-            {aboutSectionContent.body}
-          </p>
-
-          <div className="mt-20">
-            <h3 className="section-title text-[clamp(2rem,3.1vw,3.1rem)] leading-[1.05] tracking-[0.08em] uppercase">
-              {aboutSectionContent.whatIDoTitle}
-            </h3>
-            <p className="mt-3 text-[1rem] leading-[1.7] text-[var(--ink)]">
-              {aboutSectionContent.whatIDoItems.map((item) => (
-                <span key={item} className="block">
-                  {item}
-                </span>
-              ))}
-            </p>
-          </div>
+        <div className="order-2 min-h-[24rem] lg:order-2 lg:min-h-full">
+          <PortfolioGallery images={portfolioGalleryImages} />
         </div>
       </div>
     </section>

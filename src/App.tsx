@@ -1,13 +1,13 @@
 import { useEffect, useRef } from "react";
 import CommissionPage from "./pages/CommissionPage.tsx";
 import ContactSection from "./sections/ContactSection";
-import AboutSection from "./sections/AboutSection";
 import HeroSection from "./sections/HeroSection";
-import PortfolioSection from "./sections/PortfolioSection";
 import WorkshopsSection from "./sections/WorkshopsSection";
 import MobileMenuPage from "./pages/MobileMenuPage";
 import SiteNav from "./components/SiteNav";
 import { Route, Routes, useLocation } from "react-router-dom";
+import AboutSection from "./sections/AboutSection.tsx";
+import PortfolioSection from "./sections/PortfolioSection.tsx";
 
 function HomePage() {
   const location = useLocation();

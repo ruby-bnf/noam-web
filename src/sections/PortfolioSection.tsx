@@ -1,40 +1,102 @@
-import PortfolioGallery from "../components/portfolio/PortfolioGallery";
-import { projectsSectionContent } from "../constants/content";
-
+import { useRef } from "react";
 import CAT3 from "../assets/PortfolioThumbnails/CAT3.png";
 import KangarooP2 from "../assets/PortfolioThumbnails/Kangaroo-p-2.png";
 import OliverMap from "../assets/PortfolioThumbnails/OliverMap.png";
 import OliverPoop from "../assets/PortfolioThumbnails/OliverPoop.png";
 
-const portfolioGalleryImages = [KangarooP2, CAT3, OliverMap, OliverPoop];
+const galleryImages = [KangarooP2, CAT3, OliverMap, OliverPoop];
 
 function PortfolioSection() {
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
+
+  const scroll = (direction: "left" | "right") => {
+    if (scrollContainerRef.current) {
+      const scrollAmount = 300;
+      scrollContainerRef.current.scrollBy({
+        left: direction === "left" ? -scrollAmount : scrollAmount,
+        behavior: "smooth",
+      });
+    }
+  };
+
   return (
     <section
-      id="portfolio"
-      className="relative w-full flex min-h-screen snap-start items-center bg-white px-[clamp(1.25rem,4vw,5rem)] pt-20 pb-10"
+      id="portfolio-gallery"
+      className="relative w-full flex min-h-screen snap-start items-center bg-white px-[clamp(1.25rem,4vw,5rem)] py-20"
     >
-      <div className="mx-auto grid min-h-[calc(100vh-7.5rem)] w-full max-w-7xl grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-10">
-        <div className="order-1 flex flex-col justify-center lg:order-1">
-          <div className="max-w-xl space-y-6">
-            <p className="m-0 inline-flex pb-1 text-[0.72rem] font-semibold tracking-[0.18em] uppercase text-[rgba(var(--ink-rgb),0.72)]">
-              Recent Work
-            </p>
-
-            <h2 className="section-title text-[clamp(2rem,3.6vw,3.8rem)] leading-[0.98] tracking-[0.05em] uppercase text-[rgba(var(--ink-rgb),1)]">
-              <span className="block">Most</span>
-              <span className="block">Recent</span>
-              <span className="block">Works</span>
-            </h2>
-
-            <p className="m-0 text-[clamp(1rem,1.2vw,1.12rem)] leading-[1.75] text-[rgba(var(--ink-rgb),0.84)]">
-              {projectsSectionContent.body}
-            </p>
-          </div>
+      <div className="mx-auto w-full max-w-6xl">
+        <div className="mb-8">
+          <h2 className="section-title text-[clamp(2rem,3.6vw,3.8rem)] leading-[0.98] tracking-[0.05em] uppercase">
+            Recent Works
+          </h2>
         </div>
 
-        <div className="order-2 min-h-[24rem] lg:order-2 lg:min-h-full">
-          <PortfolioGallery images={portfolioGalleryImages} />
+        <div className="relative">
+          <div
+            ref={scrollContainerRef}
+            className="flex gap-6 overflow-x-auto scroll-smooth pb-4 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+          >
+            {galleryImages.map((image, index) => (
+              <div
+                key={`${image}-${index}`}
+                className="flex-shrink-0 w-80 h-96 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300"
+              >
+                <img
+                  src={image}
+                  alt={`Gallery item ${index + 1}`}
+                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+            ))}
+          </div>
+
+          <button
+            onClick={() => scroll("left")}
+            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-16 z-10 bg-[rgba(var(--ink-rgb),0.1)] hover:bg-[rgba(var(--ink-rgb),0.2)] rounded-full p-3 transition-colors duration-300"
+            aria-label="Scroll gallery left"
+          >
+            <svg
+              className="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M15 19l-7-7 7-7"
+              />
+            </svg>
+          </button>
+
+          <button
+            onClick={() => scroll("right")}
+            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-16 z-10 bg-[rgba(var(--ink-rgb),0.1)] hover:bg-[rgba(var(--ink-rgb),0.2)] rounded-full p-3 transition-colors duration-300"
+            aria-label="Scroll gallery right"
+          >
+            <svg
+              className="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M9 5l7 7-7 7"
+              />
+            </svg>
+          </button>
+        </div>
+
+        <div className="mt-6 flex justify-center">
+          <a href="/#portfolio-gallery" className="button-primary">
+            Go To Recent Projects
+          </a>
         </div>
       </div>
     </section>
