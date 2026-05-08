@@ -3,14 +3,13 @@ import instagramIcon from "../assets/icons/InstegramIcon.svg";
 import IconTextLink from "../components/IconTextLink";
 import InfoCard from "../components/InfoCard";
 import { contactSectionContent } from "../constants/content";
+import Footer from "./Footer";
 
 const sectionClasses =
-  "flex min-h-screen snap-start flex-col justify-center gap-8 bg-[radial-gradient(circle_at_78%_8%,rgba(var(--red-default-rgb),0.16),transparent_34%),linear-gradient(180deg,var(--colors-Primary-white)_0%,rgba(var(--colors-Primary-white-rgb),0.96)_58%,rgba(var(--secondary-blue-rgb),0.26)_100%)] px-[clamp(1.25rem,4vw,5rem)] pt-24 pb-12";
+  "flex h-auto snap-start flex-col justify-between bg-[var(--colors-Primary-white)] px-[clamp(1.25rem,4vw,5rem)] py-12";
 
-const titleClasses =
-  "section-title text-[clamp(2rem,3.1vw,3.1rem)] leading-[1.05] tracking-[0.08em] uppercase";
-
-const infoCardGridClasses = "grid gap-4 md:grid-cols-2 md:gap-6";
+const containerClasses =
+  "mx-auto flex w-full max-w-5xl items-center gap-8 lg:gap-12";
 
 const contactLinks = [
   {
@@ -27,13 +26,9 @@ const contactLinks = [
   },
 ] as const;
 
-function ContactSectionHeading() {
-  return <h2 className={titleClasses}>{contactSectionContent.title}</h2>;
-}
-
 function CommissionPromptCard() {
   return (
-    <InfoCard className="rounded-[28px] bg-[rgba(var(--colors-Primary-white-rgb),0.92)] p-6 text-[var(--colors-Primary-dark-green)] shadow-[0_14px_30px_rgba(0,0,0,0.12)] md:p-8">
+    <InfoCard className="rounded-lg p-6 text-[var(--colors-Primary-dark-green)] md:p-8">
       <p className="max-w-[40ch] text-[clamp(1.03rem,1.3vw,1.2rem)] leading-[1.65]">
         {contactSectionContent.commissionPrompt}
       </p>
@@ -52,7 +47,7 @@ function CommissionPromptCard() {
 
 function ContactLinksCard() {
   return (
-    <InfoCard className="rounded-[28px] border border-[rgba(var(--colors-Primary-dark-green-rgb),0.16)] bg-[rgba(var(--colors-Primary-white-rgb),0.82)] p-6 text-[var(--colors-Primary-dark-green)] shadow-[0_10px_24px_rgba(0,0,0,0.08)] md:p-8">
+    <InfoCard className="rounded-lg border border-[rgba(var(--colors-Primary-dark-green-rgb),0.16)] p-6 text-[var(--colors-Primary-dark-green)] md:p-8">
       <p className="text-[clamp(1.03rem,1.3vw,1.2rem)] leading-[1.65]">
         {contactSectionContent.availabilityText}
       </p>
@@ -75,12 +70,23 @@ function ContactLinksCard() {
 function ContactSection() {
   return (
     <section id="contact" className={sectionClasses}>
-      <ContactSectionHeading />
+      <div className={containerClasses}>
+        {/* Left Column */}
+        <div className="flex min-h-0 flex-col gap-3 flex-1">
+          <h2 className="section-title text-[clamp(2rem,3.1vw,3.1rem)] leading-[1.05] tracking-[0.08em] uppercase">
+            {contactSectionContent.title}
+          </h2>
+          <CommissionPromptCard />
+        </div>
 
-      <div className={infoCardGridClasses}>
-        <CommissionPromptCard />
-        <ContactLinksCard />
+        {/* Right Column */}
+        <div className="hidden lg:flex items-center flex-1">
+          <ContactLinksCard />
+        </div>
       </div>
+
+      {/* Footer */}
+      <Footer />
     </section>
   );
 }
