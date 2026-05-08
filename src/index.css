@@ -2,7 +2,7 @@
 @import "tailwindcss";
 
 :root {
-  --colors-Primary-white: rgba(244, 239, 212, 1);
+  --colors-Primary-white: rgb(246, 248, 242);
   --colors-Primary-black: rgba(0, 0, 0, 1);
   --colors-Primary-dark-green: rgba(44, 54, 35, 1);
 
@@ -13,7 +13,7 @@
   --secondary-blue-rgb: 127, 191, 233;
   --orange-accent-rgb: 252, 165, 105;
 
-  --colors-Primary-white-rgb: 244, 239, 212;
+  --colors-Primary-white-rgb: 246, 248, 242;
   --colors-Primary-black-rgb: 0, 0, 0;
   --colors-Primary-dark-green-rgb: 44, 54, 35;
 
