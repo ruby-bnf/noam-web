@@ -15,12 +15,8 @@ function PortfolioSection() {
       className="relative w-full flex min-h-screen snap-start items-center bg-white px-[clamp(1.25rem,4vw,5rem)] pt-20 pb-10"
     >
       <div className="mx-auto grid min-h-[calc(100vh-7.5rem)] w-full max-w-7xl grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-10">
-        <div className="order-2 min-h-[24rem] lg:order-1 lg:min-h-full">
-          <PortfolioGallery images={portfolioGalleryImages} />
-        </div>
-
-        <div className="order-1 flex flex-col justify-center lg:order-2">
-          <div className="max-w-xl space-y-6 lg:ml-auto">
+        <div className="order-1 flex flex-col justify-center lg:order-1">
+          <div className="max-w-xl space-y-6">
             <p className="m-0 inline-flex pb-1 text-[0.72rem] font-semibold tracking-[0.18em] uppercase text-[rgba(var(--ink-rgb),0.72)]">
               Recent Work
             </p>
@@ -35,6 +31,10 @@ function PortfolioSection() {
               {projectsSectionContent.body}
             </p>
           </div>
+        </div>
+
+        <div className="order-2 min-h-[24rem] lg:order-2 lg:min-h-full">
+          <PortfolioGallery images={portfolioGalleryImages} />
         </div>
       </div>
     </section>
