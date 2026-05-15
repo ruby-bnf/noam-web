@@ -5,7 +5,7 @@ import {
   aboutSectionContent,
   aboutWorkExperienceContent,
 } from "../constants/content";
-import NoamAboutImage from "../assets/Noam-about-me.jpg";
+import NoamAboutImage from "../assets/Noam-about-me.webp";
 
 const sectionTitleStyle = {
   fontFamily: "var(--title-font)",

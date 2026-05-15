@@ -5,10 +5,10 @@ import {
   projectsSectionContent,
 } from "../constants/content";
 
-import ComicCat from "../assets/PortfolioThumbnails/Comic/cat-p1.png";
-import ComicKangaroo from "../assets/PortfolioThumbnails/Comic/Kangarp-2.png";
-import ComicOliver from "../assets/PortfolioThumbnails/Comic/oliver.png";
-import ComicTomato from "../assets/PortfolioThumbnails/Comic/Tomato-factory.png";
+import ComicCat from "../assets/PortfolioThumbnails/Comic/cat-p1.webp";
+import ComicKangaroo from "../assets/PortfolioThumbnails/Comic/Kangarp-2.webp";
+import ComicOliver from "../assets/PortfolioThumbnails/Comic/oliver.webp";
+import ComicTomato from "../assets/PortfolioThumbnails/Comic/Tomato-factory.webp";
 
 const portfolioGalleryImages = [
   ComicKangaroo,

@@ -1,5 +1,5 @@
 import { useRef } from "react";
-import heroBackground from "../assets/HeroSectionComic.png";
+import heroBackground from "../assets/HeroSectionComic.webp";
 import { useHeroIntroVisible } from "../components/hero/useHeroMotion";
 
 function HeroSection() {

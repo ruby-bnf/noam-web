@@ -1,9 +1,9 @@
 import { useRef } from "react";
-import CAT3 from "../assets/PortfolioThumbnails/scrollGallery/CAT3.png";
-import KangarooP1 from "../assets/PortfolioThumbnails/scrollGallery/Kangaroo-p-1.png";
-import KangarooP2 from "../assets/PortfolioThumbnails/scrollGallery/Kangaroo-p-2.png";
-import OliverMap from "../assets/PortfolioThumbnails/scrollGallery/OliverMap.png";
-import OliverPoop from "../assets/PortfolioThumbnails/scrollGallery/OliverPoop.png";
+import CAT3 from "../assets/PortfolioThumbnails/scrollGallery/CAT3.webp";
+import KangarooP1 from "../assets/PortfolioThumbnails/scrollGallery/Kangaroo-p-1.webp";
+import KangarooP2 from "../assets/PortfolioThumbnails/scrollGallery/Kangaroo-p-2.webp";
+import OliverMap from "../assets/PortfolioThumbnails/scrollGallery/OliverMap.webp";
+import OliverPoop from "../assets/PortfolioThumbnails/scrollGallery/OliverPoop.webp";
 
 const galleryImages = [KangarooP1, KangarooP2, CAT3, OliverMap, OliverPoop];
 

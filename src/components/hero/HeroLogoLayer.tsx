@@ -1,5 +1,5 @@
 import type { ReactNode, RefObject } from "react";
-import logo from "../../assets/logo.png";
+import logo from "../../assets/logo.webp";
 import logoFrame from "../../assets/logoFrame.svg";
 
 const BASE_LOGO_DIMENSIONS = {
