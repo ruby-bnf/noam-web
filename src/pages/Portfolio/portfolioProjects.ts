@@ -10,6 +10,11 @@ import oliver2 from "../../assets/portfolio/Oliver/oliver2.png";
 import kangaroo1 from "../../assets/portfolio/Kangaroo/kangaroo1.png";
 import kangaroo2 from "../../assets/portfolio/Kangaroo/kangaroo2.png";
 
+import Tomato1 from "../../assets/portfolio/Tomato-factory/tomato1.png";
+import Tomato2 from "../../assets/portfolio/Tomato-factory/tomato2.png";
+import Tomato3 from "../../assets/portfolio/Tomato-factory/tomato3.png";
+import Tomato4 from "../../assets/portfolio/Tomato-factory/tomato4.png";
+
 export type PortfolioProject = {
   category: string;
   title: string;
@@ -30,6 +35,13 @@ export const portfolioProjects: PortfolioProject[] = [
     category: "Comic",
     summary: "A short story about my first job as a dog-walker.",
     image: [oliver1, oliver2],
+  },
+  {
+    title: "Tomato Factory",
+    category: "Comic",
+    summary:
+      "A short comic about my temporary job working in a tomato factory in rural Australia.",
+    image: [Tomato1, Tomato2, Tomato3, Tomato4],
   },
   {
     title: "Kangaroo",
