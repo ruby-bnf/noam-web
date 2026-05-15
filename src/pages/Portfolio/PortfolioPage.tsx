@@ -85,8 +85,17 @@ function PortfolioPage() {
                   alt={project.title}
                   loading="lazy"
                   decoding="async"
-                  className="h-full w-full object-cover"
+                  className="h-full w-full object-cover transition-transform duration-500 ease-out group-hover:scale-[1.02] group-focus-visible:scale-[1.02]"
                 />
+                <div
+                  aria-hidden="true"
+                  className="pointer-events-none absolute inset-0 bg-[rgba(var(--colors-Primary-black-rgb),0)] transition-colors duration-300 ease-out group-hover:bg-[rgba(var(--colors-Primary-black-rgb),0.48)] group-focus-visible:bg-[rgba(var(--colors-Primary-black-rgb),0.48)]"
+                />
+                <div className="pointer-events-none absolute inset-0 flex items-center justify-center p-4">
+                  <p className="m-0 translate-y-2 text-center text-[clamp(1rem,1.3vw,1.2rem)] font-semibold tracking-[0.03em] text-[var(--colors-Primary-white)] opacity-0 transition-all duration-300 ease-out group-hover:translate-y-0 group-hover:opacity-100 group-focus-visible:translate-y-0 group-focus-visible:opacity-100">
+                    {project.title}
+                  </p>
+                </div>
               </button>
             ))}
           </div>
