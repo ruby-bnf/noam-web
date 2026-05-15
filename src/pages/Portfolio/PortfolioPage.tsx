@@ -47,13 +47,13 @@ function PortfolioPage() {
     <div className="flex min-h-screen flex-col bg-[var(--colors-Primary-white)] text-[var(--colors-Primary-dark-green)]">
       <SiteNav />
 
-      <main className="mx-auto w-full max-w-7xl flex-1 px-[clamp(1.25rem,4vw,5rem)] pt-28 pb-0 sm:pt-32">
+      <main className="mx-auto w-full max-w-7xl flex-1 px-[clamp(1.25rem,4vw,5rem)] pt-8 sm:pt-10">
         <ProjectDetails
           selectedProject={selectedProject}
           projectDetailsRef={projectDetailsRef}
           onClose={() => setSelectedProject(null)}
         />
-        <div className="max-w-3xl">
+        <div className="max-w-3xl pt-8 sm:pt-10">
           <p className="m-0 pb-2 text-[0.72rem] font-semibold tracking-[0.18em] uppercase text-[rgba(var(--colors-Primary-dark-green-rgb),0.72)]">
             Portfolio
           </p>
@@ -67,7 +67,7 @@ function PortfolioPage() {
         </div>
 
         <section
-          className="pt-8 sm:pt-10"
+          className="pt-12 sm:pt-16 pb-12 sm:pb-16"
           aria-label="Portfolio image gallery"
           id="portfolio-gallery-grid"
         >
