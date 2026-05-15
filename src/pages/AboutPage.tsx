@@ -39,7 +39,7 @@ function HeroSection() {
         </p>
 
         <div className="pt-2">
-          <Link to="/#contact" className="button-primary">
+          <Link to="/contact" className="button-primary">
             Get in Touch
           </Link>
         </div>

@@ -9,6 +9,7 @@ import { Route, Routes, useLocation } from "react-router-dom";
 import AboutSection from "./sections/AboutSection.tsx";
 import PortfolioPage from "./pages/PortfolioPage.tsx";
 import AboutPage from "./pages/AboutPage.tsx";
+import ContactPage from "./pages/ContactPage.tsx";
 
 function HomePage() {
   const location = useLocation();
@@ -63,6 +64,7 @@ function App() {
     <Routes>
       <Route path="/" element={<HomePage />} />
       <Route path="/about" element={<AboutPage />} />
+      <Route path="/contact" element={<ContactPage />} />
       <Route path="/portfolio" element={<PortfolioPage />} />
       <Route path="/commission" element={<CommissionPage />} />
       <Route

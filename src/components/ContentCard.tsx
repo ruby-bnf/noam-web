@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 type WorkshopStatus = "open" | "new" | "closed";
 
 type ContentCardProps = {
@@ -34,6 +36,9 @@ function ContentCard({
       "bg-[rgba(var(--red-default-rgb),0.92)] text-[var(--colors-Primary-white)]",
   };
   const ctaLabel = normalizedStatus === "closed" ? "Show interest" : "Book now";
+  const isInternalHref = Boolean(
+    href && (href.startsWith("/") || href.startsWith("#")),
+  );
 
   const cardContent = (
     <>
@@ -71,6 +76,14 @@ function ContentCard({
   );
 
   if (href) {
+    if (isInternalHref) {
+      return (
+        <Link to={href} className={cardClassName}>
+          {cardContent}
+        </Link>
+      );
+    }
+
     return (
       <a href={href} className={cardClassName}>
         {cardContent}

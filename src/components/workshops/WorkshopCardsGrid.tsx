@@ -16,7 +16,7 @@ function WorkshopCardsGrid({ workshopCards }: WorkshopCardsGridProps) {
           pictureAlt={card.pictureAlt}
           status={card.status}
           isFeatured={index === 0}
-          href="#contact"
+          href="/contact"
         />
       ))}
     </div>

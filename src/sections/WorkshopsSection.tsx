@@ -26,7 +26,7 @@ function WorkshopsSection() {
               description={workshop.description}
               picture={workshop.thumbnail}
               status={workshop.status}
-              href="#contact"
+              href="/contact"
             />
           ))}
         </div>
