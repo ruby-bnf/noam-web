@@ -93,12 +93,14 @@ function SiteNav() {
 
   const navLinkClassName = `my-[-0.75rem] inline-flex shrink-0 items-center border-b border-transparent px-2 py-[0.75rem] text-[0.7rem] font-semibold tracking-[0.14em] uppercase transition-colors duration-75 ${
     isDarkBackground
-      ? "text-[rgba(var(--cream-rgb),0.9)] hover:border-[rgba(var(--cream-rgb),0.75)] hover:bg-[rgba(255,255,255,0.22)] hover:text-[var(--cream)]"
-      : "text-[rgba(var(--ink-rgb),0.82)] hover:border-[rgba(var(--sun-rgb),0.7)] hover:bg-[rgba(255,255,255,0.45)] hover:text-[var(--ink)]"
+      ? "text-[rgba(var(--colors-Primary-white-rgb),0.9)] hover:border-[rgba(var(--colors-Primary-white-rgb),0.75)] hover:bg-[rgba(var(--colors-Primary-white-rgb),0.22)] hover:text-[var(--colors-Primary-white)]"
+      : "text-[rgba(var(--colors-Primary-dark-green-rgb),0.82)] hover:border-[rgba(var(--red-default-rgb),0.7)] hover:bg-[rgba(var(--colors-Primary-white-rgb),0.45)] hover:text-[var(--colors-Primary-dark-green)]"
   }`;
 
   const mobileTriggerClassName = `bg-transparent p-2 ${
-    isDarkBackground ? "text-[var(--cream)]" : "text-[var(--ink)]"
+    isDarkBackground
+      ? "text-[var(--colors-Primary-white)]"
+      : "text-[var(--colors-Primary-dark-green)]"
   }`;
 
   const mobileIconClassName = `h-6 w-6 ${isDarkBackground ? "invert" : ""}`;
@@ -112,7 +114,9 @@ function SiteNav() {
       >
         <nav
           className={`flex w-full items-center justify-start gap-4 bg-transparent px-5 py-3 text-left whitespace-nowrap ${
-            isDarkBackground ? "text-[var(--cream)]" : "text-[var(--ink)]"
+            isDarkBackground
+              ? "text-[var(--colors-Primary-white)]"
+              : "text-[var(--colors-Primary-dark-green)]"
           }`}
         >
           {navItems.map((item) => (

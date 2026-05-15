@@ -16,17 +16,6 @@
   --colors-Primary-white-rgb: 246, 248, 242;
   --colors-Primary-black-rgb: 0, 0, 0;
   --colors-Primary-dark-green-rgb: 44, 54, 35;
-
-  --ink: var(--colors-Primary-dark-green);
-  --cream: var(--colors-Primary-white);
-  --sea: var(--secondary-blue);
-  --sun: var(--red-default);
-  --orange: var(--orange-accent);
-
-  --ink-rgb: var(--colors-Primary-dark-green-rgb);
-  --cream-rgb: var(--colors-Primary-white-rgb);
-  --sea-rgb: var(--secondary-blue-rgb);
-  --sun-rgb: var(--red-default-rgb);
   --title-font: "Poppins", sans-serif;
 }
 

@@ -67,7 +67,7 @@ function MobileMenuPage() {
   };
 
   return (
-    <div className="fixed inset-0 z-[70] h-[100dvh] overflow-hidden text-[var(--ink)] lg:hidden">
+    <div className="fixed inset-0 z-[70] h-[100dvh] overflow-hidden text-[var(--colors-Primary-dark-green)] lg:hidden">
       <div
         className={`flex h-full w-full flex-col gap-2 bg-[linear-gradient(180deg,#fbf7ef_0%,#f4ecdc_100%)] px-5 py-4 transition-transform duration-300 ease-out ${isEntering ? "translate-x-0" : "translate-x-full"}`}
       >
@@ -99,7 +99,7 @@ function MobileMenuPage() {
                 event.preventDefault();
                 closeWithPushAnimation(item.href);
               }}
-              className="flex w-full flex-1 items-center justify-start px-1 text-left text-[clamp(1rem,2vh,1.18rem)] font-semibold tracking-[0.12em] uppercase text-[rgba(var(--ink-rgb),0.88)] transition-colors duration-200 hover:text-[rgba(var(--red-default-rgb),0.96)]"
+              className="flex w-full flex-1 items-center justify-start px-1 text-left text-[clamp(1rem,2vh,1.18rem)] font-semibold tracking-[0.12em] uppercase text-[rgba(var(--colors-Primary-dark-green-rgb),0.88)] transition-colors duration-200 hover:text-[rgba(var(--red-default-rgb),0.96)]"
             >
               {item.label}
             </Link>

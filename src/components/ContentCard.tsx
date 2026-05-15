@@ -23,9 +23,9 @@ function ContentCard({
 }: ContentCardProps) {
   const normalizedStatus = status ?? "open";
 
-  const cardClassName = `group mx-auto flex w-full max-w-[19rem] h-[26rem] flex-col overflow-hidden rounded-lg bg-[rgba(var(--cream-rgb),0.88)] shadow-[0_10px_20px_rgba(var(--ink-rgb),0.12)] transition-all duration-300 hover:-translate-y-1 hover:rotate-[-0.35deg] hover:shadow-[0_16px_28px_rgba(var(--ink-rgb),0.2)] focus-visible:-translate-y-1 focus-visible:shadow-[0_16px_28px_rgba(var(--ink-rgb),0.2)] focus-visible:outline-2 focus-visible:outline-[var(--red-default)] focus-visible:outline-offset-2 ${
+  const cardClassName = `group mx-auto flex w-full max-w-[19rem] h-[26rem] flex-col overflow-hidden rounded-lg bg-[rgba(var(--colors-Primary-white-rgb),0.88)] shadow-[0_10px_20px_rgba(var(--colors-Primary-dark-green-rgb),0.12)] transition-all duration-300 hover:-translate-y-1 hover:rotate-[-0.35deg] hover:shadow-[0_16px_28px_rgba(var(--colors-Primary-dark-green-rgb),0.2)] focus-visible:-translate-y-1 focus-visible:shadow-[0_16px_28px_rgba(var(--colors-Primary-dark-green-rgb),0.2)] focus-visible:outline-2 focus-visible:outline-[var(--red-default)] focus-visible:outline-offset-2 ${
     isFeatured
-      ? "-translate-y-1 rotate-[-0.35deg] shadow-[0_16px_28px_rgba(var(--ink-rgb),0.2)]"
+      ? "-translate-y-1 rotate-[-0.35deg] shadow-[0_16px_28px_rgba(var(--colors-Primary-dark-green-rgb),0.2)]"
       : ""
   }`;
 

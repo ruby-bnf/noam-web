@@ -14,7 +14,7 @@ function WorkshopsSection() {
         >
           Workshops
         </h2>
-        <p className="max-w-[70ch] text-[clamp(1rem,1.2vw,1.12rem)] leading-[1.65] text-[var(--ink)]">
+        <p className="max-w-[70ch] text-[clamp(1rem,1.2vw,1.12rem)] leading-[1.65] text-[var(--colors-Primary-dark-green)]">
           {workshopsSectionContent.intro}
         </p>
 

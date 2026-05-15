@@ -15,7 +15,7 @@ function ContactSection() {
             Get in touch!
           </h2>
 
-          <p className="max-w-[75ch] text-[clamp(1.02rem,1.25vw,1.16rem)] leading-[1.7] text-[rgba(var(--ink-rgb),0.88)]">
+          <p className="max-w-[75ch] text-[clamp(1.02rem,1.25vw,1.16rem)] leading-[1.7] text-[rgba(var(--colors-Primary-dark-green-rgb),0.88)]">
             Are you interested in a commissioned project or a workshop? You can
             start by filing a commission form.{" "}
             <a
@@ -30,7 +30,7 @@ function ContactSection() {
           </p>
         </div>
 
-        <div className="flex min-h-0 flex-col gap-3 text-[clamp(1rem,1.2vw,1.1rem)] leading-[1.7] text-[rgba(var(--ink-rgb),0.9)] lg:justify-self-end lg:max-w-[30rem]">
+        <div className="flex min-h-0 flex-col gap-3 text-[clamp(1rem,1.2vw,1.1rem)] leading-[1.7] text-[rgba(var(--colors-Primary-dark-green-rgb),0.9)] lg:justify-self-end lg:max-w-[30rem]">
           <p>I am also available via mail and on social media:</p>
           <a
             href="mailto:Noamhen.illustration@gmail.com"

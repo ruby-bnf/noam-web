@@ -4,7 +4,7 @@ import heroBackground from "../assets/HeroSectionComic.png";
 
 function ContactPage() {
   return (
-    <div className="flex min-h-screen flex-col bg-[var(--colors-Primary-white)] px-[clamp(1.25rem,4vw,5rem)] pt-24 pb-0 text-[var(--ink)]">
+    <div className="flex min-h-screen flex-col bg-[var(--colors-Primary-white)] px-[clamp(1.25rem,4vw,5rem)] pt-24 pb-0 text-[var(--colors-Primary-dark-green)]">
       <SiteNav />
 
       <main className="mx-auto flex w-full max-w-6xl flex-1 flex-col gap-10">
@@ -14,7 +14,7 @@ function ContactPage() {
               Get in touch!
             </h1>
 
-            <p className="max-w-[75ch] text-[clamp(1.02rem,1.25vw,1.16rem)] leading-[1.7] text-[rgba(var(--ink-rgb),0.88)]">
+            <p className="max-w-[75ch] text-[clamp(1.02rem,1.25vw,1.16rem)] leading-[1.7] text-[rgba(var(--colors-Primary-dark-green-rgb),0.88)]">
               Are you interested in a commissioned project or a workshop? You
               can start by filing a commission form.{" "}
               <a
@@ -28,7 +28,7 @@ function ContactPage() {
               .
             </p>
 
-            <div className="flex flex-col gap-3 text-[clamp(1rem,1.2vw,1.1rem)] leading-[1.7] text-[rgba(var(--ink-rgb),0.9)]">
+            <div className="flex flex-col gap-3 text-[clamp(1rem,1.2vw,1.1rem)] leading-[1.7] text-[rgba(var(--colors-Primary-dark-green-rgb),0.9)]">
               <p>I am also available via mail and on social media:</p>
               <a
                 href="mailto:Noamhen.illustration@gmail.com"

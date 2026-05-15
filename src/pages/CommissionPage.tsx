@@ -14,7 +14,7 @@ function CommissionPage() {
   ];
 
   return (
-    <div className="flex min-h-screen flex-col bg-[var(--red-default)] px-[clamp(1.25rem,4vw,5rem)] pt-24 pb-0 text-[var(--ink)]">
+    <div className="flex min-h-screen flex-col bg-[var(--red-default)] px-[clamp(1.25rem,4vw,5rem)] pt-24 pb-0 text-[var(--colors-Primary-dark-green)]">
       <SiteNav />
 
       <main className="mx-auto flex w-full max-w-6xl flex-1 flex-col gap-8">
