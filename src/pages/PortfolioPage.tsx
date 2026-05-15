@@ -1,5 +1,6 @@
 import { useRef, useState } from "react";
 import SiteNav from "../components/SiteNav";
+import Footer from "../sections/Footer";
 
 import ComicCat from "../assets/PortfolioThumbnails/Comic/cat-p1.png";
 import ComicKangaroo from "../assets/PortfolioThumbnails/Comic/Kangarp-2.png";
@@ -101,10 +102,10 @@ function PortfolioPage() {
   };
 
   return (
-    <div className="min-h-screen bg-[linear-gradient(165deg,#fff9ef_0%,#f4efe4_44%,#edf2f0_100%)] text-[var(--ink)]">
+    <div className="flex min-h-screen flex-col bg-[linear-gradient(165deg,#fff9ef_0%,#f4efe4_44%,#edf2f0_100%)] text-[var(--ink)]">
       <SiteNav />
 
-      <main className="mx-auto w-full max-w-7xl px-[clamp(1.25rem,4vw,5rem)] pt-28 pb-14 sm:pt-32">
+      <main className="mx-auto w-full max-w-7xl flex-1 px-[clamp(1.25rem,4vw,5rem)] pt-28 pb-0 sm:pt-32">
         <div className="max-w-3xl">
           <p className="m-0 pb-2 text-[0.72rem] font-semibold tracking-[0.18em] uppercase text-[rgba(var(--ink-rgb),0.72)]">
             Portfolio
@@ -175,6 +176,8 @@ function PortfolioPage() {
             ))}
           </div>
         </section>
+
+        <Footer />
       </main>
     </div>
   );

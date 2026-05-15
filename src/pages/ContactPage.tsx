@@ -4,10 +4,10 @@ import heroBackground from "../assets/HeroSectionComic.png";
 
 function ContactPage() {
   return (
-    <div className="min-h-screen bg-[var(--colors-Primary-white)] px-[clamp(1.25rem,4vw,5rem)] pt-24 pb-12 text-[var(--ink)]">
+    <div className="flex min-h-screen flex-col bg-[var(--colors-Primary-white)] px-[clamp(1.25rem,4vw,5rem)] pt-24 pb-0 text-[var(--ink)]">
       <SiteNav />
 
-      <main className="mx-auto flex min-h-[calc(100vh-9rem)] w-full max-w-6xl flex-col gap-10">
+      <main className="mx-auto flex w-full max-w-6xl flex-1 flex-col gap-10">
         <section className="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-10">
           <div className="flex flex-col gap-6">
             <h1 className="section-title text-[clamp(2.4rem,4vw,3.8rem)] leading-[0.98] tracking-[0.06em] uppercase text-[var(--colors-Primary-dark-green)]">

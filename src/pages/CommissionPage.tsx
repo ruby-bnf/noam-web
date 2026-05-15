@@ -2,6 +2,7 @@ import SiteNav from "../components/SiteNav";
 import InfoCard from "../components/InfoCard";
 import { commissionPageContent } from "../constants/commissionPageContent";
 import arrow from "../assets/decoratives/arrow.svg";
+import Footer from "../sections/Footer";
 
 function CommissionPage() {
   const stepPathClasses = [
@@ -13,10 +14,10 @@ function CommissionPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-[var(--red-default)] px-[clamp(1.25rem,4vw,5rem)] pt-24 pb-12 text-[var(--ink)]">
+    <div className="flex min-h-screen flex-col bg-[var(--red-default)] px-[clamp(1.25rem,4vw,5rem)] pt-24 pb-0 text-[var(--ink)]">
       <SiteNav />
 
-      <main className="mx-auto flex min-h-[calc(100vh-9rem)] w-full max-w-6xl flex-col gap-8">
+      <main className="mx-auto flex w-full max-w-6xl flex-1 flex-col gap-8">
         <h1
           className="section-title text-[clamp(2.5rem,4.2vw,4rem)] leading-[0.95] tracking-[0.06em] uppercase"
           style={{
@@ -78,6 +79,8 @@ function CommissionPage() {
             ))}
           </div>
         </div>
+
+        <Footer />
       </main>
     </div>
   );

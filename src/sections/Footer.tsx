@@ -1,26 +1,42 @@
 function Footer() {
   return (
-    <footer className="flex items-center justify-between border-t border-[rgba(var(--colors-Primary-dark-green-rgb),0.1)] pt-4">
-      <div className="flex flex-col gap-1">
-        <p className="text-[0.75rem] font-semibold text-[var(--colors-Primary-dark-green)]">
-          Noam Hen
-        </p>
-        <a
-          href="mailto:noamhen100@gmail.com"
-          className="text-[0.75rem] text-[rgba(var(--colors-Primary-dark-green-rgb),0.7)] hover:text-[var(--colors-Primary-dark-green)] transition-colors"
-        >
-          noamhen100@gmail.com
-        </a>
-      </div>
+    <footer className="relative left-1/2 right-1/2 mt-auto ml-[-50dvw] mr-[-50dvw] w-[100dvw] bg-[var(--colors-Primary-white)] border-t border-[rgba(var(--colors-Primary-dark-green-rgb),0.12)] px-[clamp(1.25rem,4vw,5rem)] pt-6 pb-6">
+      <div className="mx-auto grid w-full max-w-6xl grid-cols-1 gap-6 text-[0.82rem] text-[rgba(var(--colors-Primary-dark-green-rgb),0.78)] md:grid-cols-2 md:gap-8">
+        <div className="flex flex-col gap-2">
+          <p className="text-[0.8rem] font-semibold tracking-[0.06em] uppercase text-[var(--colors-Primary-dark-green)]">
+            Noam Hen
+          </p>
+          <p className="max-w-[30ch] leading-[1.6]">
+            Illustrator, comic artist, and workshop facilitator based in
+            Rotterdam.
+          </p>
+        </div>
 
-      <a
-        href="https://instagram.com/noam.illustration"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="text-[0.75rem] text-[rgba(var(--colors-Primary-dark-green-rgb),0.7)] hover:text-[var(--colors-Primary-dark-green)] transition-colors"
-      >
-        Instagram
-      </a>
+        <div className="flex flex-col gap-2 md:items-end">
+          <a
+            href="mailto:Noamhen.illustration@gmail.com"
+            className="hover:text-[var(--colors-Primary-dark-green)]"
+          >
+            Noamhen.illustration@gmail.com
+          </a>
+          <a
+            href="https://www.instagram.com/noam.illustration/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-[var(--colors-Primary-dark-green)]"
+          >
+            @Noam.illustration
+          </a>
+          <a
+            href="https://noamhen-newsletter.beehiiv.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-[var(--colors-Primary-dark-green)]"
+          >
+            Newsletter
+          </a>
+        </div>
+      </div>
     </footer>
   );
 }

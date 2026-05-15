@@ -48,7 +48,7 @@ function HomePage() {
 
       <main
         ref={mainRef}
-        className="h-screen snap-y snap-mandatory overflow-y-auto scroll-smooth"
+        className="h-screen snap-y snap-mandatory overflow-y-auto overflow-x-hidden scroll-smooth"
       >
         <HeroSection />
         <AboutSection />

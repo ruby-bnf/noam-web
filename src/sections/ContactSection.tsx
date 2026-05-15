@@ -1,91 +1,62 @@
-import emailIcon from "../assets/icons/emailIcon.svg";
-import instagramIcon from "../assets/icons/InstegramIcon.svg";
-import IconTextLink from "../components/IconTextLink";
-import InfoCard from "../components/InfoCard";
-import { contactSectionContent } from "../constants/content";
 import Footer from "./Footer";
 
 const sectionClasses =
-  "flex h-auto snap-start flex-col justify-between bg-[var(--colors-Primary-white)] px-[clamp(1.25rem,4vw,5rem)] py-12";
+  "flex min-h-screen snap-start flex-col bg-[var(--colors-Primary-white)] px-[clamp(1.25rem,4vw,5rem)] pt-24 pb-0";
 
 const containerClasses =
-  "mx-auto flex w-full max-w-5xl flex-col lg:flex-row items-center gap-8 lg:gap-12";
-
-const contactLinks = [
-  {
-    href: "mailto:noamhen100@gmail.com",
-    iconSrc: emailIcon,
-    text: "Email: noamhen100@gmail.com",
-    external: false,
-  },
-  {
-    href: "https://instagram.com/noam.illustration",
-    iconSrc: instagramIcon,
-    text: "Instagram: noam.illustration",
-    external: true,
-  },
-] as const;
-
-function CommissionPromptCard() {
-  return (
-    <InfoCard className="rounded-lg p-6 text-[var(--colors-Primary-dark-green)] md:p-8">
-      <p className="max-w-[40ch] text-[clamp(1.03rem,1.3vw,1.2rem)] leading-[1.65]">
-        {contactSectionContent.commissionPrompt}
-      </p>
-
-      <div className="mt-5">
-        <a
-          href="mailto:noamhen100@gmail.com?subject=Commission%20Form%20Request"
-          className="button-primary"
-        >
-          Book Here
-        </a>
-      </div>
-    </InfoCard>
-  );
-}
-
-function ContactLinksCard() {
-  return (
-    <InfoCard className="rounded-lg border border-[rgba(var(--colors-Primary-dark-green-rgb),0.16)] p-6 text-[var(--colors-Primary-dark-green)] md:p-8">
-      <p className="text-[clamp(1.03rem,1.3vw,1.2rem)] leading-[1.65]">
-        {contactSectionContent.availabilityText}
-      </p>
-
-      <div className="mt-4 grid gap-3 text-[clamp(1rem,1.2vw,1.1rem)]">
-        {contactLinks.map((item) => (
-          <IconTextLink
-            key={item.text}
-            href={item.href}
-            iconSrc={item.iconSrc}
-            text={item.text}
-            external={item.external}
-          />
-        ))}
-      </div>
-    </InfoCard>
-  );
-}
+  "mx-auto grid w-full max-w-6xl flex-1 grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-12";
 
 function ContactSection() {
   return (
     <section id="contact" className={sectionClasses}>
       <div className={containerClasses}>
-        {/* Left Column */}
-        <div className="flex min-h-0 flex-col gap-3 flex-1">
-          <h2 className="section-title text-[clamp(2rem,3.1vw,3.1rem)] leading-[1.05] tracking-[0.08em] uppercase">
-            {contactSectionContent.title}
+        <div className="flex min-h-0 flex-col gap-4">
+          <h2 className="section-title text-[clamp(2.4rem,4vw,3.8rem)] leading-[0.98] tracking-[0.06em] uppercase text-[var(--colors-Primary-dark-green)]">
+            Get in touch!
           </h2>
-          <CommissionPromptCard />
+
+          <p className="max-w-[75ch] text-[clamp(1.02rem,1.25vw,1.16rem)] leading-[1.7] text-[rgba(var(--ink-rgb),0.88)]">
+            Are you interested in a commissioned project or a workshop? You can
+            start by filing a commission form.{" "}
+            <a
+              href="https://docs.google.com/forms/d/e/1FAIpQLSeBOhSKgrusVzXPkv_uLjEjqTuvg0mHJdK0JS4lF6ZTQWcaQA/viewform?usp=header"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline decoration-[1.5px] underline-offset-4"
+            >
+              Commission form
+            </a>
+            .
+          </p>
         </div>
 
-        {/* Right Column */}
-        <div className="flex items-center flex-1">
-          <ContactLinksCard />
+        <div className="flex min-h-0 flex-col gap-3 text-[clamp(1rem,1.2vw,1.1rem)] leading-[1.7] text-[rgba(var(--ink-rgb),0.9)] lg:justify-self-end lg:max-w-[30rem]">
+          <p>I am also available via mail and on social media:</p>
+          <a
+            href="mailto:Noamhen.illustration@gmail.com"
+            className="w-fit underline decoration-[1.5px] underline-offset-4"
+          >
+            Noamhen.illustration@gmail.com
+          </a>
+          <a
+            href="https://www.instagram.com/noam.illustration/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-fit underline decoration-[1.5px] underline-offset-4"
+          >
+            @Noam.illustration
+          </a>
+          <a
+            href="https://noamhen-newsletter.beehiiv.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-fit underline decoration-[1.5px] underline-offset-4"
+          >
+            Subscribe to my studio&apos;s Newsletter
+          </a>
         </div>
       </div>
 
-      {/* Footer */}
       <Footer />
     </section>
   );

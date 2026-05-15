@@ -108,10 +108,10 @@ function WorkExperienceSection() {
 
 function AboutPage() {
   return (
-    <div className="min-h-screen bg-white px-[clamp(1.25rem,4vw,5rem)] pt-24 pb-12 text-[var(--ink)]">
+    <div className="flex min-h-screen flex-col bg-white px-[clamp(1.25rem,4vw,5rem)] pt-24 pb-0 text-[var(--ink)]">
       <SiteNav />
 
-      <main className="mx-auto flex min-h-[calc(100vh-9rem)] w-full max-w-6xl flex-col gap-12">
+      <main className="mx-auto flex w-full max-w-6xl flex-1 flex-col gap-12">
         <HeroSection />
         <WorkExperienceSection />
 
