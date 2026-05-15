@@ -84,6 +84,16 @@ import seasonalRecipeCalendar2 from "../../assets/portfolio/Seasonal-recipe-cale
 import seasonalRecipeCalendar3 from "../../assets/portfolio/Seasonal-recipe-calendar/Calendar3.png";
 import seasonalRecipeCalendar4 from "../../assets/portfolio/Seasonal-recipe-calendar/Calendar-original.jpg";
 
+import standAloneIllustration1 from "../../assets/portfolio/StandAloneIllustrations/Botanical-Gardens.jpg";
+import standAloneIllustration2 from "../../assets/portfolio/StandAloneIllustrations/Bells.png";
+import standAloneIllustration3 from "../../assets/portfolio/StandAloneIllustrations/Countertop.png";
+import standAloneIllustration4 from "../../assets/portfolio/StandAloneIllustrations/Hanegev-timeline.png";
+import standAloneIllustration5 from "../../assets/portfolio/StandAloneIllustrations/Mountain-flowers.png";
+import standAloneIllustration6 from "../../assets/portfolio/StandAloneIllustrations/Mountain-life.png";
+import standAloneIllustration7 from "../../assets/portfolio/StandAloneIllustrations/Mountains.png";
+import standAloneIllustration8 from "../../assets/portfolio/StandAloneIllustrations/Our-house.png";
+import standAloneIllustration9 from "../../assets/portfolio/StandAloneIllustrations/Rainy-Rotterdam.png";
+
 export type PortfolioProject = {
   category: string;
   title: string;
@@ -237,5 +247,59 @@ export const portfolioProjects: PortfolioProject[] = [
       seasonalRecipeCalendar3,
       seasonalRecipeCalendar4,
     ],
+  },
+  {
+    title: "Botanical Gardens",
+    category: "Illustration",
+    summary: null,
+    image: [standAloneIllustration1],
+  },
+  {
+    title: "Bells",
+    category: "Illustration",
+    summary: null,
+    image: [standAloneIllustration2],
+  },
+  {
+    title: "Countertop",
+    category: "Illustration",
+    summary: null,
+    image: [standAloneIllustration3],
+  },
+  {
+    title: "Hanegev Timeline",
+    category: "Illustration",
+    summary: null,
+    image: [standAloneIllustration4],
+  },
+  {
+    title: "Mountain flowers",
+    category: "Illustration",
+    summary: null,
+    image: [standAloneIllustration5],
+  },
+  {
+    title: "Mountain Life",
+    category: "Illustration",
+    summary: null,
+    image: [standAloneIllustration6],
+  },
+  {
+    title: "Mountains",
+    category: "Illustration",
+    summary: null,
+    image: [standAloneIllustration7],
+  },
+  {
+    title: "Our House",
+    category: "Illustration",
+    summary: null,
+    image: [standAloneIllustration8],
+  },
+  {
+    title: "Rainy Rotterdam",
+    category: "Illustration",
+    summary: null,
+    image: [standAloneIllustration9],
   },
 ];
