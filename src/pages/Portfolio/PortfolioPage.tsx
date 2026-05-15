@@ -1,29 +1,8 @@
-import { useRef, useState } from "react";
-import SiteNav from "../components/SiteNav";
-import Footer from "../sections/Footer";
-
-type PortfolioProject = {
-  category: string;
-  title: string;
-  summary: string | null;
-  image: string[];
-};
-
-const portfolioProjects: PortfolioProject[] = [
-  {
-    title: "Cat story",
-    category: "Comic",
-    summary:
-      "A short story about the time I looked after my neighbor’s cat and ended up in a garden-to-garden chase.",
-    image: [cat1, cat2, cat3, cat4, cat5],
-  },
-  {
-    title: "Oliver",
-    category: "Comic",
-    summary: null,
-    image: [oliver1, oliver2],
-  },
-];
+import { useRef, useState, useEffect } from "react";
+import SiteNav from "../../components/SiteNav";
+import Footer from "../../sections/Footer";
+import { portfolioProjects, type PortfolioProject } from "./portfolioProjects";
+import ProjectDetails from "./ProjectDetails";
 
 function PortfolioPage() {
   const [selectedProject, setSelectedProject] =
@@ -41,11 +20,39 @@ function PortfolioPage() {
     });
   };
 
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        projectDetailsRef.current &&
+        !projectDetailsRef.current.contains(event.target as Node)
+      ) {
+        // Check if click is outside the project details section
+        const target = event.target as HTMLElement;
+        // Allow clicks on gallery buttons to still work
+        if (!target.closest("#portfolio-gallery-grid")) {
+          setSelectedProject(null);
+        }
+      }
+    };
+
+    if (selectedProject) {
+      document.addEventListener("mousedown", handleClickOutside);
+      return () => {
+        document.removeEventListener("mousedown", handleClickOutside);
+      };
+    }
+  }, [selectedProject]);
+
   return (
     <div className="flex min-h-screen flex-col bg-[var(--colors-Primary-white)] text-[var(--colors-Primary-dark-green)]">
       <SiteNav />
 
       <main className="mx-auto w-full max-w-7xl flex-1 px-[clamp(1.25rem,4vw,5rem)] pt-28 pb-0 sm:pt-32">
+        <ProjectDetails
+          selectedProject={selectedProject}
+          projectDetailsRef={projectDetailsRef}
+          onClose={() => setSelectedProject(null)}
+        />
         <div className="max-w-3xl">
           <p className="m-0 pb-2 text-[0.72rem] font-semibold tracking-[0.18em] uppercase text-[rgba(var(--colors-Primary-dark-green-rgb),0.72)]">
             Portfolio
@@ -58,45 +65,6 @@ function PortfolioPage() {
             open its project section at the top.
           </p>
         </div>
-
-        {selectedProject ? (
-          <section
-            ref={projectDetailsRef}
-            className="pt-8 sm:pt-10"
-            aria-label="Selected project details"
-          >
-            <div className="grid grid-cols-1 gap-5 border border-[rgba(var(--colors-Primary-dark-green-rgb),0.12)] bg-[rgba(var(--colors-Primary-white-rgb),0.72)] p-4 sm:p-6 lg:grid-cols-[1.5fr_0.7fr] lg:items-start">
-              <div className="flex flex-col gap-3">
-                {selectedProject.image.map((imageSrc, index) => (
-                  <div
-                    key={`${selectedProject.title}-${index}`}
-                    className="overflow-hidden bg-[var(--colors-Primary-white)]"
-                  >
-                    <img
-                      src={imageSrc}
-                      alt={`${selectedProject.title} ${index + 1}`}
-                      loading="lazy"
-                      decoding="async"
-                      className="h-full w-full object-cover"
-                    />
-                  </div>
-                ))}
-              </div>
-
-              <div className="min-w-0">
-                <p className="m-0 text-[0.72rem] font-semibold tracking-[0.16em] uppercase text-[rgba(var(--colors-Primary-dark-green-rgb),0.65)]">
-                  {selectedProject.category}
-                </p>
-                <h2 className="m-0 pt-2 text-[clamp(1.6rem,2.4vw,2.4rem)] leading-[1.02] tracking-[0.03em] uppercase text-[rgba(var(--colors-Primary-dark-green-rgb),1)]">
-                  {selectedProject.title}
-                </h2>
-                <p className="m-0 pt-4 text-[clamp(0.98rem,1.1vw,1.08rem)] leading-[1.7] text-[rgba(var(--colors-Primary-dark-green-rgb),0.84)]">
-                  {selectedProject.summary}
-                </p>
-              </div>
-            </div>
-          </section>
-        ) : null}
 
         <section
           className="pt-8 sm:pt-10"

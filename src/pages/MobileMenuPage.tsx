@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import closeIcon from "../assets/icons/closeIcone.svg";
+import closeIcon from "../assets/icons/closeIcon.svg";
 
 const MENU_TRANSITION_MS = 300;
 
