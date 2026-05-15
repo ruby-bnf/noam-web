@@ -1,87 +1,26 @@
 import { useRef, useState } from "react";
 import SiteNav from "../components/SiteNav";
 import Footer from "../sections/Footer";
-
-import ComicCat from "../assets/PortfolioThumbnails/Comic/cat-p1.png";
-import ComicKangaroo from "../assets/PortfolioThumbnails/Comic/Kangarp-2.png";
-import ComicOliver from "../assets/PortfolioThumbnails/Comic/oliver.png";
-import ComicTomato from "../assets/PortfolioThumbnails/Comic/Tomato-factory.png";
-import CAT3 from "../assets/PortfolioThumbnails/scrollGallery/CAT3.png";
-import KangarooP1 from "../assets/PortfolioThumbnails/scrollGallery/Kangaroo-p-1.png";
-import KangarooP2 from "../assets/PortfolioThumbnails/scrollGallery/Kangaroo-p-2.png";
-import OliverMap from "../assets/PortfolioThumbnails/scrollGallery/OliverMap.png";
-import OliverPoop from "../assets/PortfolioThumbnails/scrollGallery/OliverPoop.png";
+import cat1 from "../assets/portfolio/Cat-story/cat1.png";
+import cat2 from "../assets/portfolio/Cat-story/cat2.png";
+import cat3 from "../assets/portfolio/Cat-story/cat3.png";
+import cat4 from "../assets/portfolio/Cat-story/cat4.png";
+import cat5 from "../assets/portfolio/Cat-story/cat5.png";
 
 type PortfolioProject = {
-  title: string;
   category: string;
-  summary: string;
-  image: string;
+  title: string;
+  summary: string | null;
+  image: string[];
 };
 
 const portfolioProjects: PortfolioProject[] = [
   {
-    title: "Kangaroo Journey",
+    title: "Cat story",
     category: "Comic",
     summary:
-      "A playful narrative sequence that follows a curious kangaroo character through dramatic panels and energetic pacing.",
-    image: ComicKangaroo,
-  },
-  {
-    title: "Cat Story Panel",
-    category: "Comic",
-    summary:
-      "Character-focused storytelling with expressive poses and contrast-driven composition to guide the eye.",
-    image: ComicCat,
-  },
-  {
-    title: "Oliver Portrait Scene",
-    category: "Illustration",
-    summary:
-      "An illustrative scene centered on texture and shape language, balancing warmth with strong silhouette design.",
-    image: ComicOliver,
-  },
-  {
-    title: "Tomato Factory",
-    category: "Comic",
-    summary:
-      "A busy environment piece packed with visual details and rhythmic panel flow inspired by editorial comics.",
-    image: ComicTomato,
-  },
-  {
-    title: "Kangaroo Opening",
-    category: "Storyboard",
-    summary:
-      "An opening frame that establishes motion and scale, combining clean line work with atmospheric color.",
-    image: KangarooP1,
-  },
-  {
-    title: "Kangaroo Continuation",
-    category: "Storyboard",
-    summary:
-      "Continuation scene emphasizing momentum, with directional composition used to pull attention across the frame.",
-    image: KangarooP2,
-  },
-  {
-    title: "CAT3 Study",
-    category: "Character Study",
-    summary:
-      "A focused character exploration that tests mood, expression, and personality through minimal staging.",
-    image: CAT3,
-  },
-  {
-    title: "Oliver Map",
-    category: "Visual Development",
-    summary:
-      "A world-building artwork that layers iconography and location cues to suggest story context and journey.",
-    image: OliverMap,
-  },
-  {
-    title: "Oliver Poop",
-    category: "Humor Illustration",
-    summary:
-      "A comedic beat illustration designed around timing, exaggeration, and readable character acting.",
-    image: OliverPoop,
+      "A short story about the time I looked after my neighbor’s cat and ended up in a garden-to-garden chase.",
+    image: [cat1, cat2, cat3, cat4, cat5],
   },
 ];
 
@@ -125,7 +64,24 @@ function PortfolioPage() {
             className="pt-8 sm:pt-10"
             aria-label="Selected project details"
           >
-            <div className="grid grid-cols-1 gap-5 border border-[rgba(var(--colors-Primary-dark-green-rgb),0.12)] bg-[rgba(var(--colors-Primary-white-rgb),0.72)] p-4 sm:p-6 lg:grid-cols-[1.15fr_1fr] lg:items-start">
+            <div className="grid grid-cols-1 gap-5 border border-[rgba(var(--colors-Primary-dark-green-rgb),0.12)] bg-[rgba(var(--colors-Primary-white-rgb),0.72)] p-4 sm:p-6 lg:grid-cols-[1.5fr_0.7fr] lg:items-start">
+              <div className="flex flex-col gap-3">
+                {selectedProject.image.map((imageSrc, index) => (
+                  <div
+                    key={`${selectedProject.title}-${index}`}
+                    className="overflow-hidden bg-[var(--colors-Primary-white)]"
+                  >
+                    <img
+                      src={imageSrc}
+                      alt={`${selectedProject.title} ${index + 1}`}
+                      loading="lazy"
+                      decoding="async"
+                      className="h-full w-full object-cover"
+                    />
+                  </div>
+                ))}
+              </div>
+
               <div className="min-w-0">
                 <p className="m-0 text-[0.72rem] font-semibold tracking-[0.16em] uppercase text-[rgba(var(--colors-Primary-dark-green-rgb),0.65)]">
                   {selectedProject.category}
@@ -136,16 +92,6 @@ function PortfolioPage() {
                 <p className="m-0 pt-4 text-[clamp(0.98rem,1.1vw,1.08rem)] leading-[1.7] text-[rgba(var(--colors-Primary-dark-green-rgb),0.84)]">
                   {selectedProject.summary}
                 </p>
-              </div>
-
-              <div className="overflow-hidden bg-[var(--colors-Primary-white)]">
-                <img
-                  src={selectedProject.image}
-                  alt={selectedProject.title}
-                  loading="lazy"
-                  decoding="async"
-                  className="h-full w-full object-cover"
-                />
               </div>
             </div>
           </section>
@@ -159,14 +105,14 @@ function PortfolioPage() {
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {portfolioProjects.map((project, index) => (
               <button
-                key={`${project.image}-${index}`}
+                key={`${project.title}-${index}`}
                 type="button"
                 onClick={() => handleProjectSelect(project)}
                 className="button-unstyled group relative block aspect-[4/5] overflow-hidden bg-[var(--colors-Primary-white)]"
                 aria-label={`Show details for ${project.title}`}
               >
                 <img
-                  src={project.image}
+                  src={project.image[0]}
                   alt={project.title}
                   loading="lazy"
                   decoding="async"
