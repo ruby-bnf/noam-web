@@ -15,6 +15,14 @@ import Tomato2 from "../../assets/portfolio/Tomato-factory/tomato2.png";
 import Tomato3 from "../../assets/portfolio/Tomato-factory/tomato3.png";
 import Tomato4 from "../../assets/portfolio/Tomato-factory/tomato4.png";
 
+import window1 from "../../assets/portfolio/Window-christmas-illustrations/window-1.png";
+import window2 from "../../assets/portfolio/Window-christmas-illustrations/Window-2.jpg";
+import window3 from "../../assets/portfolio/Window-christmas-illustrations/window-3.jpg";
+import window4 from "../../assets/portfolio/Window-christmas-illustrations/Window-4.jpg";
+import window5 from "../../assets/portfolio/Window-christmas-illustrations/window-5.jpg";
+import window6 from "../../assets/portfolio/Window-christmas-illustrations/window-6.jpg";
+import window7 from "../../assets/portfolio/Window-christmas-illustrations/window-7.png";
+
 export type PortfolioProject = {
   category: string;
   title: string;
@@ -49,5 +57,12 @@ export const portfolioProjects: PortfolioProject[] = [
     summary:
       "A slightly morbid story about a night in one of Australia’s endless roads.",
     image: [kangaroo1, kangaroo2],
+  },
+  {
+    title: "Window Christmas illustration",
+    category: "Window Doodling",
+    summary:
+      "Commissioned holiday window illustrations for a local indian restaurant.",
+    image: [window1, window2, window3, window4, window5, window6, window7],
   },
 ];
