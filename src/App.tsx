@@ -8,6 +8,7 @@ import SiteNav from "./components/SiteNav";
 import { Route, Routes, useLocation } from "react-router-dom";
 import AboutSection from "./sections/AboutSection.tsx";
 import PortfolioPage from "./pages/PortfolioPage.tsx";
+import AboutPage from "./pages/AboutPage.tsx";
 
 function HomePage() {
   const location = useLocation();
@@ -61,6 +62,7 @@ function App() {
   return (
     <Routes>
       <Route path="/" element={<HomePage />} />
+      <Route path="/about" element={<AboutPage />} />
       <Route path="/portfolio" element={<PortfolioPage />} />
       <Route path="/commission" element={<CommissionPage />} />
       <Route

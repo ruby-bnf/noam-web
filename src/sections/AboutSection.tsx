@@ -1,4 +1,5 @@
 import PortfolioGallery from "../components/portfolio/PortfolioGallery";
+import { Link } from "react-router-dom";
 import {
   aboutSectionContent,
   projectsSectionContent,
@@ -31,8 +32,6 @@ function AboutSection() {
 
             <h2 className="section-title text-[clamp(2rem,3.6vw,3.8rem)] leading-[0.98] tracking-[0.05em] uppercase text-[rgba(var(--ink-rgb),1)]">
               <span className="block"> {aboutSectionContent.title}</span>
-              {/* <span className="block">Recent</span>
-              <span className="block">Works</span> */}
             </h2>
 
             <p className="m-0 text-[clamp(1rem,1.2vw,1.12rem)] leading-[1.75] text-[rgba(var(--ink-rgb),0.84)]">
@@ -42,9 +41,9 @@ function AboutSection() {
             </p>
 
             <div className="pt-2">
-              <a href="#contact" className="button-primary">
-                Contact Me
-              </a>
+              <Link to="/about" className="button-primary">
+                More about me
+              </Link>
             </div>
           </div>
         </div>

@@ -1,15 +1,54 @@
 export const aboutSectionContent = {
   title: "Hey there!",
-  body: `I'm Noam, an illustrator based in Rotterdam.
-I have a passion for comics, linocut print,
-and traditional techniques.
+  body: `I'm Noam, an illustrator based in Rotterdam. I have a passion for comics, linocut print, and traditional techniques. You can usually find me at my sweet studio at the heart of historical delfshaven.
 
-My portfolio pieces typically begin with a nerdy
-dive into some random curiosity.
+My projects typically begin with a nerdy dive into some random curiosity. Then, with details and care, an illustration is born!
 
-Then, with details and care, an illustration is born !`,
+After relocating from Israel to the Netherlands, themes of cultural identity and the scenery of my upbringing often find their way into my work. I like to speculate about alternative ways of living in a world facing social and ecological changes. I work around themes of cultural identity, social change, nature and ecology.`,
   whatIDoTitle: "what i do:",
   whatIDoItems: ["comic book", "workshops", "ART MARKETS"],
+} as const;
+
+export const aboutWorkExperienceContent = {
+  title: "Work Experience",
+  experiences: [
+    {
+      role: "Freelance Illustrator",
+      period: "2022 - Present",
+      description:
+        "Visual communication and illustration for cultural and commercial clients, including signage, branding, window displays and visual educational materials.",
+    },
+    {
+      role: "Workshop Designer & Facilitator - Hortus Leiden",
+      period: "2024–2025",
+      description:
+        "Design and facilitation of illustration workshops combining drawing, storytelling and sciences for diverse groups.",
+    },
+    {
+      role: "Commissioned Workshop - Bibliotheek Rijn en Venen",
+      period: "August 2025",
+      description:
+        "Developed and led custom illustration workshops for visitors of all ages.",
+    },
+    {
+      role: "Education & Illustration Intern - Hortus Leiden",
+      period: "Feb–June 2024",
+      description:
+        "Created botanical illustrations for a scientific research project and developed thematic educational tours integrating visual storytelling.",
+    },
+    {
+      role: "Commissioned Illustrator - Hortus Alkmaar",
+      period: "2024–2025",
+      description:
+        "Illustration and visual design for educational materials. Created an illustrated visitor map to support independent and guided learning routes.",
+    },
+    {
+      role: "Bachelor of Arts (Illustration)",
+      period: "2021-2025",
+      description:
+        "Willem de Kooning Academy, Rotterdam University of Applied Sciences",
+    },
+  ],
 } as const;
 
 export const projectsSectionContent = {
