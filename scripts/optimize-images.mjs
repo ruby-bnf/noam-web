@@ -7,8 +7,10 @@ const assetsRoot = path.join(projectRoot, "src", "assets");
 const sourceRoot = path.join(projectRoot, "src");
 
 const rasterExts = new Set([".png", ".jpg", ".jpeg", ".gif"]);
+const imageExts = new Set([".png", ".jpg", ".jpeg", ".gif", ".webp"]);
 const sourceFileExts = new Set([".ts", ".tsx", ".js", ".jsx", ".css"]);
 const maxDimension = 2200;
+const thumbnailMaxDimension = 640;
 const forceRebuild = process.argv.includes("--force");
 
 async function walk(dir) {
@@ -72,6 +74,40 @@ async function convertToWebp(inputPath) {
   return { converted: true, outputPath };
 }
 
+async function generateThumbnail(webpPath) {
+  if (!webpPath.toLowerCase().endsWith(".webp")) {
+    return { generated: false, outputPath: webpPath };
+  }
+
+  if (webpPath.toLowerCase().endsWith(".thumb.webp")) {
+    return { generated: false, outputPath: webpPath };
+  }
+
+  const outputPath = webpPath.slice(0, -".webp".length) + ".thumb.webp";
+  const inputStat = await fs.stat(webpPath);
+  const outputExists = await fileExists(outputPath);
+
+  if (outputExists && !forceRebuild) {
+    const outputStat = await fs.stat(outputPath);
+    if (outputStat.mtimeMs >= inputStat.mtimeMs) {
+      return { generated: false, outputPath };
+    }
+  }
+
+  await sharp(webpPath)
+    .rotate()
+    .resize({
+      width: thumbnailMaxDimension,
+      height: thumbnailMaxDimension,
+      fit: "inside",
+      withoutEnlargement: true,
+    })
+    .webp({ quality: 62, effort: 5 })
+    .toFile(outputPath);
+
+  return { generated: true, outputPath };
+}
+
 function updateImportPaths(content) {
   return content
     .replace(
@@ -86,15 +122,34 @@ function updateImportPaths(content) {
 
 async function main() {
   const assetFiles = await walk(assetsRoot);
-  const rasterFiles = assetFiles.filter((file) =>
+  const imageFiles = assetFiles.filter((file) =>
+    imageExts.has(path.extname(file).toLowerCase()),
+  );
+  const rasterFiles = imageFiles.filter((file) =>
     rasterExts.has(path.extname(file).toLowerCase()),
   );
 
   let convertedCount = 0;
+  const webpFilesForThumbnails = new Set(
+    imageFiles
+      .filter((file) => path.extname(file).toLowerCase() === ".webp")
+      .filter((file) => !file.toLowerCase().endsWith(".thumb.webp")),
+  );
+
   for (const filePath of rasterFiles) {
     const result = await convertToWebp(filePath);
     if (result.converted) {
       convertedCount += 1;
+    }
+
+    webpFilesForThumbnails.add(result.outputPath);
+  }
+
+  let generatedThumbnailsCount = 0;
+  for (const webpFile of webpFilesForThumbnails) {
+    const result = await generateThumbnail(webpFile);
+    if (result.generated) {
+      generatedThumbnailsCount += 1;
     }
   }
 
@@ -114,6 +169,7 @@ async function main() {
   }
 
   console.log(`Converted images: ${convertedCount}`);
+  console.log(`Generated thumbnails: ${generatedThumbnailsCount}`);
   console.log(`Source files updated: ${updatedSources}`);
 }
 

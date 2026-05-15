@@ -81,7 +81,7 @@ function PortfolioPage() {
                 aria-label={`Show details for ${project.title}`}
               >
                 <img
-                  src={project.image[0]}
+                  src={project.thumbnail}
                   alt={project.title}
                   loading="lazy"
                   decoding="async"
