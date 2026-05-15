@@ -4,11 +4,11 @@ import cat3 from "../../assets/portfolio/Cat-story/cat3.png";
 import cat4 from "../../assets/portfolio/Cat-story/cat4.png";
 import cat5 from "../../assets/portfolio/Cat-story/cat5.png";
 
-import oliver1 from "../../assets/portfolio/Cat-story/Oliver/oliver1.png";
-import oliver2 from "../../assets/portfolio/Cat-story/Oliver/oliver2.png";
+import oliver1 from "../../assets/portfolio/Oliver/oliver1.png";
+import oliver2 from "../../assets/portfolio/Oliver/oliver2.png";
 
-import kangaroo1 from "../../assets/portfolio/Cat-story/Kangaroo/kangaroo1.png";
-import kangaroo2 from "../../assets/portfolio/Cat-story/Kangaroo/kangaroo2.png";
+import kangaroo1 from "../../assets/portfolio/Kangaroo/kangaroo1.png";
+import kangaroo2 from "../../assets/portfolio/Kangaroo/kangaroo2.png";
 
 export type PortfolioProject = {
   category: string;
