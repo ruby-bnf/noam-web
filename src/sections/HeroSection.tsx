@@ -27,26 +27,8 @@ function HeroSection() {
               : "translate-y-3 opacity-0"
           }`}
         >
-          <h1
-            className="text-left text-[64px] leading-[0.92] uppercase"
-            style={{
-              fontFamily: '"Poppins", sans-serif',
-              fontWeight: 900,
-              color: "var(--red-default)",
-            }}
-          >
-            Noam Hen
-          </h1>
-          <p
-            className="mt-2 text-left text-[18px] leading-[1.2]"
-            style={{
-              fontFamily: '"Poppins", sans-serif',
-              fontWeight: 400,
-              color: "rgba(0, 0, 0, 0.95)",
-            }}
-          >
-            Comic Artist and Illustrator
-          </p>
+          <h1 className="big-title">Noam Hen</h1>
+          <p className="body-text mt-2">Comic Artist and Illustrator</p>
         </div>
       </div>
     </section>

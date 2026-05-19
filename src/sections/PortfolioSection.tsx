@@ -35,7 +35,7 @@ function PortfolioSection() {
     >
       <div className="mx-auto w-full max-w-7xl">
         <div className="mb-8">
-          <h2 className="section-title text-[clamp(2rem,3.6vw,3.8rem)] leading-[0.98] tracking-[0.05em] uppercase">
+          <h2 className="header-title">
             Recent Works
           </h2>
         </div>

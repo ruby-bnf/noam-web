@@ -58,12 +58,8 @@ function ContentCard({
         </span>
       </div>
       <div className="flex flex-1 flex-col gap-2 p-4">
-        <h3 className="whitespace-pre-line text-[1.15rem] leading-[1.25]">
-          {title}
-        </h3>
-        <p className="m-0 line-clamp-4 text-[0.97rem] leading-[1.55] text-[rgba(var(--colors-Primary-dark-green-rgb),0.85)]">
-          {description}
-        </p>
+        <h3 className="sm-text whitespace-pre-line">{title}</h3>
+        <p className="body-text m-0 line-clamp-4">{description}</p>
         <span
           className={`button-secondary mt-auto w-fit self-start group-hover:-translate-y-0.5 group-hover:bg-[rgba(var(--red-default-rgb),0.1)] ${
             isFeatured ? "-translate-y-0.5" : ""

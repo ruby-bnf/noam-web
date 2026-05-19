@@ -10,13 +10,11 @@ function ContactPage() {
       <main className="mx-auto flex w-full max-w-6xl flex-1 flex-col gap-10">
         <section className="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-10">
           <div className="flex flex-col gap-6">
-            <h1 className="section-title text-[clamp(2.4rem,4vw,3.8rem)] leading-[0.98] tracking-[0.06em] uppercase text-[var(--colors-Primary-dark-green)]">
-              Get in touch!
-            </h1>
+            <h1 className="header-title">Get in touch!</h1>
 
-            <p className="max-w-[75ch] text-[clamp(1.02rem,1.25vw,1.16rem)] leading-[1.7] text-[rgba(var(--colors-Primary-dark-green-rgb),0.88)]">
+            <p className="body-text max-w-[75ch]">
               Are you interested in a commissioned project or a workshop? You
-              can start by filing a commission form.{" "}
+              can start by filing a commission form.
               <a
                 href="https://docs.google.com/forms/d/e/1FAIpQLSeBOhSKgrusVzXPkv_uLjEjqTuvg0mHJdK0JS4lF6ZTQWcaQA/viewform?usp=header"
                 target="_blank"

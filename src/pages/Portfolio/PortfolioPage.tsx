@@ -54,13 +54,9 @@ function PortfolioPage() {
           onClose={() => setSelectedProject(null)}
         />
         <div className="max-w-3xl pt-8 sm:pt-10">
-          <p className="m-0 pb-2 text-[0.72rem] font-semibold tracking-[0.18em] uppercase text-[rgba(var(--colors-Primary-dark-green-rgb),0.72)]">
-            Portfolio
-          </p>
-          <h1 className="section-title m-0 text-[clamp(2.2rem,4.2vw,4.25rem)] leading-[0.95] tracking-[0.04em] uppercase text-[rgba(var(--colors-Primary-dark-green-rgb),1)]">
-            Gallery
-          </h1>
-          <p className="m-0 pt-4 text-[clamp(0.98rem,1.1vw,1.12rem)] leading-[1.72] text-[rgba(var(--colors-Primary-dark-green-rgb),0.82)]">
+          <p className="subtitle pb-2">Portfolio</p>
+          <h1 className="header-title m-0">Gallery</h1>
+          <p className="body-text m-0 pt-4">
             A selection of illustrations and comic snapshots. Click any image to
             open its project section at the top.
           </p>
@@ -92,7 +88,7 @@ function PortfolioPage() {
                   className="pointer-events-none absolute inset-0 bg-[rgba(var(--colors-Primary-black-rgb),0)] transition-colors duration-300 ease-out group-hover:bg-[rgba(var(--colors-Primary-black-rgb),0.48)] group-focus-visible:bg-[rgba(var(--colors-Primary-black-rgb),0.48)]"
                 />
                 <div className="pointer-events-none absolute inset-0 flex items-center justify-center p-4">
-                  <p className="m-0 translate-y-2 text-center text-[clamp(1rem,1.3vw,1.2rem)] font-semibold tracking-[0.03em] text-[var(--colors-Primary-white)] opacity-0 transition-all duration-300 ease-out group-hover:translate-y-0 group-hover:opacity-100 group-focus-visible:translate-y-0 group-focus-visible:opacity-100">
+                  <p className="body-text m-0 translate-y-2 text-center font-semibold tracking-[0.03em] text-[var(--colors-Primary-white)] opacity-0 transition-all duration-300 ease-out group-hover:translate-y-0 group-hover:opacity-100 group-focus-visible:translate-y-0 group-focus-visible:opacity-100">
                     {project.title}
                   </p>
                 </div>

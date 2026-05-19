@@ -18,18 +18,9 @@ function CommissionPage() {
       <SiteNav />
 
       <main className="mx-auto flex w-full max-w-6xl flex-1 flex-col gap-8">
-        <h1
-          className="section-title text-[clamp(2.5rem,4.2vw,4rem)] leading-[0.95] tracking-[0.06em] uppercase"
-          style={{
-            fontFamily: "var(--title-font)",
-            fontWeight: 900,
-            color: "var(--secondary-blue)",
-          }}
-        >
-          {commissionPageContent.title}
-        </h1>
+        <h1 className="header-title">{commissionPageContent.title}</h1>
 
-        <p className="max-w-[75ch] whitespace-pre-line text-[clamp(1.08rem,1.4vw,1.28rem)] leading-[1.7] text-[var(--colors-Primary-dark-green)] font-normal">
+        <p className="body-text max-w-[75ch] whitespace-pre-line">
           {commissionPageContent.description}
         </p>
 
@@ -47,15 +38,8 @@ function CommissionPage() {
                 key={step.title}
                 className={`relative z-20 flex w-full max-w-[553.405517578125px] flex-col gap-6 rounded-lg p-6 opacity-100 md:h-auto ${index === commissionPageContent.steps.length - 1 ? "bg-[var(--secondary-blue)]" : "bg-[var(--colors-Primary-white)]"} text-[var(--colors-Primary-dark-green)] ${stepPathClasses[index] ?? ""}`}
               >
-                <h2
-                  className="text-[clamp(1.15rem,1.7vw,1.5rem)] font-bold uppercase tracking-[0.05em]"
-                  style={{ fontFamily: "var(--title-font)" }}
-                >
-                  {step.title}
-                </h2>
-                <p className="text-[clamp(1.03rem,1.2vw,1.15rem)] leading-[1.65] text-[var(--colors-Primary-dark-green)]">
-                  {step.body}
-                </p>
+                <h2 className="header-title">{step.title}</h2>
+                <p className="body-text">{step.body}</p>
 
                 {step.ctaLabel && step.ctaHref ? (
                   <div className="mt-2">

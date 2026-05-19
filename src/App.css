@@ -1,3 +1,56 @@
+/* Subtitle text */
+.subtitle {
+  margin: 0;
+  display: inline-flex;
+  padding-bottom: 0.25rem;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(var(--colors-Primary-dark-green-rgb), 0.72);
+}
+/* Biggest title style */
+.big-title {
+  text-align: left;
+  font-size: 64px;
+  line-height: 0.92;
+  text-transform: uppercase;
+  font-family: "Poppins", sans-serif;
+  font-weight: 900;
+  color: var(--red-default);
+}
+
+/* Header (slightly smaller) */
+.header-title {
+  text-align: left;
+  font-size: clamp(2.1rem, 3.6vw, 3.2rem);
+  line-height: 0.95;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-family: "Poppins", sans-serif;
+  font-weight: 900;
+  color: var(--red-default);
+}
+
+/* Body text */
+.body-text {
+  margin: 0;
+  font-size: clamp(0.92rem, 1vw, 1.02rem);
+  line-height: 1.9;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  color: rgba(var(--colors-Primary-dark-green-rgb), 0.84);
+}
+
+/* Small text */
+.sm-text {
+  font-size: 0.8rem;
+  line-height: 1.5;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  color: var(--colors-Primary-dark-green);
+}
+
 :root {
   --cream: #f7f3ea;
   --ink: #15212a;
@@ -71,27 +124,6 @@
   gap: 1rem;
   padding: 6rem clamp(1.25rem, 4vw, 5rem) 3rem;
   animation: rise 650ms ease both;
-}
-
-h1,
-h2,
-h3 {
-  margin: 0;
-  font-family: "Fraunces", serif;
-  line-height: 1.04;
-}
-
-h1 {
-  font-size: clamp(2.3rem, 8vw, 6.4rem);
-  max-width: 14ch;
-}
-
-h2 {
-  font-size: clamp(2rem, 6vw, 4.2rem);
-}
-
-h3 {
-  font-size: clamp(1.25rem, 2.8vw, 1.9rem);
 }
 
 @keyframes rise {

@@ -11,11 +11,9 @@ function ContactSection() {
     <section id="contact" className={sectionClasses}>
       <div className={containerClasses}>
         <div className="flex min-h-0 flex-col gap-4">
-          <h2 className="section-title text-[clamp(2.4rem,4vw,3.8rem)] leading-[0.98] tracking-[0.06em] uppercase text-[var(--colors-Primary-dark-green)]">
-            Get in touch!
-          </h2>
+          <h2 className="header-title">Get in touch!</h2>
 
-          <p className="max-w-[75ch] text-[clamp(1.02rem,1.25vw,1.16rem)] leading-[1.7] text-[rgba(var(--colors-Primary-dark-green-rgb),0.88)]">
+          <p className="body-text max-w-[75ch]">
             Are you interested in a commissioned project or a workshop? You can
             start by filing a commission form.{" "}
             <a

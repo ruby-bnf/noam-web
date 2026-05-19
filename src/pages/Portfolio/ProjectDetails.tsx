@@ -49,13 +49,14 @@ function ProjectDetails({
           >
             <img src={closeIcon} alt="Close" width="24" height="24" />
           </button>
-          <p className="m-0 text-[0.72rem] font-semibold tracking-[0.16em] uppercase text-[rgba(var(--colors-Primary-dark-green-rgb),0.65)]">
+          <p
+            className="subtitle"
+            style={{ color: "rgba(var(--colors-Primary-dark-green-rgb),0.65)" }}
+          >
             {selectedProject.category}
           </p>
-          <h2 className="m-0 pt-2 text-[clamp(1.6rem,2.4vw,2.4rem)] leading-[1.02] tracking-[0.03em] uppercase text-[rgba(var(--colors-Primary-dark-green-rgb),1)]">
-            {selectedProject.title}
-          </h2>
-          <p className="m-0 pt-4 text-[clamp(0.98rem,1.1vw,1.08rem)] leading-[1.7] text-[rgba(var(--colors-Primary-dark-green-rgb),0.84)] whitespace-pre-wrap">
+          <h2 className="header-title m-0 pt-2">{selectedProject.title}</h2>
+          <p className="body-text m-0 pt-4 whitespace-pre-wrap">
             {selectedProject.summary}
           </p>
         </div>
