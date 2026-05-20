@@ -1,4 +1,5 @@
 import { useRef, useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import SiteNav from "../../components/SiteNav";
 import Footer from "../../sections/Footer";
 import { portfolioProjects, type PortfolioProject } from "./portfolioProjects";
@@ -8,6 +9,7 @@ function PortfolioPage() {
   const [selectedProject, setSelectedProject] =
     useState<PortfolioProject | null>(null);
   const projectDetailsRef = useRef<HTMLElement | null>(null);
+  const location = useLocation();
 
   const handleProjectSelect = (project: PortfolioProject) => {
     setSelectedProject(project);
@@ -19,6 +21,21 @@ function PortfolioPage() {
       });
     });
   };
+
+  useEffect(() => {
+    const state = location.state as { selectedProjectTitle?: string } | null;
+    if (state?.selectedProjectTitle) {
+      const project = portfolioProjects.find(
+        (p) => p.title === state.selectedProjectTitle,
+      );
+      if (project) {
+        handleProjectSelect(project);
+      }
+      // Clear state so back-navigation doesn't re-select
+      window.history.replaceState({}, "");
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
