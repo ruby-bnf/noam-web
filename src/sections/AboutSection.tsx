@@ -32,10 +32,8 @@ function AboutSection() {
               <span className="block"> {aboutSectionContent.title}</span>
             </h2>
 
-            <p className="body-text m-0 pt-6">
+            <p className="body-text m-0 pt-6 whitespace-pre-line">
               {aboutSectionContent.body}
-
-              {projectsSectionContent.body}
             </p>
 
             <div className="pt-6">

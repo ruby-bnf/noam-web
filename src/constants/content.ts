@@ -2,9 +2,7 @@ export const aboutSectionContent = {
   title: "Hey there!",
   body: `I'm Noam, an illustrator based in Rotterdam. I have a passion for comics, linocut print, and traditional techniques. You can usually find me at my sweet studio at the heart of historical delfshaven.
 
-My projects typically begin with a nerdy dive into some random curiosity. Then, with details and care, an illustration is born!
-
-After relocating from Israel to the Netherlands, themes of cultural identity and the scenery of my upbringing often find their way into my work. I like to speculate about alternative ways of living in a world facing social and ecological changes. I work around themes of cultural identity, social change, nature and ecology.`,
+My projects typically begin with a nerdy dive into some random curiosity. Then, with details and care, an illustration is born!`,
   whatIDoTitle: "what i do:",
   whatIDoItems: ["comic book", "workshops", "ART MARKETS"],
 } as const;
