@@ -1,4 +1,5 @@
 import { useRef } from "react";
+import { Link } from "react-router-dom";
 import CAT3 from "../assets/PortfolioThumbnails/scrollGallery/CAT3.webp";
 import KangarooP1 from "../assets/PortfolioThumbnails/scrollGallery/Kangaroo-p-1.webp";
 import KangarooP2 from "../assets/PortfolioThumbnails/scrollGallery/Kangaroo-p-2.webp";
@@ -41,11 +42,11 @@ function PortfolioSection() {
         <div className="flex items-center gap-2 sm:gap-3">
           <button
             onClick={() => scroll("left")}
-            className="z-10 shrink-0 rounded-full bg-dark-green/10 p-2 transition-colors duration-300 hover:bg-dark-green/20 sm:p-3"
-            aria-label="Scroll gallery left"
+            className="navigation-button button-unstyled"
           >
             <svg
-              className="h-5 w-5 sm:h-6 sm:w-6"
+              width="24"
+              height="24"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -84,11 +85,11 @@ function PortfolioSection() {
 
           <button
             onClick={() => scroll("right")}
-            className="z-10 shrink-0 rounded-full bg-dark-green/10 p-2 transition-colors duration-300 hover:bg-dark-green/20 sm:p-3"
-            aria-label="Scroll gallery right"
+            className="navigation-button button-unstyled"
           >
             <svg
-              className="h-5 w-5 sm:h-6 sm:w-6"
+              width="24"
+              height="24"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -104,9 +105,9 @@ function PortfolioSection() {
         </div>
 
         <div className="mt-6 flex justify-center">
-          <a href="/#portfolio-gallery" className="button-primary">
-            Go To Recent Projects
-          </a>
+          <Link to="/portfolio" className="button-primary">
+            Portfolio
+          </Link>
         </div>
       </div>
     </section>

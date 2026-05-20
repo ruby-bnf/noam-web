@@ -1,5 +1,4 @@
 import type { PortfolioProject } from "./portfolioProjects";
-import closeIcon from "../../assets/icons/closeIcon.svg";
 
 type ProjectDetailsProps = {
   selectedProject: PortfolioProject | null;
@@ -25,12 +24,24 @@ function ProjectDetails({
           <button
             type="button"
             onClick={onClose}
-            className="mb-2 self-end p-2 bg-transparent border-0 cursor-pointer hover:opacity-70 transition-opacity"
+            className="mb-2 self-end navigation-button button-unstyled"
             aria-label="Close project details"
             title="Close"
-            style={{ background: "none" }}
           >
-            <img src={closeIcon} alt="Close" width="24" height="24" />
+            <svg
+              width="24"
+              height="24"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M6 18L18 6M6 6l12 12"
+              />
+            </svg>
           </button>
           <p className="subtitle text-dark-green/[0.65]">
             {selectedProject.category}

@@ -1,6 +1,6 @@
 import SiteNav from "../components/SiteNav";
 import Footer from "../sections/Footer";
-import heroBackground from "../assets/HeroSectionComic.webp";
+import heroBackground from "../assets/HeroSectionEdited.webp";
 
 function ContactPage() {
   return (
