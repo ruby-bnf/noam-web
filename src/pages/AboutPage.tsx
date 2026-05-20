@@ -1,5 +1,5 @@
 import SiteNav from "../components/SiteNav";
-import Footer from "../sections/Footer";
+import Footer from "../HomePage/Footer";
 import { Link } from "react-router-dom";
 import {
   aboutSectionContent,
@@ -78,16 +78,17 @@ function WorkExperienceSection() {
 
 function AboutPage() {
   return (
-    <div className="flex min-h-screen flex-col bg-white px-[clamp(1.25rem,4vw,5rem)] pt-24 pb-0 text-dark-green">
+    <>
       <SiteNav />
+      <div className="flex min-h-screen flex-col bg-white px-[clamp(1.25rem,4vw,5rem)] pt-24 pb-0 text-dark-green">
+        <main className="mx-auto flex w-full max-w-6xl flex-1 flex-col gap-12">
+          <HeroSection />
+          <WorkExperienceSection />
 
-      <main className="mx-auto flex w-full max-w-6xl flex-1 flex-col gap-12">
-        <HeroSection />
-        <WorkExperienceSection />
-
-        <Footer />
-      </main>
-    </div>
+          <Footer />
+        </main>
+      </div>
+    </>
   );
 }
 

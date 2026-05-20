@@ -1,7 +1,7 @@
 import { useRef, useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import SiteNav from "../../components/SiteNav";
-import Footer from "../../sections/Footer";
+import Footer from "../../HomePage/Footer";
 import { portfolioProjects, type PortfolioProject } from "./portfolioProjects";
 import ProjectDetails from "./ProjectDetails";
 

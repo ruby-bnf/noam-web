@@ -1,7 +1,7 @@
 import SiteNav from "../components/SiteNav";
 import InfoCard from "../components/InfoCard";
 import { commissionPageContent } from "../constants/commissionPageContent";
-import Footer from "../sections/Footer";
+import Footer from "../HomePage/Footer";
 
 function CommissionPage() {
   const lastIndex = commissionPageContent.steps.length - 1;
