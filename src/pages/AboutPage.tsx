@@ -9,8 +9,8 @@ import NoamAboutImage from "../assets/Noam-about-me.webp";
 
 function HeroSection() {
   return (
-    <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-10">
-      <div className="flex flex-col gap-8">
+    <div className="grid grid-cols-1 gap-6 lg:grid-cols-2 lg:gap-6">
+      <div className="flex flex-col gap-6">
         <p className="subtitle">About me</p>
 
         <h1 className="header-title">{aboutSectionContent.title}</h1>
@@ -21,7 +21,7 @@ function HeroSection() {
 
         <div className="pt-2">
           <Link to="/contact" className="button-primary">
-            Get in Touch
+            lets get in Touch!
           </Link>
         </div>
       </div>
@@ -47,10 +47,10 @@ function WorkExperienceItem({
   description: string;
 }) {
   return (
-    <div className="flex flex-col gap-3 pb-6 border-b border-dark-green/[0.08] last:border-b-0 last:pb-0">
+    <div className="flex flex-col gap-1 border-b border-dark-green/[0.08] pb-4 last:border-b-0 last:pb-0">
       <div className="flex flex-col gap-1">
-        <h3 className="sm-text font-semibold">{role}</h3>
-        <p className="body-text font-semibold">{period}</p>
+        <p className="sm-text">{period}</p>
+        <h3 className="subtitle !font-semibold">{role}</h3>
       </div>
       <p className="body-text">{description}</p>
     </div>
@@ -59,10 +59,10 @@ function WorkExperienceItem({
 
 function WorkExperienceSection() {
   return (
-    <div className="flex flex-col gap-8 border-t border-dark-green/[0.12] pt-12">
+    <div className="flex flex-col gap-6 border-t border-dark-green/[0.12] pt-10">
       <h2 className="header-title">{aboutWorkExperienceContent.title}</h2>
 
-      <div className="flex flex-col gap-8">
+      <div className="flex flex-col gap-6">
         {aboutWorkExperienceContent.experiences.map((exp) => (
           <WorkExperienceItem
             key={exp.role}

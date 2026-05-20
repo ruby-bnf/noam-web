@@ -53,7 +53,7 @@ function ProjectDetails({
             {selectedProject.category}
           </p>
           <h2 className="header-title m-0 pt-2">{selectedProject.title}</h2>
-          <p className="body-text m-0 pt-4 whitespace-pre-wrap">
+          <p className="body-text m-0 pt-2 whitespace-pre-wrap">
             {selectedProject.summary}
           </p>
         </div>

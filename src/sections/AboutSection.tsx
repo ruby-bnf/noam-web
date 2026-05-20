@@ -32,13 +32,13 @@ function AboutSection() {
               <span className="block"> {aboutSectionContent.title}</span>
             </h2>
 
-            <p className="body-text m-0">
+            <p className="body-text m-0 pt-6">
               {aboutSectionContent.body}
 
               {projectsSectionContent.body}
             </p>
 
-            <div className="pt-2">
+            <div className="pt-6">
               <Link to="/about" className="button-primary">
                 More about me
               </Link>

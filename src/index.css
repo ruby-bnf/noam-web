@@ -51,45 +51,70 @@ button:not(.button-unstyled),
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  gap: 0.4rem;
   border: 0;
   border-radius: 9999px;
-  background: #c44e39;
-  padding: 0.75rem 1.25rem;
-  font-size: 0.875rem;
-  font-weight: 600;
-  color: #2c3623;
+  background: linear-gradient(
+    180deg,
+    color-mix(in srgb, var(--color-red) 88%, white),
+    var(--color-red)
+  );
+  padding: 0.72rem 1.2rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-white);
   text-decoration: none;
-  transition: transform 200ms ease;
+  transition:
+    transform 200ms ease,
+    filter 200ms ease;
 }
 
 button:not(.button-unstyled):hover,
 .button-primary:hover {
   transform: translateY(-2px);
+  filter: saturate(1.05);
+}
+
+button:not(.button-unstyled):focus-visible,
+.button-primary:focus-visible {
+  outline: 2px solid var(--color-red);
+  outline-offset: 2px;
 }
 
 .button-primary-small {
-  padding: 0.375rem 0.75rem;
-  font-size: 0.75rem;
+  padding: 0.45rem 0.85rem;
+  font-size: 0.66rem;
 }
 
 .button-secondary {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid #c44e39;
-  border-radius: 0.65rem;
-  background: transparent;
-  padding: 0.3125rem 0.5rem;
-  font-size: 0.72rem;
-  font-weight: 600;
-  color: #c44e39;
+  gap: 0.35rem;
+  border: 1px solid color-mix(in srgb, var(--color-red) 75%, transparent);
+  border-radius: 9999px;
+  background: color-mix(in srgb, var(--color-white) 12%, transparent);
+  padding: 0.375rem 0.75rem;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-red);
   text-decoration: none;
   transition:
     transform 200ms ease,
-    background-color 200ms ease;
+    background-color 200ms ease,
+    color 200ms ease;
 }
 
 .button-secondary:hover {
-  transform: translateY(-2px);
-  background: #fca569;
+  background-color: var(--color-red);
+  color: var(--color-white);
+}
+
+.button-secondary:focus-visible {
+  outline: 2px solid var(--color-red);
+  outline-offset: 2px;
 }

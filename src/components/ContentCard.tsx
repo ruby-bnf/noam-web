@@ -39,7 +39,7 @@ function ContentCard({
 
   const cardContent = (
     <>
-      <div className="relative h-32 overflow-hidden">
+      <div className="relative h-36 overflow-hidden">
         <img
           src={picture}
           alt={pictureAlt ?? title}
@@ -49,14 +49,16 @@ function ContentCard({
           loading="lazy"
         />
         <span
-          className={`pointer-events-none absolute top-3 right-3 rounded-full px-2.5 py-1 text-[0.68rem] font-semibold tracking-[0.05em] uppercase shadow-md ${statusStyles[normalizedStatus]}`}
+          className={`pointer-events-none absolute top-3 left-3 rounded-full px-2.5 py-1 text-[0.68rem] font-semibold tracking-[0.05em] uppercase shadow-md ${statusStyles[normalizedStatus]}`}
         >
           {normalizedStatus}
         </span>
       </div>
-      <div className="flex flex-1 flex-col gap-2 p-4">
+      <div className="flex flex-1 flex-col p-3 text-left">
         <h3 className="subtitle whitespace-pre-line">{title}</h3>
-        <p className="sm-text m-0 line-clamp-4">{description}</p>
+        <p className="sm-text m-0 line-clamp-4 text-dark-green/85">
+          {description}
+        </p>
         <span
           className={`button-secondary mt-auto w-fit self-start group-hover:-translate-y-0.5 group-hover:bg-red/10 ${
             isFeatured ? "-translate-y-0.5" : ""

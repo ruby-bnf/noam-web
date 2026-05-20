@@ -54,12 +54,8 @@ function PortfolioPage() {
           onClose={() => setSelectedProject(null)}
         />
         <div className="max-w-3xl pt-8 sm:pt-10">
-          <p className="subtitle pb-2">Portfolio</p>
-          <h1 className="header-title m-0">Gallery</h1>
-          <p className="body-text m-0 pt-4">
-            A selection of illustrations and comic snapshots. Click any image to
-            open its project section at the top.
-          </p>
+          <p className="subtitle pb-2">Comic Art and Illustrations</p>
+          <h1 className="header-title m-0">Portfolio</h1>
         </div>
 
         <section

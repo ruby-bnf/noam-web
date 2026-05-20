@@ -6,7 +6,7 @@ type WorkshopCardsGridProps = {
 
 function WorkshopCardsGrid({ workshopCards }: WorkshopCardsGridProps) {
   return (
-    <div className="grid grid-cols-[repeat(auto-fit,minmax(15rem,17rem))] justify-center gap-4">
+    <div className="grid grid-cols-[repeat(auto-fit,minmax(min(100%,15rem),1fr))] justify-center gap-4">
       {workshopCards.map((card, index) => (
         <ContentCard
           key={card.title}
