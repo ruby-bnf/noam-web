@@ -84,7 +84,7 @@ function PortfolioPage() {
                   className="pointer-events-none absolute inset-0 bg-black/0 transition-colors duration-300 ease-out group-hover:bg-black/[0.48] group-focus-visible:bg-black/[0.48]"
                 />
                 <div className="pointer-events-none absolute inset-0 flex items-center justify-center p-4">
-                  <p className="body-text m-0 translate-y-2 text-center font-semibold tracking-[0.03em] text-white opacity-0 transition-all duration-300 ease-out group-hover:translate-y-0 group-hover:opacity-100 group-focus-visible:translate-y-0 group-focus-visible:opacity-100">
+                  <p className="subtitle !text-white m-0 translate-y-2 text-center font-semibold tracking-[0.03em] text-white opacity-0 transition-all duration-300 ease-out group-hover:translate-y-0 group-hover:opacity-100 group-focus-visible:translate-y-0 group-focus-visible:opacity-100">
                     {project.title}
                   </p>
                 </div>

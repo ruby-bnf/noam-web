@@ -20,25 +20,8 @@ function ProjectDetails({
       className="pt-8 sm:pt-10"
       aria-label="Selected project details"
     >
-      <div className="grid grid-cols-1 gap-5 border border-dark-green/[0.12] bg-white/[0.72] p-4 sm:p-6 lg:grid-cols-[1.5fr_0.7fr] lg:items-start">
-        <div className="flex flex-col gap-3">
-          {selectedProject.image.map((imageSrc, index) => (
-            <div
-              key={`${selectedProject.title}-${index}`}
-              className="overflow-hidden bg-white"
-            >
-              <img
-                src={imageSrc}
-                alt={`${selectedProject.title} ${index + 1}`}
-                loading="lazy"
-                decoding="async"
-                className="h-full w-full object-cover"
-              />
-            </div>
-          ))}
-        </div>
-
-        <div className="min-w-0 flex flex-col">
+      <div className="grid grid-cols-1 gap-5 backdrop-blur-md bg-white/50 border border-white/30 rounded-2xl p-4 sm:p-6 lg:grid-cols-[1.5fr_0.7fr] lg:items-start shadow-xl">
+        <div className="min-w-0 flex flex-col lg:order-last">
           <button
             type="button"
             onClick={onClose}
@@ -56,6 +39,23 @@ function ProjectDetails({
           <p className="body-text m-0 pt-2 whitespace-pre-wrap">
             {selectedProject.summary}
           </p>
+        </div>
+
+        <div className="flex flex-col gap-3 lg:order-first">
+          {selectedProject.image.map((imageSrc, index) => (
+            <div
+              key={`${selectedProject.title}-${index}`}
+              className="overflow-hidden bg-white"
+            >
+              <img
+                src={imageSrc}
+                alt={`${selectedProject.title} ${index + 1}`}
+                loading="lazy"
+                decoding="async"
+                className="h-full w-full object-cover"
+              />
+            </div>
+          ))}
         </div>
       </div>
     </section>
