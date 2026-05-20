@@ -1,5 +1,5 @@
 import { useRef } from "react";
-import heroBackground from "../assets/HeroSectionComic.webp";
+import heroBackground from "../assets/HeroSectionEdited.png";
 import { useHeroIntroVisible } from "../components/hero/useHeroMotion";
 
 function HeroSection() {
@@ -10,14 +10,14 @@ function HeroSection() {
     <section
       id="hero"
       ref={sectionRef}
-      className="relative isolate flex min-h-[92vh] snap-start overflow-hidden bg-black"
+      className="relative isolate flex min-h-[92vh] snap-start overflow-hidden "
     >
       <img
         src={heroBackground}
         alt="Hero illustration background"
         className="absolute inset-0 z-0 h-full w-full object-cover"
       />
-      <div className="absolute inset-0 z-10 bg-black/20" />
+      <div className="absolute inset-0 z-10" />
 
       <div className="relative z-20 flex min-h-[92vh] w-full items-end justify-start px-[clamp(1.25rem,4vw,5rem)] pb-[4.5rem] md:pb-24">
         <div
