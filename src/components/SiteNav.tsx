@@ -96,10 +96,10 @@ function SiteNav() {
   const isDarkBackground =
     activeSectionId === "workshops" || isDarkBackgroundPage;
 
-  const navLinkClassName = `subtitle inline-flex shrink-0 items-center border-b border-transparent px-2 py-[0.75rem] transition-colors duration-75 ${
+  const navLinkClassName = `subtitle inline-flex shrink-0 items-center border-b border-transparent px-2 py-[0.75rem] !transition-colors !duration-75 ${
     isDarkBackground
-      ? "text-white/90 hover:border-white/75 hover:bg-white/20 hover:text-white"
-      : "text-dark-green/80 hover:border-red/70 hover:bg-white/45 hover:text-dark-green"
+      ? "!text-white/90 hover:border-white/75 hover:bg-white/20 hover:text-white"
+      : "!text-dark-green/80 hover:border-red/70 hover:bg-white/45 hover:text-dark-green"
   }`;
 
   const mobileTriggerClassName = `bg-transparent p-2 ${
