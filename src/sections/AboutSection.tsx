@@ -1,9 +1,6 @@
 import PortfolioGallery from "../components/portfolio/PortfolioGallery";
 import { Link } from "react-router-dom";
-import {
-  aboutSectionContent,
-  projectsSectionContent,
-} from "../constants/content";
+import { aboutSectionContent } from "../constants/content";
 
 import ComicCat from "../assets/PortfolioThumbnails/Comic/cat-p1.webp";
 import ComicKangaroo from "../assets/PortfolioThumbnails/Comic/Kangarp-2.webp";

@@ -1,10 +1,8 @@
 import { useRef } from "react";
 import heroBackground from "../assets/HeroSectionEdited.webp";
-import { useHeroIntroVisible } from "../components/hero/useHeroMotion";
 
 function HeroSection() {
   const sectionRef = useRef<HTMLElement | null>(null);
-  const introVisible = useHeroIntroVisible();
 
   return (
     <section
@@ -20,13 +18,7 @@ function HeroSection() {
       <div className="absolute inset-0 z-10" />
 
       <div className="relative z-20 flex min-h-[92vh] w-full items-end justify-start px-[clamp(1.25rem,4vw,5rem)] pb-[4.5rem] md:pb-24">
-        <div
-          className={`transition-[opacity,transform] duration-[900ms] ease-out ${
-            introVisible
-              ? "translate-y-0 opacity-100"
-              : "translate-y-3 opacity-0"
-          }`}
-        >
+        <div className="transition-[opacity,transform] duration-[900ms] ease-out translate-y-0 opacity-100">
           <h1 className="big-title">Noam Hen</h1>
           <p className="subtitle mt-4 !text-[0.9rem] !tracking-[0.2em] [word-spacing:0.2em]">
             Comic Artist and Illustrator
