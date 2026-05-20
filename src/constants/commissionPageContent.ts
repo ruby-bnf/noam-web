@@ -5,19 +5,21 @@ export type CommissionPageStep = {
   ctaHref?: string;
 };
 
+const COMISSION_FORM_LINK =
+  "https://docs.google.com/forms/d/e/1FAIpQLSeBOhSKgrusVzXPkv_uLjEjqTuvg0mHJdK0JS4lF6ZTQWcaQA/viewform?usp=header";
+
 export const commissionPageContent = {
   title: "how to comission a project",
   description:
     "Hi! I'm really glad you're interested in working together. For me, good collaboration means clear and respectful communication, while also leaving space for creativity and experimentation. I like to keep the process structured and straightforward, so we can focus on making great work together.Here's how we can work together, step by step, to bring your ideas to life:",
   finalCtaLabel: "Start Commission Request",
-  finalCtaHref: "mailto:noamhen100@gmail.com?subject=Commission%20Request",
+  finalCtaHref: COMISSION_FORM_LINK,
   steps: [
     {
       title: "Commission Form",
       body: "tell me about your project (i.e. illustration, workshop, art work piece...).",
       ctaLabel: "Get the form here!",
-      ctaHref:
-        "mailto:noamhen100@gmail.com?subject=Commission%20Form%20Request",
+      ctaHref: COMISSION_FORM_LINK,
     },
     {
       title: "Project outline",
