@@ -28,7 +28,9 @@ function HeroSection() {
           }`}
         >
           <h1 className="big-title">Noam Hen</h1>
-          <p className="subtitle mt-1">Comic Artist and Illustrator</p>
+          <p className="subtitle mt-4 !text-[0.9rem] !tracking-[0.2em] [word-spacing:0.2em]">
+            Comic Artist and Illustrator
+          </p>
         </div>
       </div>
     </section>

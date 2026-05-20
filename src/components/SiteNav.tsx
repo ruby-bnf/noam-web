@@ -96,7 +96,7 @@ function SiteNav() {
   const isDarkBackground =
     activeSectionId === "workshops" || isDarkBackgroundPage;
 
-  const navLinkClassName = `my-[-0.75rem] inline-flex shrink-0 items-center border-b border-transparent px-2 py-[0.75rem] text-[0.7rem] font-semibold tracking-[0.14em] uppercase transition-colors duration-75 ${
+  const navLinkClassName = `subtitle inline-flex shrink-0 items-center border-b border-transparent px-2 py-[0.75rem] transition-colors duration-75 ${
     isDarkBackground
       ? "text-white/90 hover:border-white/75 hover:bg-white/20 hover:text-white"
       : "text-dark-green/80 hover:border-red/70 hover:bg-white/45 hover:text-dark-green"
@@ -116,7 +116,7 @@ function SiteNav() {
         }`}
       >
         <nav
-          className={`flex w-full items-center justify-start gap-4 bg-transparent px-5 py-3 text-left whitespace-nowrap ${
+          className={`flex w-full items-center justify-start gap-4 bg-transparent text-left whitespace-nowrap ${
             isDarkBackground ? "text-white" : "text-dark-green"
           }`}
         >
