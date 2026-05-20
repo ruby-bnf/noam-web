@@ -47,7 +47,15 @@ function AboutSection() {
         </div>
 
         <div className="order-2 min-h-[24rem] lg:order-2 lg:min-h-full">
-          <PortfolioGallery images={portfolioGalleryImages} />
+          <PortfolioGallery
+            images={portfolioGalleryImages}
+            projectTitles={[
+              "Kangaroo",
+              "Cat story",
+              "Oliver",
+              "Tomato Factory",
+            ]}
+          />
         </div>
       </div>
     </section>

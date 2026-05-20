@@ -1,7 +1,9 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 type PortfolioGalleryProps = {
   images: string[];
+  projectTitles?: string[];
 };
 
 const expandedDesktopGrow = 2;
@@ -9,9 +11,10 @@ const collapsedDesktopGrow = 0.75;
 const restingDesktopGrow = 0.72;
 const restingFeaturedGrow = 1.25;
 
-function PortfolioGallery({ images }: PortfolioGalleryProps) {
+function PortfolioGallery({ images, projectTitles }: PortfolioGalleryProps) {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
   const [activeIndex, setActiveIndex] = useState<number | null>(0);
+  const navigate = useNavigate();
 
   const getDesktopGrow = (index: number) => {
     if (hoveredIndex !== null) {
@@ -28,6 +31,11 @@ function PortfolioGallery({ images }: PortfolioGalleryProps) {
   };
 
   const handlePanelClick = (index: number) => {
+    const title = projectTitles?.[index];
+    if (title) {
+      navigate("/portfolio", { state: { selectedProjectTitle: title } });
+      return;
+    }
     setActiveIndex((currentIndex) => (currentIndex === index ? null : index));
   };
 
