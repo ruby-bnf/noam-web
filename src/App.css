@@ -7,7 +7,7 @@
   font-weight: 600;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: rgba(var(--colors-Primary-dark-green-rgb), 0.72);
+  color: #2c3623;
 }
 /* Biggest title style */
 .big-title {
@@ -17,7 +17,7 @@
   text-transform: uppercase;
   font-family: "Poppins", sans-serif;
   font-weight: 900;
-  color: var(--red-default);
+  color: #c44e39;
 }
 
 /* Header (slightly smaller) */
@@ -29,7 +29,7 @@
   text-transform: uppercase;
   font-family: "Poppins", sans-serif;
   font-weight: 900;
-  color: var(--red-default);
+  color: #c44e39;
 }
 
 /* Body text */
@@ -39,7 +39,7 @@
   line-height: 1.9;
   font-family: "Poppins", sans-serif;
   font-weight: 400;
-  color: rgba(var(--colors-Primary-dark-green-rgb), 0.84);
+  color: #2c3623;
 }
 
 /* Small text */
@@ -48,33 +48,13 @@
   line-height: 1.5;
   font-family: "Poppins", sans-serif;
   font-weight: 400;
-  color: var(--colors-Primary-dark-green);
-}
-
-:root {
-  --cream: #f7f3ea;
-  --ink: #15212a;
-  --sun: #ef8a3d;
-  --sea: #2f7e8a;
-  --sand: #ecd1a8;
-  --card: rgba(247, 243, 234, 0.88);
+  color: #2c3623;
 }
 
 .page-shell {
   min-height: 100vh;
-  background:
-    radial-gradient(
-      circle at 20% 15%,
-      rgba(239, 138, 61, 0.24),
-      transparent 45%
-    ),
-    radial-gradient(
-      circle at 80% 85%,
-      rgba(47, 126, 138, 0.2),
-      transparent 50%
-    ),
-    linear-gradient(135deg, #fff9ef 0%, #f2efe7 40%, #ecf2f3 100%);
-  color: var(--colors-Primary-dark-green);
+  background: #f6f8f2;
+  color: #2c3623;
 }
 
 .top-nav {
@@ -88,13 +68,13 @@
   flex-wrap: wrap;
   padding: 0.45rem;
   border-radius: 999px;
-  background: rgba(247, 243, 234, 0.75);
-  border: 1px solid rgba(21, 33, 42, 0.12);
+  background: #f6f8f2;
+  border: 1px solid #2c3623;
   backdrop-filter: blur(10px);
 }
 
 .top-nav a {
-  color: var(--colors-Primary-dark-green);
+  color: #2c3623;
   text-decoration: none;
   font-family: "IBM Plex Sans", sans-serif;
   font-size: 0.85rem;
@@ -105,7 +85,7 @@
 }
 
 .top-nav a:hover {
-  background: rgba(239, 138, 61, 0.18);
+  background: #fca569;
 }
 
 .sections-scroll {

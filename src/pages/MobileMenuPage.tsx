@@ -67,15 +67,15 @@ function MobileMenuPage() {
   };
 
   return (
-    <div className="fixed inset-0 z-[70] h-[100dvh] overflow-hidden text-[var(--colors-Primary-dark-green)] lg:hidden">
+    <div className="fixed inset-0 z-[70] h-[100dvh] overflow-hidden text-dark-green lg:hidden">
       <div
-        className={`flex h-full w-full flex-col gap-2 bg-[linear-gradient(180deg,#fbf7ef_0%,#f4ecdc_100%)] px-5 py-4 transition-transform duration-300 ease-out ${isEntering ? "translate-x-0" : "translate-x-full"}`}
+        className={`flex h-full w-full flex-col gap-2 bg-white px-5 py-4 transition-transform duration-300 ease-out ${isEntering ? "translate-x-0" : "translate-x-full"}`}
       >
         <div className="flex items-center justify-end pb-2">
           <Link
             to="/"
             aria-label="Close menu"
-            className="bg-[rgba(250,246,237,0.94)] p-2"
+            className="bg-white p-2"
             onClick={(event) => {
               event.preventDefault();
               closeWithPushAnimation("/");
@@ -99,7 +99,7 @@ function MobileMenuPage() {
                 event.preventDefault();
                 closeWithPushAnimation(item.href);
               }}
-              className="flex w-full flex-1 items-center justify-start px-1 text-left text-[clamp(1rem,2vh,1.18rem)] font-semibold tracking-[0.12em] uppercase text-[rgba(var(--colors-Primary-dark-green-rgb),0.88)] transition-colors duration-200 hover:text-[rgba(var(--red-default-rgb),0.96)]"
+              className="flex w-full flex-1 items-center justify-start px-1 text-left text-[clamp(1rem,2vh,1.18rem)] font-semibold tracking-[0.12em] uppercase text-dark-green/[0.88] transition-colors duration-200 hover:text-red/[0.96]"
             >
               {item.label}
             </Link>

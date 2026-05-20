@@ -21,7 +21,7 @@ function AboutSection() {
   return (
     <section
       id="portfolio"
-      className="relative w-full flex min-h-screen snap-start items-center bg-[var(--colors-Primary-white)] px-[clamp(1.25rem,4vw,5rem)] pt-20 pb-10"
+      className="relative w-full flex min-h-screen snap-start items-center bg-white px-[clamp(1.25rem,4vw,5rem)] pt-20 pb-10"
     >
       <div className="mx-auto grid min-h-[calc(100vh-7.5rem)] w-full max-w-6xl grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-10">
         <div className="order-1 flex flex-col justify-center lg:order-1">

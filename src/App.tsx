@@ -43,7 +43,7 @@ function HomePage() {
   }, [location.hash, location.pathname]);
 
   return (
-    <div className="min-h-screen bg-[radial-gradient(circle_at_20%_15%,rgba(var(--red-default-rgb),0.24),transparent_45%),radial-gradient(circle_at_80%_85%,rgba(var(--secondary-blue-rgb),0.2),transparent_50%),linear-gradient(135deg,#fff9ef_0%,#f2efe7_40%,#ecf2f3_100%)] text-[var(--colors-Primary-dark-green)]">
+    <div className="min-h-screen bg-white text-dark-green">
       <SiteNav />
 
       <main

@@ -32,7 +32,7 @@ function PortfolioGallery({ images }: PortfolioGalleryProps) {
   };
 
   return (
-    <div className="flex h-full flex-col overflow-hidden bg-[rgba(var(--colors-Primary-white-rgb),0.52)] md:flex-row md:flex-nowrap md:gap-0">
+    <div className="flex h-full flex-col overflow-hidden bg-white/[0.52] md:flex-row md:flex-nowrap md:gap-0">
       {images.map((image, index) => (
         <button
           key={`${image}-${index}`}

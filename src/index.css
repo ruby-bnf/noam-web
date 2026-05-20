@@ -1,22 +1,13 @@
 @import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Nunito+Sans:wght@600;700;800&family=Poppins:wght@400;500;600;700;800;900&display=swap");
 @import "tailwindcss";
 
-:root {
-  --colors-Primary-white: rgb(246, 248, 242);
-  --colors-Primary-black: rgba(0, 0, 0, 1);
-  --colors-Primary-dark-green: rgba(44, 54, 35, 1);
-
-  --red-default: #c44e39;
-  --secondary-blue: #7fbfe9;
-  --orange-accent: #fca569;
-  --red-default-rgb: 196, 78, 57;
-  --secondary-blue-rgb: 127, 191, 233;
-  --orange-accent-rgb: 252, 165, 105;
-
-  --colors-Primary-white-rgb: 246, 248, 242;
-  --colors-Primary-black-rgb: 0, 0, 0;
-  --colors-Primary-dark-green-rgb: 44, 54, 35;
-  --title-font: "Poppins", sans-serif;
+@theme {
+  --color-white: #f6f8f2;
+  --color-black: #000000;
+  --color-dark-green: #2c3623;
+  --color-orange: #fca569;
+  --color-blue: #7fbfe9;
+  --color-red: #c44e39;
 }
 
 * {
@@ -38,21 +29,21 @@ body {
 body {
   min-height: 100vh;
   font-family: "IBM Plex Sans", sans-serif;
-  background: var(--secondary-blue);
+  background: #7fbfe9;
 }
 
 h1,
 h2,
 h3 {
-  font-family: var(--title-font);
+  font-family: "Poppins", sans-serif;
   font-weight: 600;
   line-height: 1.08;
 }
 
 .section-title {
-  font-family: var(--title-font);
+  font-family: "Poppins", sans-serif;
   font-weight: 900;
-  color: var(--red-default);
+  color: #c44e39;
 }
 
 button:not(.button-unstyled),
@@ -62,11 +53,11 @@ button:not(.button-unstyled),
   justify-content: center;
   border: 0;
   border-radius: 9999px;
-  background: var(--red-default);
+  background: #c44e39;
   padding: 0.75rem 1.25rem;
   font-size: 0.875rem;
   font-weight: 600;
-  color: var(--colors-Primary-dark-green);
+  color: #2c3623;
   text-decoration: none;
   transition: transform 200ms ease;
 }
@@ -85,13 +76,13 @@ button:not(.button-unstyled):hover,
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid var(--red-default);
+  border: 1px solid #c44e39;
   border-radius: 0.65rem;
   background: transparent;
   padding: 0.3125rem 0.5rem;
   font-size: 0.72rem;
   font-weight: 600;
-  color: var(--red-default);
+  color: #c44e39;
   text-decoration: none;
   transition:
     transform 200ms ease,
@@ -100,5 +91,5 @@ button:not(.button-unstyled):hover,
 
 .button-secondary:hover {
   transform: translateY(-2px);
-  background: rgba(var(--red-default-rgb), 0.1);
+  background: #fca569;
 }

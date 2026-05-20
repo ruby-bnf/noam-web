@@ -44,7 +44,7 @@ function PortfolioPage() {
   }, [selectedProject]);
 
   return (
-    <div className="flex min-h-screen flex-col bg-[var(--colors-Primary-white)] text-[var(--colors-Primary-dark-green)]">
+    <div className="flex min-h-screen flex-col bg-white text-dark-green">
       <SiteNav />
 
       <main className="mx-auto w-full max-w-7xl flex-1 px-[clamp(1.25rem,4vw,5rem)] pt-8 sm:pt-10">
@@ -73,7 +73,7 @@ function PortfolioPage() {
                 key={`${project.title}-${index}`}
                 type="button"
                 onClick={() => handleProjectSelect(project)}
-                className="button-unstyled group relative block aspect-[4/5] overflow-hidden bg-[var(--colors-Primary-white)]"
+                className="button-unstyled group relative block aspect-[4/5] overflow-hidden bg-white"
                 aria-label={`Show details for ${project.title}`}
               >
                 <img
@@ -85,10 +85,10 @@ function PortfolioPage() {
                 />
                 <div
                   aria-hidden="true"
-                  className="pointer-events-none absolute inset-0 bg-[rgba(var(--colors-Primary-black-rgb),0)] transition-colors duration-300 ease-out group-hover:bg-[rgba(var(--colors-Primary-black-rgb),0.48)] group-focus-visible:bg-[rgba(var(--colors-Primary-black-rgb),0.48)]"
+                  className="pointer-events-none absolute inset-0 bg-black/0 transition-colors duration-300 ease-out group-hover:bg-black/[0.48] group-focus-visible:bg-black/[0.48]"
                 />
                 <div className="pointer-events-none absolute inset-0 flex items-center justify-center p-4">
-                  <p className="body-text m-0 translate-y-2 text-center font-semibold tracking-[0.03em] text-[var(--colors-Primary-white)] opacity-0 transition-all duration-300 ease-out group-hover:translate-y-0 group-hover:opacity-100 group-focus-visible:translate-y-0 group-focus-visible:opacity-100">
+                  <p className="body-text m-0 translate-y-2 text-center font-semibold tracking-[0.03em] text-white opacity-0 transition-all duration-300 ease-out group-hover:translate-y-0 group-hover:opacity-100 group-focus-visible:translate-y-0 group-focus-visible:opacity-100">
                     {project.title}
                   </p>
                 </div>

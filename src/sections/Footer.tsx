@@ -1,9 +1,9 @@
 function Footer() {
   return (
-    <footer className="relative left-1/2 right-1/2 mt-auto ml-[-50dvw] mr-[-50dvw] w-[100dvw] bg-[var(--colors-Primary-white)] border-t border-[rgba(var(--colors-Primary-dark-green-rgb),0.12)] px-[clamp(1.25rem,4vw,5rem)] pt-6 pb-6">
-      <div className="mx-auto grid w-full max-w-6xl grid-cols-1 gap-6 text-[0.82rem] text-[rgba(var(--colors-Primary-dark-green-rgb),0.78)] md:grid-cols-2 md:gap-8">
+    <footer className="relative left-1/2 right-1/2 mt-auto ml-[-50dvw] mr-[-50dvw] w-[100dvw] bg-white border-t border-dark-green/[0.12] px-[clamp(1.25rem,4vw,5rem)] pt-6 pb-6">
+      <div className="mx-auto grid w-full max-w-6xl grid-cols-1 gap-6 text-[0.82rem] text-dark-green/[0.78] md:grid-cols-2 md:gap-8">
         <div className="flex flex-col gap-2">
-          <p className="text-[0.8rem] font-semibold tracking-[0.06em] uppercase text-[var(--colors-Primary-dark-green)]">
+          <p className="text-[0.8rem] font-semibold tracking-[0.06em] uppercase text-dark-green">
             Noam Hen
           </p>
           <p className="max-w-[30ch] leading-[1.6]">
@@ -15,7 +15,7 @@ function Footer() {
         <div className="flex flex-col gap-2 md:items-end">
           <a
             href="mailto:Noamhen.illustration@gmail.com"
-            className="hover:text-[var(--colors-Primary-dark-green)]"
+            className="hover:text-dark-green"
           >
             Noamhen.illustration@gmail.com
           </a>
@@ -23,7 +23,7 @@ function Footer() {
             href="https://www.instagram.com/noam.illustration/"
             target="_blank"
             rel="noopener noreferrer"
-            className="hover:text-[var(--colors-Primary-dark-green)]"
+            className="hover:text-dark-green"
           >
             @Noam.illustration
           </a>
@@ -31,7 +31,7 @@ function Footer() {
             href="https://noamhen-newsletter.beehiiv.com/"
             target="_blank"
             rel="noopener noreferrer"
-            className="hover:text-[var(--colors-Primary-dark-green)]"
+            className="hover:text-dark-green"
           >
             Newsletter
           </a>

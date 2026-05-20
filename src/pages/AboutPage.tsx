@@ -47,7 +47,7 @@ function WorkExperienceItem({
   description: string;
 }) {
   return (
-    <div className="flex flex-col gap-3 pb-6 border-b border-[rgba(var(--colors-Primary-dark-green-rgb),0.08)] last:border-b-0 last:pb-0">
+    <div className="flex flex-col gap-3 pb-6 border-b border-dark-green/[0.08] last:border-b-0 last:pb-0">
       <div className="flex flex-col gap-1">
         <h3 className="sm-text font-semibold">{role}</h3>
         <p className="body-text font-semibold">{period}</p>
@@ -59,7 +59,7 @@ function WorkExperienceItem({
 
 function WorkExperienceSection() {
   return (
-    <div className="flex flex-col gap-8 border-t border-[rgba(var(--colors-Primary-dark-green-rgb),0.12)] pt-12">
+    <div className="flex flex-col gap-8 border-t border-dark-green/[0.12] pt-12">
       <h2 className="header-title">{aboutWorkExperienceContent.title}</h2>
 
       <div className="flex flex-col gap-8">
@@ -78,7 +78,7 @@ function WorkExperienceSection() {
 
 function AboutPage() {
   return (
-    <div className="flex min-h-screen flex-col bg-[var(--colors-Primary-white)] px-[clamp(1.25rem,4vw,5rem)] pt-24 pb-0 text-[var(--colors-Primary-dark-green)]">
+    <div className="flex min-h-screen flex-col bg-white px-[clamp(1.25rem,4vw,5rem)] pt-24 pb-0 text-dark-green">
       <SiteNav />
 
       <main className="mx-auto flex w-full max-w-6xl flex-1 flex-col gap-12">

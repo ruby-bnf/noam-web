@@ -16,7 +16,7 @@ function IconTextLink({
       href={href}
       target={external ? "_blank" : undefined}
       rel={external ? "noreferrer" : undefined}
-      className="inline-flex w-fit items-center gap-3 text-[var(--colors-Primary-dark-green)] underline-offset-4 transition-opacity hover:opacity-75"
+      className="inline-flex w-fit items-center gap-3 text-dark-green underline-offset-4 transition-opacity hover:opacity-75"
     >
       <img
         src={iconSrc}

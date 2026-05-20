@@ -20,12 +20,12 @@ function ProjectDetails({
       className="pt-8 sm:pt-10"
       aria-label="Selected project details"
     >
-      <div className="grid grid-cols-1 gap-5 border border-[rgba(var(--colors-Primary-dark-green-rgb),0.12)] bg-[rgba(var(--colors-Primary-white-rgb),0.72)] p-4 sm:p-6 lg:grid-cols-[1.5fr_0.7fr] lg:items-start">
+      <div className="grid grid-cols-1 gap-5 border border-dark-green/[0.12] bg-white/[0.72] p-4 sm:p-6 lg:grid-cols-[1.5fr_0.7fr] lg:items-start">
         <div className="flex flex-col gap-3">
           {selectedProject.image.map((imageSrc, index) => (
             <div
               key={`${selectedProject.title}-${index}`}
-              className="overflow-hidden bg-[var(--colors-Primary-white)]"
+              className="overflow-hidden bg-white"
             >
               <img
                 src={imageSrc}
@@ -49,10 +49,7 @@ function ProjectDetails({
           >
             <img src={closeIcon} alt="Close" width="24" height="24" />
           </button>
-          <p
-            className="subtitle"
-            style={{ color: "rgba(var(--colors-Primary-dark-green-rgb),0.65)" }}
-          >
+          <p className="subtitle text-dark-green/[0.65]">
             {selectedProject.category}
           </p>
           <h2 className="header-title m-0 pt-2">{selectedProject.title}</h2>

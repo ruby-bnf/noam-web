@@ -17,7 +17,7 @@ function HeroSection() {
         alt="Hero illustration background"
         className="absolute inset-0 z-0 h-full w-full object-cover"
       />
-      <div className="absolute inset-0 z-10 bg-[linear-gradient(180deg,rgba(0,0,0,0.28)_0%,rgba(0,0,0,0.08)_28%,rgba(0,0,0,0.16)_100%)]" />
+      <div className="absolute inset-0 z-10 bg-black/20" />
 
       <div className="relative z-20 flex min-h-[92vh] w-full items-end justify-start px-[clamp(1.25rem,4vw,5rem)] pb-[4.5rem] md:pb-24">
         <div

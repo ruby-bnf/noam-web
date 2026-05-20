@@ -14,7 +14,7 @@ function CommissionPage() {
   ];
 
   return (
-    <div className="flex min-h-screen flex-col bg-[var(--red-default)] px-[clamp(1.25rem,4vw,5rem)] pt-24 pb-0 text-[var(--colors-Primary-dark-green)]">
+    <div className="flex min-h-screen flex-col bg-red px-[clamp(1.25rem,4vw,5rem)] pt-24 pb-0 text-dark-green">
       <SiteNav />
 
       <main className="mx-auto flex w-full max-w-6xl flex-1 flex-col gap-8">
@@ -36,7 +36,7 @@ function CommissionPage() {
             {commissionPageContent.steps.map((step, index) => (
               <InfoCard
                 key={step.title}
-                className={`relative z-20 flex w-full max-w-[553.405517578125px] flex-col gap-6 rounded-lg p-6 opacity-100 md:h-auto ${index === commissionPageContent.steps.length - 1 ? "bg-[var(--secondary-blue)]" : "bg-[var(--colors-Primary-white)]"} text-[var(--colors-Primary-dark-green)] ${stepPathClasses[index] ?? ""}`}
+                className={`relative z-20 flex w-full max-w-[553.405517578125px] flex-col gap-6 rounded-lg p-6 opacity-100 md:h-auto ${index === commissionPageContent.steps.length - 1 ? "bg-blue" : "bg-white"} text-dark-green ${stepPathClasses[index] ?? ""}`}
               >
                 <h2 className="header-title">{step.title}</h2>
                 <p className="body-text">{step.body}</p>

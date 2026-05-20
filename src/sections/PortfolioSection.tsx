@@ -31,19 +31,17 @@ function PortfolioSection() {
   return (
     <section
       id="portfolio-gallery"
-      className="relative flex min-h-screen w-full snap-start items-center overflow-x-hidden bg-[var(--colors-Primary-white)] px-[clamp(1.25rem,4vw,5rem)] py-20"
+      className="relative flex min-h-screen w-full snap-start items-center overflow-x-hidden bg-white px-[clamp(1.25rem,4vw,5rem)] py-20"
     >
       <div className="mx-auto w-full max-w-7xl">
         <div className="mb-8">
-          <h2 className="header-title">
-            Recent Works
-          </h2>
+          <h2 className="header-title">Recent Works</h2>
         </div>
 
         <div className="flex items-center gap-2 sm:gap-3">
           <button
             onClick={() => scroll("left")}
-            className="z-10 shrink-0 rounded-full bg-[rgba(var(--colors-Primary-dark-green-rgb),0.1)] p-2 transition-colors duration-300 hover:bg-[rgba(var(--colors-Primary-dark-green-rgb),0.2)] sm:p-3"
+            className="z-10 shrink-0 rounded-full bg-dark-green/10 p-2 transition-colors duration-300 hover:bg-dark-green/20 sm:p-3"
             aria-label="Scroll gallery left"
           >
             <svg
@@ -86,7 +84,7 @@ function PortfolioSection() {
 
           <button
             onClick={() => scroll("right")}
-            className="z-10 shrink-0 rounded-full bg-[rgba(var(--colors-Primary-dark-green-rgb),0.1)] p-2 transition-colors duration-300 hover:bg-[rgba(var(--colors-Primary-dark-green-rgb),0.2)] sm:p-3"
+            className="z-10 shrink-0 rounded-full bg-dark-green/10 p-2 transition-colors duration-300 hover:bg-dark-green/20 sm:p-3"
             aria-label="Scroll gallery right"
           >
             <svg
