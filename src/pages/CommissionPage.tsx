@@ -1,67 +1,69 @@
 import SiteNav from "../components/SiteNav";
 import InfoCard from "../components/InfoCard";
 import { commissionPageContent } from "../constants/commissionPageContent";
-import arrow from "../assets/decoratives/arrow.svg";
 import Footer from "../sections/Footer";
 
 function CommissionPage() {
-  const stepPathClasses = [
-    "md:self-start md:ml-0",
-    "md:self-end md:mr-0",
-    "md:self-start md:ml-0",
-    "md:self-end md:mr-0",
-    "md:self-start md:ml-0",
-  ];
+  const lastIndex = commissionPageContent.steps.length - 1;
 
   return (
     <div className="flex min-h-screen flex-col bg-red px-[clamp(1.25rem,4vw,5rem)] pt-24 pb-0 text-dark-green">
       <SiteNav />
 
       <main className="mx-auto flex w-full max-w-6xl flex-1 flex-col gap-8">
-        <h1 className="header-title">{commissionPageContent.title}</h1>
+        <h1 className="header-title !text-blue">
+          {commissionPageContent.title}
+        </h1>
 
         <p className="body-text max-w-[75ch] whitespace-pre-line">
           {commissionPageContent.description}
         </p>
 
-        <div className="relative flex w-full flex-col gap-8 md:gap-12">
-          <div className="relative z-10 flex w-full flex-col gap-8 md:gap-12">
-            <img
-              src={arrow}
-              alt=""
-              aria-hidden="true"
-              className="pointer-events-none absolute top-[calc(241px/2)] left-1/2 z-0 h-[calc(100%-264px)] w-[746px] -translate-x-1/2 border-[7px] border-transparent object-contain opacity-100"
-            />
+        <div className="commission-timeline pb-8">
+          {commissionPageContent.steps.map((step, index) => {
+            const isLeft = index % 2 === 0;
+            const isLast = index === lastIndex;
+            const bgClass = isLast ? "bg-blue" : "bg-white";
+            const arrowClass = isLeft
+              ? "commission-arrow-left"
+              : "commission-arrow-right";
+            const arrowColorClass = isLast ? "blue" : "";
 
-            {commissionPageContent.steps.map((step, index) => (
-              <InfoCard
+            return (
+              <div
                 key={step.title}
-                className={`relative z-20 flex w-full max-w-[553.405517578125px] flex-col gap-6 rounded-lg p-6 opacity-100 md:h-auto ${index === commissionPageContent.steps.length - 1 ? "bg-blue" : "bg-white"} text-dark-green ${stepPathClasses[index] ?? ""}`}
+                className={`commission-container ${isLeft ? "commission-left" : "commission-right"}`}
               >
-                <h2 className="header-title">{step.title}</h2>
-                <p className="body-text">{step.body}</p>
+                <InfoCard
+                  className={`commission-textbox ${bgClass} text-dark-green`}
+                >
+                  <h2 className="subtitle">{step.title}</h2>
+                  <p className="sm-text mt-2">{step.body}</p>
 
-                {step.ctaLabel && step.ctaHref ? (
-                  <div className="mt-2">
-                    <a href={step.ctaHref} className="button-primary">
-                      {step.ctaLabel}
-                    </a>
-                  </div>
-                ) : null}
+                  {step.ctaLabel && step.ctaHref ? (
+                    <div className="mt-6">
+                      <a href={step.ctaHref} className="button-secondary">
+                        {step.ctaLabel}
+                      </a>
+                    </div>
+                  ) : null}
 
-                {index === commissionPageContent.steps.length - 1 ? (
-                  <div className="mt-2">
-                    <a
-                      href={commissionPageContent.finalCtaHref}
-                      className="button-primary"
-                    >
-                      {commissionPageContent.finalCtaLabel}
-                    </a>
-                  </div>
-                ) : null}
-              </InfoCard>
-            ))}
-          </div>
+                  {isLast ? (
+                    <div className="mt-4">
+                      <a
+                        href={commissionPageContent.finalCtaHref}
+                        className="button-primary"
+                      >
+                        {commissionPageContent.finalCtaLabel}
+                      </a>
+                    </div>
+                  ) : null}
+
+                  <span className={`${arrowClass} ${arrowColorClass}`} />
+                </InfoCard>
+              </div>
+            );
+          })}
         </div>
 
         <Footer />

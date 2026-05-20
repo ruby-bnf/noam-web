@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import menuIcon from "../assets/icons/MenuIcon.svg";
 
 const navItems = [
@@ -14,6 +14,10 @@ const navItems = [
 function SiteNav() {
   const [activeSectionId, setActiveSectionId] = useState<string | null>(null);
   const [isNavVisible, setIsNavVisible] = useState(false);
+  const location = useLocation();
+
+  // Determine if current page has a dark background
+  const isDarkBackgroundPage = location.pathname === "/commission";
 
   useEffect(() => {
     const frame = window.requestAnimationFrame(() => {
@@ -89,7 +93,8 @@ function SiteNav() {
     };
   }, []);
 
-  const isDarkBackground = activeSectionId === "workshops";
+  const isDarkBackground =
+    activeSectionId === "workshops" || isDarkBackgroundPage;
 
   const navLinkClassName = `my-[-0.75rem] inline-flex shrink-0 items-center border-b border-transparent px-2 py-[0.75rem] text-[0.7rem] font-semibold tracking-[0.14em] uppercase transition-colors duration-75 ${
     isDarkBackground

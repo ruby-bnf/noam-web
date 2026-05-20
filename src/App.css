@@ -138,3 +138,142 @@
     padding-top: 6.5rem;
   }
 }
+
+/* ── Commission timeline ── */
+.commission-timeline {
+  position: relative;
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+.commission-timeline::after {
+  content: "";
+  position: absolute;
+  width: 4px;
+  height: 100%;
+  background: #2c3623;
+  top: 0;
+  left: 50%;
+  margin-left: -2px;
+  z-index: 0;
+  animation: commission-moveline 2.5s linear forwards;
+}
+
+@keyframes commission-moveline {
+  0% {
+    height: 0;
+  }
+  100% {
+    height: 100%;
+  }
+}
+
+.commission-container {
+  padding: 10px 50px;
+  position: relative;
+  width: 50%;
+  opacity: 0;
+  animation: commission-movedown 0.5s ease forwards;
+}
+
+@keyframes commission-movedown {
+  0% {
+    opacity: 0;
+    transform: translateY(-24px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.commission-container:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.commission-container:nth-child(2) {
+  animation-delay: 0.5s;
+}
+.commission-container:nth-child(3) {
+  animation-delay: 0.9s;
+}
+.commission-container:nth-child(4) {
+  animation-delay: 1.3s;
+}
+.commission-container:nth-child(5) {
+  animation-delay: 1.7s;
+}
+
+.commission-left {
+  left: 0;
+}
+.commission-right {
+  left: 50%;
+}
+
+.commission-textbox {
+  padding: 12px 24px 20px;
+  position: relative;
+  border-radius: 8px;
+  z-index: 1;
+}
+
+/* CSS triangle arrows */
+.commission-arrow-left {
+  height: 0;
+  width: 0;
+  position: absolute;
+  top: 28px;
+  right: -10px;
+  z-index: 1;
+  border-top: 15px solid transparent;
+  border-bottom: 15px solid transparent;
+  border-left: 15px solid #f6f8f2;
+}
+
+.commission-arrow-right {
+  height: 0;
+  width: 0;
+  position: absolute;
+  top: 28px;
+  left: -10px;
+  z-index: 1;
+  border-top: 15px solid transparent;
+  border-bottom: 15px solid transparent;
+  border-right: 15px solid #f6f8f2;
+}
+
+.commission-arrow-left.blue {
+  border-left-color: #7fbfe9;
+}
+.commission-arrow-right.blue {
+  border-right-color: #7fbfe9;
+}
+
+@media screen and (max-width: 640px) {
+  .commission-timeline::after {
+    left: 20px;
+  }
+
+  .commission-container {
+    width: 100%;
+    padding-left: 56px;
+    padding-right: 16px;
+  }
+
+  .commission-right {
+    left: 0;
+  }
+
+  .commission-arrow-left,
+  .commission-arrow-right {
+    border-right: 15px solid #f6f8f2;
+    border-left: 0;
+    left: -15px;
+    right: auto;
+  }
+
+  .commission-arrow-left.blue,
+  .commission-arrow-right.blue {
+    border-right-color: #7fbfe9;
+  }
+}
