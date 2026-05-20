@@ -3,10 +3,11 @@
   margin: 0;
   display: inline-flex;
   padding-bottom: 0.25rem;
-  font-size: 0.72rem;
+  font-size: 0.7rem;
   font-weight: 600;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
+  font-family: "Poppins", sans-serif;
   color: #2c3623;
 }
 /* Biggest title style */

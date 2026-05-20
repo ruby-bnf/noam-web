@@ -33,7 +33,7 @@ function PortfolioSection() {
       id="portfolio-gallery"
       className="relative flex min-h-screen w-full snap-start items-center overflow-x-hidden bg-white px-[clamp(1.25rem,4vw,5rem)] py-20"
     >
-      <div className="mx-auto w-full max-w-7xl">
+      <div className="mx-auto w-full max-w-6xl">
         <div className="mb-8">
           <h2 className="header-title">Recent Works</h2>
         </div>

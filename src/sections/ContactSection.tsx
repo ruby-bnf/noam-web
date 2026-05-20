@@ -1,10 +1,10 @@
 import Footer from "./Footer";
 
 const sectionClasses =
-  "flex min-h-screen snap-start flex-col bg-white px-[clamp(1.25rem,4vw,5rem)] pt-24 pb-0";
+  "flex snap-start flex-col bg-white px-[clamp(1.25rem,4vw,5rem)] pt-24 pb-0";
 
 const containerClasses =
-  "mx-auto grid w-full max-w-6xl flex-1 grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-12";
+  "mx-auto grid w-full max-w-6xl grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-12";
 
 function ContactSection() {
   return (
@@ -28,11 +28,13 @@ function ContactSection() {
           </p>
         </div>
 
-        <div className="flex min-h-0 flex-col gap-3 text-[clamp(1rem,1.2vw,1.1rem)] leading-[1.7] text-dark-green/90 lg:justify-self-end lg:max-w-[30rem]">
-          <p>I am also available via mail and on social media:</p>
+        <div className="flex min-h-0 flex-col gap-3 lg:justify-self-end lg:max-w-[30rem]">
+          <p className="body-text">
+            I am also available via mail and on social media:
+          </p>
           <a
             href="mailto:Noamhen.illustration@gmail.com"
-            className="w-fit underline decoration-[1.5px] underline-offset-4"
+            className="body-text w-fit underline decoration-[1.5px] underline-offset-4"
           >
             Noamhen.illustration@gmail.com
           </a>
@@ -40,7 +42,7 @@ function ContactSection() {
             href="https://www.instagram.com/noam.illustration/"
             target="_blank"
             rel="noopener noreferrer"
-            className="w-fit underline decoration-[1.5px] underline-offset-4"
+            className="body-text w-fit underline decoration-[1.5px] underline-offset-4"
           >
             @Noam.illustration
           </a>
@@ -48,7 +50,7 @@ function ContactSection() {
             href="https://noamhen-newsletter.beehiiv.com/"
             target="_blank"
             rel="noopener noreferrer"
-            className="w-fit underline decoration-[1.5px] underline-offset-4"
+            className="body-text w-fit underline decoration-[1.5px] underline-offset-4"
           >
             Subscribe to my studio&apos;s Newsletter
           </a>

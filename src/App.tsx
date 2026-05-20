@@ -7,6 +7,7 @@ import MobileMenuPage from "./pages/MobileMenuPage";
 import SiteNav from "./components/SiteNav";
 import { Route, Routes, useLocation } from "react-router-dom";
 import AboutSection from "./sections/AboutSection.tsx";
+import PortfolioSection from "./sections/PortfolioSection";
 import PortfolioPage from "./pages/Portfolio/PortfolioPage.tsx";
 import AboutPage from "./pages/AboutPage.tsx";
 import ContactPage from "./pages/ContactPage.tsx";
@@ -52,6 +53,7 @@ function HomePage() {
       >
         <HeroSection />
         <AboutSection />
+        <PortfolioSection />
         <WorkshopsSection />
         <ContactSection />
       </main>
