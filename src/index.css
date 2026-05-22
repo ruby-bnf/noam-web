@@ -54,11 +54,7 @@ button:not(.button-unstyled),
   gap: 0.4rem;
   border: 0;
   border-radius: 9999px;
-  background: linear-gradient(
-    180deg,
-    color-mix(in srgb, var(--color-red) 88%, white),
-    var(--color-red)
-  );
+  background: var(--color-red);
   padding: 0.72rem 1.2rem;
   font-size: 0.78rem;
   font-weight: 700;
@@ -74,7 +70,7 @@ button:not(.button-unstyled),
 button:not(.button-unstyled):hover,
 .button-primary:hover {
   transform: translateY(-2px);
-  filter: saturate(1.05);
+  background: var(--color-blue);
 }
 
 button:not(.button-unstyled):focus-visible,
