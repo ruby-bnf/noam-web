@@ -2,6 +2,7 @@ import drawingScentsThumbnail from "../assets/workshops/DrawingScents/drawingSce
 import comicsFromTheFutureThumbnail from "../assets/workshops/ComicsFromTheFuture/DrawThumbnail.thumb.webp";
 import fibbonacciThumbnail from "../assets/workshops/fibbonacci/fibbonacciThumbnail.thumb.webp";
 import foxLinoThumbnail from "../assets/workshops/lino/foxLinoTumbnail.thumb.webp";
+import colorAnalysisThumbnail from "../assets/workshops/colorAnalysis/20251122_193424.jpg";
 
 type WorkshopStatus = "open" | "new" | "closed";
 
@@ -23,7 +24,7 @@ export const workshopsSectionContent: {
       title: "Introduction to Linocut Printing",
       description:
         "Learn the basics of linocut: design, carve, ink, and print your first handmade prints. No experience needed.",
-      status: "new",
+      status: "open",
       thumbnail: foxLinoThumbnail,
     },
     {
@@ -41,10 +42,17 @@ export const workshopsSectionContent: {
       thumbnail: drawingScentsThumbnail,
     },
     {
+      title: "Find your colors - color analysis!",
+      description:
+        "Create your own personal color map and leave with a clearer understanding of color theory and your palette.",
+      status: "new",
+      thumbnail: colorAnalysisThumbnail,
+    },
+    {
       title: "Fibonacci in nature",
       description:
         "explore the intersection of art and science through the study of the Golden Ratio",
-      status: "closed",
+      status: "open",
       thumbnail: fibbonacciThumbnail,
     },
   ],

@@ -8,6 +8,7 @@ type ContentCardProps = {
   picture: string;
   pictureAlt?: string;
   href?: string;
+  onActionClick?: () => void;
   status?: WorkshopStatus;
   isFeatured?: boolean;
 };
@@ -18,6 +19,7 @@ function ContentCard({
   picture,
   pictureAlt,
   href,
+  onActionClick,
   status,
   isFeatured,
 }: ContentCardProps) {
@@ -64,6 +66,7 @@ function ContentCard({
           isInternalHref ? (
             <Link
               to={href}
+              onClick={onActionClick}
               className={`button-secondary mt-auto w-fit self-start group-hover:-translate-y-0.5 group-hover:bg-red/10 ${
                 isFeatured ? "-translate-y-0.5" : ""
               }`}
@@ -74,6 +77,7 @@ function ContentCard({
           ) : (
             <a
               href={href}
+              onClick={onActionClick}
               className={`button-secondary mt-auto w-fit self-start group-hover:-translate-y-0.5 group-hover:bg-red/10 ${
                 isFeatured ? "-translate-y-0.5" : ""
               }`}

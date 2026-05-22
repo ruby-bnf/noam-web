@@ -11,6 +11,12 @@ function WorkshopsPage() {
     useState<WorkshopProject | null>(null);
   const workshopDetailsRef = useRef<HTMLElement | null>(null);
   const location = useLocation();
+  const sortedWorkshops = [...workshopProjects].sort((a, b) => {
+    if (a.status === b.status) return 0;
+    if (a.status === "new") return -1;
+    if (b.status === "new") return 1;
+    return 0;
+  });
 
   const handleWorkshopSelect = (workshop: WorkshopProject) => {
     setSelectedWorkshop(workshop);
@@ -87,13 +93,14 @@ function WorkshopsPage() {
           id="workshops-gallery-grid"
         >
           <div className="grid grid-cols-[repeat(auto-fit,minmax(min(100%,15rem),1fr))] justify-center gap-4">
-            {workshopProjects.map((workshop) => (
+            {sortedWorkshops.map((workshop) => (
               <ContentCard
                 key={workshop.title}
                 title={workshop.title}
                 description={workshop.summary}
                 picture={workshop.thumbnail}
                 status={workshop.status}
+                onActionClick={() => handleWorkshopSelect(workshop)}
                 href={`/workshops?selected=${encodeURIComponent(workshop.title)}`}
               />
             ))}

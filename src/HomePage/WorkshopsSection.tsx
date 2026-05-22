@@ -2,6 +2,15 @@ import ContentCard from "../components/ContentCard";
 import { workshopsSectionContent } from "../constants/workshopsInfo";
 
 function WorkshopsSection() {
+  const sortedWorkshops = [...workshopsSectionContent.workshops].sort(
+    (a, b) => {
+      if (a.status === b.status) return 0;
+      if (a.status === "new") return -1;
+      if (b.status === "new") return 1;
+      return 0;
+    },
+  );
+
   return (
     <section
       id="workshops"
@@ -13,7 +22,7 @@ function WorkshopsSection() {
           {workshopsSectionContent.intro}
         </p>
         <div className="grid grid-cols-[repeat(auto-fit,minmax(min(100%,15rem),1fr))] justify-center gap-4">
-          {workshopsSectionContent.workshops.map((workshop) => (
+          {sortedWorkshops.map((workshop) => (
             <ContentCard
               key={workshop.title}
               title={workshop.title}
