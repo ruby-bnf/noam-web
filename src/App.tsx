@@ -11,6 +11,7 @@ import PortfolioSection from "./HomePage/PortfolioSection.tsx";
 import PortfolioPage from "./pages/Portfolio/PortfolioPage.tsx";
 import AboutPage from "./pages/AboutPage.tsx";
 import ContactPage from "./pages/ContactPage.tsx";
+import WorkshopsPage from "./pages/Workshops/WorkshopsPage.tsx";
 
 function HomePage() {
   const location = useLocation();
@@ -68,6 +69,7 @@ function App() {
       <Route path="/about" element={<AboutPage />} />
       <Route path="/contact" element={<ContactPage />} />
       <Route path="/portfolio" element={<PortfolioPage />} />
+      <Route path="/workshops" element={<WorkshopsPage />} />
       <Route path="/commission" element={<CommissionPage />} />
       <Route
         path="/menu"

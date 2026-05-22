@@ -32,7 +32,8 @@ function ContentCard({
     new: "bg-blue/95 text-dark-green",
     closed: "bg-red/90 text-white",
   };
-  const ctaLabel = normalizedStatus === "closed" ? "Show interest" : "Book now";
+  const ctaLabel =
+    normalizedStatus === "closed" ? "Show interest" : "More info";
   const isInternalHref = Boolean(
     href && (href.startsWith("/") || href.startsWith("#")),
   );
@@ -59,38 +60,42 @@ function ContentCard({
         <p className="sm-text m-0 line-clamp-4 text-dark-green/85">
           {description}
         </p>
-        <span
-          className={`button-secondary mt-auto w-fit self-start group-hover:-translate-y-0.5 group-hover:bg-red/10 ${
-            isFeatured ? "-translate-y-0.5" : ""
-          }`}
-        >
-          {ctaLabel}
-        </span>
+        {href ? (
+          isInternalHref ? (
+            <Link
+              to={href}
+              className={`button-secondary mt-auto w-fit self-start group-hover:-translate-y-0.5 group-hover:bg-red/10 ${
+                isFeatured ? "-translate-y-0.5" : ""
+              }`}
+              aria-label={`${ctaLabel} for ${title}`}
+            >
+              {ctaLabel}
+            </Link>
+          ) : (
+            <a
+              href={href}
+              className={`button-secondary mt-auto w-fit self-start group-hover:-translate-y-0.5 group-hover:bg-red/10 ${
+                isFeatured ? "-translate-y-0.5" : ""
+              }`}
+              aria-label={`${ctaLabel} for ${title}`}
+            >
+              {ctaLabel}
+            </a>
+          )
+        ) : (
+          <span
+            className={`button-secondary mt-auto w-fit self-start group-hover:-translate-y-0.5 group-hover:bg-red/10 ${
+              isFeatured ? "-translate-y-0.5" : ""
+            }`}
+          >
+            {ctaLabel}
+          </span>
+        )}
       </div>
     </>
   );
 
-  if (href) {
-    if (isInternalHref) {
-      return (
-        <Link to={href} className={cardClassName}>
-          {cardContent}
-        </Link>
-      );
-    }
-
-    return (
-      <a href={href} className={cardClassName}>
-        {cardContent}
-      </a>
-    );
-  }
-
-  return (
-    <article className={`${cardClassName} cursor-pointer`}>
-      {cardContent}
-    </article>
-  );
+  return <article className={cardClassName}>{cardContent}</article>;
 }
 
 export type { ContentCardProps };

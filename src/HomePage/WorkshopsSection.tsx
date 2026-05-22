@@ -20,7 +20,7 @@ function WorkshopsSection() {
               description={workshop.description}
               picture={workshop.thumbnail}
               status={workshop.status}
-              href="/contact"
+              href={`/workshops?selected=${encodeURIComponent(workshop.title)}`}
             />
           ))}
         </div>
