@@ -2,7 +2,7 @@ import drawingScentsThumbnail from "../assets/workshops/DrawingScents/drawingSce
 import comicsFromTheFutureThumbnail from "../assets/workshops/ComicsFromTheFuture/DrawThumbnail.thumb.webp";
 import fibbonacciThumbnail from "../assets/workshops/fibbonacci/fibbonacciThumbnail.thumb.webp";
 import foxLinoThumbnail from "../assets/workshops/lino/foxLinoTumbnail.thumb.webp";
-import colorAnalysisThumbnail from "../assets/workshops/colorAnalysis/20251122_193424.jpg";
+import colorAnalysisThumbnail from "../assets/workshops/colorAnalysis/20251122_193424.webp";
 
 type WorkshopStatus = "open" | "new" | "closed";
 

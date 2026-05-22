@@ -66,6 +66,7 @@ function PortfolioPage() {
 
       <main className="mx-auto w-full max-w-7xl flex-1 px-[clamp(1.25rem,4vw,5rem)] pt-8 sm:pt-10">
         <ProjectDetails
+          key={selectedProject?.title ?? "none"}
           selectedProject={selectedProject}
           projectDetailsRef={projectDetailsRef}
           onClose={() => setSelectedProject(null)}

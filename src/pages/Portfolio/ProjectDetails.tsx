@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import type { PortfolioProject } from "./portfolioProjects";
 
 type ProjectDetailsProps = {
@@ -11,6 +12,57 @@ function ProjectDetails({
   projectDetailsRef,
   onClose,
 }: ProjectDetailsProps) {
+  const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
+
+  const imageCount = selectedProject?.image.length ?? 0;
+  const isLightboxOpen = lightboxIndex !== null;
+
+  useEffect(() => {
+    if (!isLightboxOpen || imageCount === 0) {
+      return;
+    }
+
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setLightboxIndex(null);
+      }
+
+      if (imageCount > 1 && event.key === "ArrowLeft") {
+        setLightboxIndex((current) =>
+          current === null ? 0 : (current - 1 + imageCount) % imageCount,
+        );
+      }
+
+      if (imageCount > 1 && event.key === "ArrowRight") {
+        setLightboxIndex((current) =>
+          current === null ? 0 : (current + 1) % imageCount,
+        );
+      }
+    };
+
+    document.addEventListener("keydown", handleKeyDown);
+
+    return () => {
+      document.body.style.overflow = previousOverflow;
+      document.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [imageCount, isLightboxOpen]);
+
+  const showPreviousImage = () => {
+    setLightboxIndex((current) =>
+      current === null ? 0 : (current - 1 + imageCount) % imageCount,
+    );
+  };
+
+  const showNextImage = () => {
+    setLightboxIndex((current) =>
+      current === null ? 0 : (current + 1) % imageCount,
+    );
+  };
+
   if (!selectedProject) return null;
 
   return (
@@ -56,21 +108,126 @@ function ProjectDetails({
 
         <div className="flex flex-col gap-3 lg:order-first">
           {selectedProject.image.map((imageSrc, index) => (
-            <div
+            <button
               key={`${selectedProject.title}-${index}`}
-              className="overflow-hidden bg-white"
+              type="button"
+              className="button-unstyled overflow-hidden bg-white"
+              onClick={() => setLightboxIndex(index)}
+              aria-label={`Open ${selectedProject.title} image ${index + 1} in full screen`}
             >
               <img
                 src={imageSrc}
                 alt={`${selectedProject.title} ${index + 1}`}
                 loading="lazy"
                 decoding="async"
-                className="h-full w-full object-cover"
+                className="h-full w-full object-cover transition-transform duration-300 ease-out hover:scale-[1.01]"
               />
-            </div>
+            </button>
           ))}
         </div>
       </div>
+
+      {isLightboxOpen && lightboxIndex !== null && (
+        <div
+          className="fixed inset-0 z-[70] flex items-center justify-center bg-black/85 p-3 sm:p-8"
+          role="dialog"
+          aria-modal="true"
+          aria-label={`${selectedProject.title} image viewer`}
+          onClick={(event) => {
+            if (event.target === event.currentTarget) {
+              setLightboxIndex(null);
+            }
+          }}
+        >
+          <div
+            className="relative w-full max-w-[70rem]"
+            onClick={(event) => event.stopPropagation()}
+          >
+            <button
+              type="button"
+              onClick={() => setLightboxIndex(null)}
+              className="button-unstyled absolute right-2 top-2 z-10 rounded-full border border-white/50 bg-black/35 p-2 text-white backdrop-blur-sm transition-colors hover:bg-black/55"
+              aria-label="Close image viewer"
+              title="Close"
+            >
+              <svg
+                width="24"
+                height="24"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              </svg>
+            </button>
+
+            {imageCount > 1 && (
+              <>
+                <button
+                  type="button"
+                  onClick={showPreviousImage}
+                  className="button-unstyled absolute left-2 top-1/2 z-10 -translate-y-1/2 rounded-full border border-white/50 bg-black/35 p-2 text-white backdrop-blur-sm transition-colors hover:bg-black/55"
+                  aria-label="Show previous image"
+                >
+                  <svg
+                    width="24"
+                    height="24"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M15 19l-7-7 7-7"
+                    />
+                  </svg>
+                </button>
+
+                <button
+                  type="button"
+                  onClick={showNextImage}
+                  className="button-unstyled absolute right-2 top-1/2 z-10 -translate-y-1/2 rounded-full border border-white/50 bg-black/35 p-2 text-white backdrop-blur-sm transition-colors hover:bg-black/55"
+                  aria-label="Show next image"
+                >
+                  <svg
+                    width="24"
+                    height="24"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M9 5l7 7-7 7"
+                    />
+                  </svg>
+                </button>
+              </>
+            )}
+
+            <img
+              src={selectedProject.image[lightboxIndex]}
+              alt={`${selectedProject.title} ${lightboxIndex + 1}`}
+              className="max-h-[88vh] w-full rounded-lg object-contain"
+            />
+
+            {imageCount > 1 && (
+              <p className="subtitle m-0 pt-3 text-center !text-white/85">
+                {lightboxIndex + 1} / {imageCount}
+              </p>
+            )}
+          </div>
+        </div>
+      )}
     </section>
   );
 }

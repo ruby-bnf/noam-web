@@ -6,9 +6,9 @@ import drawingScentsHome from "../../assets/workshops/DrawingScents/Home.webp";
 import drawingScentsPeople from "../../assets/workshops/DrawingScents/People.webp";
 import drawingScentsThumbnail from "../../assets/workshops/DrawingScents/Draw.thumb.webp";
 
-import colorAnalysisImage1 from "../../assets/workshops/colorAnalysis/20251122_193424.jpg";
-import colorAnalysisImage2 from "../../assets/workshops/colorAnalysis/20251122_193429.jpg";
-import colorAnalysisImage3 from "../../assets/workshops/colorAnalysis/20251122_193431.jpg";
+import colorAnalysisImage1 from "../../assets/workshops/colorAnalysis/20251122_193424.webp";
+import colorAnalysisImage2 from "../../assets/workshops/colorAnalysis/20251122_193429.webp";
+import colorAnalysisImage3 from "../../assets/workshops/colorAnalysis/20251122_193431.webp";
 
 import fibonacciImage from "../../assets/workshops/fibbonacci/fibbonacciThumbnail.webp";
 import fibonacciThumbnail from "../../assets/workshops/fibbonacci/fibbonacciThumbnail.thumb.webp";
