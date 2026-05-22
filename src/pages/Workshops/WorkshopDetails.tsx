@@ -27,7 +27,7 @@ function WorkshopDetails({
       className="pt-8 sm:pt-10"
       aria-label="Selected workshop details"
     >
-      <div className="grid grid-cols-1 gap-5 rounded-2xl border border-white/30 bg-white/50 p-4 shadow-xl backdrop-blur-md sm:p-6 lg:grid-cols-[1.5fr_0.7fr] lg:items-start">
+      <div className="grid grid-cols-1 gap-5 rounded-2xl border border-white/30 bg-white/50 p-4 shadow-xl backdrop-blur-md sm:p-6 lg:grid-cols-[1.35fr_0.85fr] lg:items-start">
         <div className="min-w-0 flex flex-col lg:order-last">
           <button
             type="button"
@@ -55,8 +55,10 @@ function WorkshopDetails({
           <p className="subtitle text-dark-green/[0.65]">
             {selectedWorkshop.category}
           </p>
-          <h2 className="header-title m-0 pt-2">{selectedWorkshop.title}</h2>
-          <p className="body-text m-0 pt-2 whitespace-pre-wrap">
+          <h2 className="header-title m-0 pt-2 break-normal [overflow-wrap:normal] [word-break:normal]">
+            {selectedWorkshop.title}
+          </h2>
+          <p className="body-text m-0 pt-2 whitespace-pre-wrap break-words">
             {selectedWorkshop.summary}
           </p>
           <a

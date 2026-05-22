@@ -19,7 +19,7 @@ function ProjectDetails({
       className="pt-8 sm:pt-10"
       aria-label="Selected project details"
     >
-      <div className="grid grid-cols-1 gap-5 backdrop-blur-md bg-white/50 border border-white/30 rounded-2xl p-4 sm:p-6 lg:grid-cols-[1.5fr_0.7fr] lg:items-start shadow-xl">
+      <div className="grid grid-cols-1 gap-5 backdrop-blur-md bg-white/50 border border-white/30 rounded-2xl p-4 sm:p-6 lg:grid-cols-[1.35fr_0.85fr] lg:items-start shadow-xl">
         <div className="min-w-0 flex flex-col lg:order-last">
           <button
             type="button"
@@ -46,8 +46,10 @@ function ProjectDetails({
           <p className="subtitle text-dark-green/[0.65]">
             {selectedProject.category}
           </p>
-          <h2 className="header-title m-0 pt-2">{selectedProject.title}</h2>
-          <p className="body-text m-0 pt-2 whitespace-pre-wrap">
+          <h2 className="header-title m-0 pt-2 break-normal [overflow-wrap:normal] [word-break:normal]">
+            {selectedProject.title}
+          </h2>
+          <p className="body-text m-0 pt-2 whitespace-pre-wrap break-words">
             {selectedProject.summary}
           </p>
         </div>
