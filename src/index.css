@@ -29,7 +29,7 @@ body {
 body {
   min-height: 100vh;
   font-family: "IBM Plex Sans", sans-serif;
-  background: #7fbfe9;
+  background: var(--color-white);
 }
 
 h1,
